@@ -1,0 +1,103 @@
+ 
+set ignorecase
+set smartcase
+set incsearch
+set tabstop=2
+set shiftwidth=2
+
+inoremap z,  <c-o>
+inoremap z,p <c-r>"
+
+nnoremap \ ,
+nnoremap gj i<cr><esc>k$
+nnoremap s /
+nnoremap S ?
+nnoremap zy  zt5<c-y>
+nnoremap gw  <C-w>
+nnoremap d<tab> :bdelete<cr>
+nnoremap <c-d> <PageDown>
+nnoremap <c-u> <PageUp>
+nnoremap z. :w<cr>
+
+nnoremap <c-l> :nohlsearch<cr>
+vnoremap - $
+nnoremap - $
+nnoremap gl :ls<cr>
+" select last inserted text
+nnoremap gV `[v`]
+
+nnoremap <c-n> n.
+nnoremap Q @@
+
+nnoremap ]e :.,.m<space>.+1<cr>
+nnoremap [e :.,.m<space>.-2<cr>
+vnoremap ]e :m<space>.+1<cr>gv
+vnoremap [e :m<space>.-2<cr>kgv
+
+eclipseaction eclipsenextitem org.eclipse.ui.navigate.next
+nnoremap ]q :eclipsenextitem<cr>
+eclipseaction eclipsepreviousitem org.eclipse.ui.navigate.previous
+nnoremap [q :eclipsepreviousitem<cr>
+
+inoremap jk <esc> 
+
+" nnoremap <M-k> :eclipseprevelement<cr>
+
+"version control
+eclipseaction eclipsecomparehead org.eclipse.egit.ui.team.CompareWithHead
+nnoremap Ud :eclipsecomparehead<cr>
+
+eclipseaction eclipsefindref org.eclipse.jdt.ui.edit.text.java.search.references.in.workspace
+nnoremap gr :eclipsefindref<cr>
+
+eclipseuiaction eclipsegotoimpl org.eclipse.jdt.ui.edit.text.java.open.implementation
+nnoremap gI :eclipsegotoimpl<cr>
+
+" show type hierarchy relative to current type
+eclipseuiaction eclipsetypehier org.eclipse.jdt.ui.edit.text.java.open.hierarchy
+nnoremap <C-t> :eclipsetypehier<cr>
+
+" go to type
+eclipseuiaction eclipsegototype org.eclipse.jdt.ui.navigate.open.type
+nnoremap g/t :eclipsegototype<cr>
+
+" show documentation for current symbol
+eclipseuiaction eclipseshowdoc org.eclipse.ui.edit.text.showInformation
+nnoremap K   :eclipseshowdoc<cr>
+
+" go to super implementation
+eclipseaction eclipsegotosuper org.eclipse.java.ui.edit.text.java.open.super.implementation
+nnoremap gzi :eclipsegotosuper<cr>
+
+"show refactor menu
+eclipseaction eclipserefactormenu org.eclipse.jdt.ui.edit.text.java.refactor.quickMenu
+nnoremap crr        :eclipserefactormenu<cr>
+vnoremap <c-r><c-r> :eclipserefactormenu<cr>gv
+
+"show code-generation menu
+eclipseaction eclipsesrcgenmenu org.eclipse.jdt.ui.edit.text.java.source.quickMenu
+nnoremap crs        :eclipsesrcgenmenu<cr>
+vnoremap <c-r><c-s> :eclipsesrcgenmenu<cr>gv
+
+" rename current symbol
+eclipseaction eclipserename org.eclipse.jdt.ui.edit.text.java.rename.element
+au "Dart Editor" eclipseaction eclipserename com.google.dart.tools.ui.edit.text.dart.rename.element
+nnoremap crn :eclipserename<cr>
+
+"show quickfix menu
+eclipseuiaction eclipsequickfix org.eclipse.jdt.ui.edit.text.java.correction.assist.proposals
+au "Dart Editor" eclipseuiaction eclipsequickfix com.google.dart.tools.ui.specific_content_assist.command
+nnoremap <backspace> :eclipsequickfix<cr>
+vnoremap <backspace> :eclipsequickfix<cr>
+
+nnoremap <c-p> :eclipseopenresource<cr>
+
+nnoremap <space> :eclipsecmdsearch<cr>
+
+nnoremap <m-v> :vim<cr>
+set autochdir
+set cleanindent
+set contentassistmode
+set gvimpath=/usr/local/bin/mvim
+
+source .vrapperrc.local

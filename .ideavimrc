@@ -1,0 +1,113 @@
+set hlsearch                      " highlight search occurrences
+set number                        " line numbers
+set ignorecase                    " ignore case in search patterns
+set smartcase                     " no ignore case when pattern is uppercase
+set incsearch                     " show search results while typing
+set wrapscan                      " searches wrap around the end of the file
+
+set gdefault                      " substitute all occurrences in line per default
+set history=10000                 " keep x lines of command line history
+set scrolloff=5 sidescrolloff=10  " keep some lines before and after the cursor visible
+set clipboard=unnamedplus,unnamed,ideaput " integrate with system clipboard
+set surround
+set easymotion
+set commentary
+set mapleader = " "
+
+" don't lose selection when indenting
+vnoremap < <gv
+vnoremap > >gv
+vnoremap = =gv
+
+" clear search highlighting
+nnoremap <leader>/ :nohls<return><esc>
+nnoremap <leader>pu :action Vcs.Push<CR>
+nnoremap <leader>p :action GotoFile<CR>
+" Better indenting
+vnoremap < <gv
+vnoremap > >gv
+
+nnoremap <Leader>\ :vsplit<CR>
+nnoremap <Leader>/ :split<CR>
+" IDEA specific
+nmap <leader>? :action GotoAction<CR>
+
+" change font size
+nmap + :action EditorIncreaseFontSize<CR>
+nmap - :action EditorDecreaseFontSize<CR>
+nmap <leader>= :action EditorResetFontSize<CR>
+
+" code navigation
+
+" https://youtrack.jetbrains.com/issue/VIM-44
+nnoremap <c-o> :action Back<cr>
+nnoremap <c-i> :action Forward<cr>
+
+nmap <leader>e :action GotoFile<CR>
+nmap <leader>a :action FindInPath<CR>
+nmap gr :action ShowUsages<CR>
+nmap gi :action GotoImplementation<CR>
+nmap gs :action GotoSuperMethod<CR>
+
+" nmap l :action NextTab<CR>
+" nmap L :action PreviousTab<CR>
+
+nmap <C-p> :action ParameterInfo<CR>
+imap <C-p> <C-o>:action ParameterInfo<CR>
+nmap <leader>n :action GotoNextError<CR>
+
+
+nmap <leader>ri :action Inline<CR>
+nmap <leader>rr :action RenameElement<CR>
+nmap <leader>rev :action IntroduceVariable<CR>
+vmap <leader>rev :action IntroduceVariable<CR>
+nmap <leader>rem :action ExtractMethod<CR>
+vmap <leader>rem :action ExtractMethod<CR>
+nmap <leader>rm :action Move<CR>
+nmap <leader>ro :action OptimizeImports<CR>
+nmap <leader>rG :action Generate<CR>
+
+nmap <leader>f  :action ReformatCode<CR>
+
+nmap <, :action MoveElementLeft<CR>
+nmap >, :action MoveElementRight<CR>
+
+nmap <leader>gr :action Vcs.RollbackChangedLines<CR>
+
+" Better window navigation 
+nnoremap <C-h> <C-w>h
+nnoremap <C-j> <C-w>j
+nnoremap <C-k> <C-w>k
+nnoremap <C-l> <C-w>l
+
+# Better nav for incomplete
+inoremap <expr> <c-j> ("\<C-n>")
+inoremap <expr> <c-k> ("\<C-p>")
+
+" Move selected line / block of text in visual mode
+xnoremap K :move '<-2<CR>gv-gv
+xnoremap J :move '>+1<CR>gv-gv
+
+inoremap jk <ESC>
+
+" Fast saving 
+nmap <leader>w :w!<CR>
+" Alternate way to quit 
+nnoremap <silent> <C-q> :wq!<CR>
+" Alternate way to quit don't save
+nnoremap qq :q<CR>
+" Use control-c instead of escape
+nnoremap <silent> <C-c> <Esc>
+
+" Mappings to resize windows
+nnoremap <silent> <C-Left>  :vertical resize -5<CR>
+nnoremap <silent> <C-Right> :vertical resize +5<CR>
+nnoremap <silent> <leader>- :vertical resize -8<CR>
+nnoremap <silent> <leader>+ :vertical resize +8<CR>
+
+" Pressing ,ss will toggle and untoggle spell checking
+map <leader>ss :setlocal spell!<cr>
+" Shortcuts using <leader>
+map <leader>sn ]s
+map <leader>sp [s
+set ideajoin

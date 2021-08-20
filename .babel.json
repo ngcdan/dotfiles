@@ -1,0 +1,1563 @@
+{
+  "{\"filename\":\"/Users/linuss/Dev/projects/training/advanced-react/lib/server.js\",\"env\":{\"development\":{\"plugins\":[]}},\"retainLines\":false,\"highlightCode\":true,\"suppressDeprecationMessages\":false,\"presets\":[],\"plugins\":[[[],null],[[],null],[[],{\"loose\":false}],[[],{\"spec\":false,\"loose\":false}],[[],null],[[],null],[[],null],[[],null]],\"ignore\":[],\"code\":true,\"metadata\":true,\"ast\":true,\"comments\":true,\"compact\":\"auto\",\"minified\":false,\"sourceRoot\":\"/Users/linuss/Dev/projects/training/advanced-react/lib\",\"babelrc\":true,\"sourceType\":\"module\",\"moduleIds\":false,\"passPerPreset\":false,\"parserOpts\":false,\"generatorOpts\":false}:6.26.3": {
+    "metadata": {
+      "usedHelpers": [
+        "extends",
+        "interopRequireDefault"
+      ],
+      "marked": [],
+      "modules": {
+        "imports": [
+          {
+            "source": "express",
+            "imported": [
+              "default"
+            ],
+            "specifiers": [
+              {
+                "kind": "named",
+                "imported": "default",
+                "local": "express"
+              }
+            ]
+          },
+          {
+            "source": "./config",
+            "imported": [
+              "default"
+            ],
+            "specifiers": [
+              {
+                "kind": "named",
+                "imported": "default",
+                "local": "config"
+              }
+            ]
+          },
+          {
+            "source": "renderers/server",
+            "imported": [
+              "default"
+            ],
+            "specifiers": [
+              {
+                "kind": "named",
+                "imported": "default",
+                "local": "serverRender"
+              }
+            ]
+          },
+          {
+            "source": "./testData",
+            "imported": [
+              "data"
+            ],
+            "specifiers": [
+              {
+                "kind": "named",
+                "imported": "data",
+                "local": "data"
+              }
+            ]
+          }
+        ],
+        "exports": {
+          "exported": [],
+          "specifiers": []
+        }
+      }
+    },
+    "options": {
+      "filename": "/Users/linuss/Dev/projects/training/advanced-react/lib/server.js",
+      "filenameRelative": "/Users/linuss/Dev/projects/training/advanced-react/lib/server.js",
+      "env": {},
+      "retainLines": false,
+      "highlightCode": true,
+      "suppressDeprecationMessages": false,
+      "presets": [],
+      "plugins": [
+        [
+          [],
+          null
+        ],
+        [
+          [],
+          null
+        ],
+        [
+          [],
+          {
+            "loose": false
+          }
+        ],
+        [
+          [],
+          {
+            "spec": false,
+            "loose": false
+          }
+        ],
+        [
+          [],
+          null
+        ],
+        [
+          [],
+          null
+        ],
+        [
+          [],
+          null
+        ],
+        [
+          [],
+          null
+        ]
+      ],
+      "ignore": [],
+      "code": true,
+      "metadata": true,
+      "ast": false,
+      "comments": true,
+      "compact": "auto",
+      "minified": false,
+      "sourceMaps": "both",
+      "sourceMapTarget": "server.js",
+      "sourceFileName": "server.js",
+      "sourceRoot": "/Users/linuss/Dev/projects/training/advanced-react/lib",
+      "babelrc": false,
+      "sourceType": "module",
+      "moduleRoot": "/Users/linuss/Dev/projects/training/advanced-react/lib",
+      "moduleIds": false,
+      "passPerPreset": false,
+      "parserOpts": false,
+      "generatorOpts": false,
+      "basename": "server"
+    },
+    "ignored": false,
+    "code": "'use strict';\n\nvar _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };\n\nvar _express = require('express');\n\nvar _express2 = _interopRequireDefault(_express);\n\nvar _config = require('./config');\n\nvar _config2 = _interopRequireDefault(_config);\n\nvar _server = require('renderers/server');\n\nvar _server2 = _interopRequireDefault(_server);\n\nvar _testData = require('./testData');\n\nfunction _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }\n\nconst app = (0, _express2.default)();\n\napp.use(_express2.default.static('public'));\n\napp.set('view engine', 'ejs');\n\napp.get('/', async (req, res) => {\n  const initialContent = await (0, _server2.default)();\n  res.render('index', _extends({}, initialContent));\n});\n\napp.get('/data', (req, res) => {\n  res.send(_testData.data);\n});\n\napp.listen(_config2.default.port, function listenHandler() {\n  console.info(`Running on ${_config2.default.port}...`);\n});\n//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNlcnZlci5qcyJdLCJuYW1lcyI6WyJhcHAiLCJ1c2UiLCJzdGF0aWMiLCJzZXQiLCJnZXQiLCJyZXEiLCJyZXMiLCJpbml0aWFsQ29udGVudCIsInJlbmRlciIsInNlbmQiLCJsaXN0ZW4iLCJwb3J0IiwibGlzdGVuSGFuZGxlciIsImNvbnNvbGUiLCJpbmZvIl0sIm1hcHBpbmdzIjoiOzs7O0FBQUE7Ozs7QUFDQTs7OztBQUNBOzs7O0FBQ0E7Ozs7QUFFQSxNQUFNQSxNQUFNLHdCQUFaOztBQUVBQSxJQUFJQyxHQUFKLENBQVEsa0JBQVFDLE1BQVIsQ0FBZSxRQUFmLENBQVI7O0FBRUFGLElBQUlHLEdBQUosQ0FBUSxhQUFSLEVBQXVCLEtBQXZCOztBQUVBSCxJQUFJSSxHQUFKLENBQVEsR0FBUixFQUFhLE9BQU9DLEdBQVAsRUFBWUMsR0FBWixLQUFvQjtBQUMvQixRQUFNQyxpQkFBaUIsTUFBTSx1QkFBN0I7QUFDQUQsTUFBSUUsTUFBSixDQUFXLE9BQVgsZUFBeUJELGNBQXpCO0FBQ0QsQ0FIRDs7QUFLQVAsSUFBSUksR0FBSixDQUFRLE9BQVIsRUFBaUIsQ0FBQ0MsR0FBRCxFQUFNQyxHQUFOLEtBQWM7QUFDN0JBLE1BQUlHLElBQUo7QUFDRCxDQUZEOztBQUlBVCxJQUFJVSxNQUFKLENBQVcsaUJBQU9DLElBQWxCLEVBQXdCLFNBQVNDLGFBQVQsR0FBeUI7QUFDL0NDLFVBQVFDLElBQVIsQ0FBYyxjQUFhLGlCQUFPSCxJQUFLLEtBQXZDO0FBQ0QsQ0FGRCIsImZpbGUiOiJzZXJ2ZXIuanMiLCJzb3VyY2VSb290IjoiL1VzZXJzL2xpbnVzcy9EZXYvcHJvamVjdHMvdHJhaW5pbmcvYWR2YW5jZWQtcmVhY3QvbGliIiwic291cmNlc0NvbnRlbnQiOlsiaW1wb3J0IGV4cHJlc3MgZnJvbSAnZXhwcmVzcyc7XG5pbXBvcnQgY29uZmlnIGZyb20gJy4vY29uZmlnJztcbmltcG9ydCBzZXJ2ZXJSZW5kZXIgZnJvbSAncmVuZGVyZXJzL3NlcnZlcic7XG5pbXBvcnQgeyBkYXRhIH0gZnJvbSAnLi90ZXN0RGF0YSc7XG5cbmNvbnN0IGFwcCA9IGV4cHJlc3MoKTtcblxuYXBwLnVzZShleHByZXNzLnN0YXRpYygncHVibGljJykpO1xuXG5hcHAuc2V0KCd2aWV3IGVuZ2luZScsICdlanMnKTtcblxuYXBwLmdldCgnLycsIGFzeW5jIChyZXEsIHJlcykgPT4ge1xuICBjb25zdCBpbml0aWFsQ29udGVudCA9IGF3YWl0IHNlcnZlclJlbmRlcigpO1xuICByZXMucmVuZGVyKCdpbmRleCcsIHsgLi4uaW5pdGlhbENvbnRlbnQgfSk7XG59KTtcblxuYXBwLmdldCgnL2RhdGEnLCAocmVxLCByZXMpID0+IHtcbiAgcmVzLnNlbmQoZGF0YSk7XG59KTtcblxuYXBwLmxpc3Rlbihjb25maWcucG9ydCwgZnVuY3Rpb24gbGlzdGVuSGFuZGxlcigpIHtcbiAgY29uc29sZS5pbmZvKGBSdW5uaW5nIG9uICR7Y29uZmlnLnBvcnR9Li4uYCk7XG59KTtcbiJdfQ==",
+    "ast": null,
+    "map": {
+      "version": 3,
+      "sources": [
+        "server.js"
+      ],
+      "names": [
+        "app",
+        "use",
+        "static",
+        "set",
+        "get",
+        "req",
+        "res",
+        "initialContent",
+        "render",
+        "send",
+        "listen",
+        "port",
+        "listenHandler",
+        "console",
+        "info"
+      ],
+      "mappings": ";;;;AAAA;;;;AACA;;;;AACA;;;;AACA;;;;AAEA,MAAMA,MAAM,wBAAZ;;AAEAA,IAAIC,GAAJ,CAAQ,kBAAQC,MAAR,CAAe,QAAf,CAAR;;AAEAF,IAAIG,GAAJ,CAAQ,aAAR,EAAuB,KAAvB;;AAEAH,IAAII,GAAJ,CAAQ,GAAR,EAAa,OAAOC,GAAP,EAAYC,GAAZ,KAAoB;AAC/B,QAAMC,iBAAiB,MAAM,uBAA7B;AACAD,MAAIE,MAAJ,CAAW,OAAX,eAAyBD,cAAzB;AACD,CAHD;;AAKAP,IAAII,GAAJ,CAAQ,OAAR,EAAiB,CAACC,GAAD,EAAMC,GAAN,KAAc;AAC7BA,MAAIG,IAAJ;AACD,CAFD;;AAIAT,IAAIU,MAAJ,CAAW,iBAAOC,IAAlB,EAAwB,SAASC,aAAT,GAAyB;AAC/CC,UAAQC,IAAR,CAAc,cAAa,iBAAOH,IAAK,KAAvC;AACD,CAFD",
+      "file": "server.js",
+      "sourceRoot": "/Users/linuss/Dev/projects/training/advanced-react/lib",
+      "sourcesContent": [
+        "import express from 'express';\nimport config from './config';\nimport serverRender from 'renderers/server';\nimport { data } from './testData';\n\nconst app = express();\n\napp.use(express.static('public'));\n\napp.set('view engine', 'ejs');\n\napp.get('/', async (req, res) => {\n  const initialContent = await serverRender();\n  res.render('index', { ...initialContent });\n});\n\napp.get('/data', (req, res) => {\n  res.send(data);\n});\n\napp.listen(config.port, function listenHandler() {\n  console.info(`Running on ${config.port}...`);\n});\n"
+      ]
+    },
+    "mtime": 1628392048632
+  },
+  "{\"filename\":\"/Users/linuss/Dev/projects/training/advanced-react/lib/config.js\",\"env\":{\"development\":{\"plugins\":[]}},\"retainLines\":false,\"highlightCode\":true,\"suppressDeprecationMessages\":false,\"presets\":[],\"plugins\":[[[],null],[[],null],[[],{\"loose\":false}],[[],{\"spec\":false,\"loose\":false}],[[],null],[[],null],[[],null],[[],null]],\"ignore\":[],\"code\":true,\"metadata\":true,\"ast\":true,\"comments\":true,\"compact\":\"auto\",\"minified\":false,\"sourceRoot\":\"/Users/linuss/Dev/projects/training/advanced-react/lib\",\"babelrc\":true,\"sourceType\":\"module\",\"moduleIds\":false,\"passPerPreset\":false,\"parserOpts\":false,\"generatorOpts\":false}:6.26.3": {
+    "metadata": {
+      "usedHelpers": [],
+      "marked": [],
+      "modules": {
+        "imports": [],
+        "exports": {
+          "exported": [],
+          "specifiers": []
+        }
+      }
+    },
+    "options": {
+      "filename": "/Users/linuss/Dev/projects/training/advanced-react/lib/config.js",
+      "filenameRelative": "/Users/linuss/Dev/projects/training/advanced-react/lib/config.js",
+      "env": {},
+      "retainLines": false,
+      "highlightCode": true,
+      "suppressDeprecationMessages": false,
+      "presets": [],
+      "plugins": [
+        [
+          [],
+          null
+        ],
+        [
+          [],
+          null
+        ],
+        [
+          [],
+          {
+            "loose": false
+          }
+        ],
+        [
+          [],
+          {
+            "spec": false,
+            "loose": false
+          }
+        ],
+        [
+          [],
+          null
+        ],
+        [
+          [],
+          null
+        ],
+        [
+          [],
+          null
+        ],
+        [
+          [],
+          null
+        ]
+      ],
+      "ignore": [],
+      "code": true,
+      "metadata": true,
+      "ast": false,
+      "comments": true,
+      "compact": "auto",
+      "minified": false,
+      "sourceMaps": "both",
+      "sourceMapTarget": "config.js",
+      "sourceFileName": "config.js",
+      "sourceRoot": "/Users/linuss/Dev/projects/training/advanced-react/lib",
+      "babelrc": false,
+      "sourceType": "module",
+      "moduleRoot": "/Users/linuss/Dev/projects/training/advanced-react/lib",
+      "moduleIds": false,
+      "passPerPreset": false,
+      "parserOpts": false,
+      "generatorOpts": false,
+      "basename": "config"
+    },
+    "ignored": false,
+    "code": "'use strict';\n\nmodule.exports = {\n  port: process.env.PORT || 8080,\n  host: process.env.HOST || 'localhost'\n};\n//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbImNvbmZpZy5qcyJdLCJuYW1lcyI6WyJtb2R1bGUiLCJleHBvcnRzIiwicG9ydCIsInByb2Nlc3MiLCJlbnYiLCJQT1JUIiwiaG9zdCIsIkhPU1QiXSwibWFwcGluZ3MiOiI7O0FBQUFBLE9BQU9DLE9BQVAsR0FBaUI7QUFDZkMsUUFBTUMsUUFBUUMsR0FBUixDQUFZQyxJQUFaLElBQW9CLElBRFg7QUFFZkMsUUFBTUgsUUFBUUMsR0FBUixDQUFZRyxJQUFaLElBQW9CO0FBRlgsQ0FBakIiLCJmaWxlIjoiY29uZmlnLmpzIiwic291cmNlUm9vdCI6Ii9Vc2Vycy9saW51c3MvRGV2L3Byb2plY3RzL3RyYWluaW5nL2FkdmFuY2VkLXJlYWN0L2xpYiIsInNvdXJjZXNDb250ZW50IjpbIm1vZHVsZS5leHBvcnRzID0ge1xuICBwb3J0OiBwcm9jZXNzLmVudi5QT1JUIHx8IDgwODAsXG4gIGhvc3Q6IHByb2Nlc3MuZW52LkhPU1QgfHwgJ2xvY2FsaG9zdCcsXG59O1xuIl19",
+    "ast": null,
+    "map": {
+      "version": 3,
+      "sources": [
+        "config.js"
+      ],
+      "names": [
+        "module",
+        "exports",
+        "port",
+        "process",
+        "env",
+        "PORT",
+        "host",
+        "HOST"
+      ],
+      "mappings": ";;AAAAA,OAAOC,OAAP,GAAiB;AACfC,QAAMC,QAAQC,GAAR,CAAYC,IAAZ,IAAoB,IADX;AAEfC,QAAMH,QAAQC,GAAR,CAAYG,IAAZ,IAAoB;AAFX,CAAjB",
+      "file": "config.js",
+      "sourceRoot": "/Users/linuss/Dev/projects/training/advanced-react/lib",
+      "sourcesContent": [
+        "module.exports = {\n  port: process.env.PORT || 8080,\n  host: process.env.HOST || 'localhost',\n};\n"
+      ]
+    },
+    "mtime": 1628392048631
+  },
+  "{\"filename\":\"/Users/linuss/Dev/projects/training/advanced-react/lib/renderers/server.js\",\"env\":{\"development\":{\"plugins\":[]}},\"retainLines\":false,\"highlightCode\":true,\"suppressDeprecationMessages\":false,\"presets\":[],\"plugins\":[[[],null],[[],null],[[],{\"loose\":false}],[[],{\"spec\":false,\"loose\":false}],[[],null],[[],null],[[],null],[[],null]],\"ignore\":[],\"code\":true,\"metadata\":true,\"ast\":true,\"comments\":true,\"compact\":\"auto\",\"minified\":false,\"sourceRoot\":\"/Users/linuss/Dev/projects/training/advanced-react/lib/renderers\",\"babelrc\":true,\"sourceType\":\"module\",\"moduleIds\":false,\"passPerPreset\":false,\"parserOpts\":false,\"generatorOpts\":false}:6.26.3": {
+    "metadata": {
+      "usedHelpers": [
+        "interopRequireDefault"
+      ],
+      "marked": [],
+      "modules": {
+        "imports": [
+          {
+            "source": "react",
+            "imported": [
+              "default"
+            ],
+            "specifiers": [
+              {
+                "kind": "named",
+                "imported": "default",
+                "local": "React"
+              }
+            ]
+          },
+          {
+            "source": "react-dom/server",
+            "imported": [
+              "default"
+            ],
+            "specifiers": [
+              {
+                "kind": "named",
+                "imported": "default",
+                "local": "ReactDOMServer"
+              }
+            ]
+          },
+          {
+            "source": "axios",
+            "imported": [
+              "default"
+            ],
+            "specifiers": [
+              {
+                "kind": "named",
+                "imported": "default",
+                "local": "axios"
+              }
+            ]
+          },
+          {
+            "source": "state-api",
+            "imported": [
+              "default"
+            ],
+            "specifiers": [
+              {
+                "kind": "named",
+                "imported": "default",
+                "local": "StateApi"
+              }
+            ]
+          },
+          {
+            "source": "components/App",
+            "imported": [
+              "default"
+            ],
+            "specifiers": [
+              {
+                "kind": "named",
+                "imported": "default",
+                "local": "App"
+              }
+            ]
+          },
+          {
+            "source": "config",
+            "imported": [
+              "default"
+            ],
+            "specifiers": [
+              {
+                "kind": "named",
+                "imported": "default",
+                "local": "config"
+              }
+            ]
+          }
+        ],
+        "exports": {
+          "exported": [],
+          "specifiers": []
+        }
+      }
+    },
+    "options": {
+      "filename": "/Users/linuss/Dev/projects/training/advanced-react/lib/renderers/server.js",
+      "filenameRelative": "/Users/linuss/Dev/projects/training/advanced-react/lib/renderers/server.js",
+      "env": {},
+      "retainLines": false,
+      "highlightCode": true,
+      "suppressDeprecationMessages": false,
+      "presets": [],
+      "plugins": [
+        [
+          [],
+          null
+        ],
+        [
+          [],
+          null
+        ],
+        [
+          [],
+          {
+            "loose": false
+          }
+        ],
+        [
+          [],
+          {
+            "spec": false,
+            "loose": false
+          }
+        ],
+        [
+          [],
+          null
+        ],
+        [
+          [],
+          null
+        ],
+        [
+          [],
+          null
+        ],
+        [
+          [],
+          null
+        ]
+      ],
+      "ignore": [],
+      "code": true,
+      "metadata": true,
+      "ast": false,
+      "comments": true,
+      "compact": "auto",
+      "minified": false,
+      "sourceMaps": "both",
+      "sourceMapTarget": "server.js",
+      "sourceFileName": "server.js",
+      "sourceRoot": "/Users/linuss/Dev/projects/training/advanced-react/lib/renderers",
+      "babelrc": false,
+      "sourceType": "module",
+      "moduleRoot": "/Users/linuss/Dev/projects/training/advanced-react/lib/renderers",
+      "moduleIds": false,
+      "passPerPreset": false,
+      "parserOpts": false,
+      "generatorOpts": false,
+      "basename": "server"
+    },
+    "ignored": false,
+    "code": "'use strict';\n\nObject.defineProperty(exports, \"__esModule\", {\n  value: true\n});\n\nvar _react = require('react');\n\nvar _react2 = _interopRequireDefault(_react);\n\nvar _server = require('react-dom/server');\n\nvar _server2 = _interopRequireDefault(_server);\n\nvar _axios = require('axios');\n\nvar _axios2 = _interopRequireDefault(_axios);\n\nvar _stateApi = require('state-api');\n\nvar _stateApi2 = _interopRequireDefault(_stateApi);\n\nvar _App = require('components/App');\n\nvar _App2 = _interopRequireDefault(_App);\n\nvar _config = require('config');\n\nvar _config2 = _interopRequireDefault(_config);\n\nfunction _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }\n\nconst serverRender = async () => {\n  const resp = await _axios2.default.get(`http://${_config2.default.host}:${_config2.default.port}/data`);\n  const store = new _stateApi2.default(resp.data);\n\n  return {\n    initialMarkup: _server2.default.renderToString(_react2.default.createElement(_App2.default, { store: store })),\n    initialData: resp.data\n  };\n};\n\nexports.default = serverRender;\n//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNlcnZlci5qcyJdLCJuYW1lcyI6WyJzZXJ2ZXJSZW5kZXIiLCJyZXNwIiwiZ2V0IiwiaG9zdCIsInBvcnQiLCJzdG9yZSIsImRhdGEiLCJpbml0aWFsTWFya3VwIiwicmVuZGVyVG9TdHJpbmciLCJpbml0aWFsRGF0YSJdLCJtYXBwaW5ncyI6Ijs7Ozs7O0FBQUE7Ozs7QUFDQTs7OztBQUNBOzs7O0FBQ0E7Ozs7QUFFQTs7OztBQUNBOzs7Ozs7QUFFQSxNQUFNQSxlQUFlLFlBQVk7QUFDL0IsUUFBTUMsT0FBTyxNQUFNLGdCQUFNQyxHQUFOLENBQVcsVUFBUyxpQkFBT0MsSUFBSyxJQUFHLGlCQUFPQyxJQUFLLE9BQS9DLENBQW5CO0FBQ0EsUUFBTUMsUUFBUSx1QkFBYUosS0FBS0ssSUFBbEIsQ0FBZDs7QUFFQSxTQUFPO0FBQ0xDLG1CQUFlLGlCQUFlQyxjQUFmLENBQ2IsK0NBQUssT0FBT0gsS0FBWixHQURhLENBRFY7QUFJTEksaUJBQWFSLEtBQUtLO0FBSmIsR0FBUDtBQU1ELENBVkQ7O2tCQVllTixZIiwiZmlsZSI6InNlcnZlci5qcyIsInNvdXJjZVJvb3QiOiIvVXNlcnMvbGludXNzL0Rldi9wcm9qZWN0cy90cmFpbmluZy9hZHZhbmNlZC1yZWFjdC9saWIvcmVuZGVyZXJzIiwic291cmNlc0NvbnRlbnQiOlsiaW1wb3J0IFJlYWN0IGZyb20gJ3JlYWN0JztcbmltcG9ydCBSZWFjdERPTVNlcnZlciBmcm9tICdyZWFjdC1kb20vc2VydmVyJztcbmltcG9ydCBheGlvcyBmcm9tICdheGlvcyc7XG5pbXBvcnQgU3RhdGVBcGkgZnJvbSAnc3RhdGUtYXBpJztcblxuaW1wb3J0IEFwcCBmcm9tICdjb21wb25lbnRzL0FwcCc7XG5pbXBvcnQgY29uZmlnIGZyb20gJ2NvbmZpZyc7XG5cbmNvbnN0IHNlcnZlclJlbmRlciA9IGFzeW5jICgpID0+IHtcbiAgY29uc3QgcmVzcCA9IGF3YWl0IGF4aW9zLmdldChgaHR0cDovLyR7Y29uZmlnLmhvc3R9OiR7Y29uZmlnLnBvcnR9L2RhdGFgKTtcbiAgY29uc3Qgc3RvcmUgPSBuZXcgU3RhdGVBcGkocmVzcC5kYXRhKTtcblxuICByZXR1cm4ge1xuICAgIGluaXRpYWxNYXJrdXA6IFJlYWN0RE9NU2VydmVyLnJlbmRlclRvU3RyaW5nKFxuICAgICAgPEFwcCBzdG9yZT17c3RvcmV9IC8+XG4gICAgKSxcbiAgICBpbml0aWFsRGF0YTogcmVzcC5kYXRhLFxuICB9O1xufTtcblxuZXhwb3J0IGRlZmF1bHQgc2VydmVyUmVuZGVyO1xuIl19",
+    "ast": null,
+    "map": {
+      "version": 3,
+      "sources": [
+        "server.js"
+      ],
+      "names": [
+        "serverRender",
+        "resp",
+        "get",
+        "host",
+        "port",
+        "store",
+        "data",
+        "initialMarkup",
+        "renderToString",
+        "initialData"
+      ],
+      "mappings": ";;;;;;AAAA;;;;AACA;;;;AACA;;;;AACA;;;;AAEA;;;;AACA;;;;;;AAEA,MAAMA,eAAe,YAAY;AAC/B,QAAMC,OAAO,MAAM,gBAAMC,GAAN,CAAW,UAAS,iBAAOC,IAAK,IAAG,iBAAOC,IAAK,OAA/C,CAAnB;AACA,QAAMC,QAAQ,uBAAaJ,KAAKK,IAAlB,CAAd;;AAEA,SAAO;AACLC,mBAAe,iBAAeC,cAAf,CACb,+CAAK,OAAOH,KAAZ,GADa,CADV;AAILI,iBAAaR,KAAKK;AAJb,GAAP;AAMD,CAVD;;kBAYeN,Y",
+      "file": "server.js",
+      "sourceRoot": "/Users/linuss/Dev/projects/training/advanced-react/lib/renderers",
+      "sourcesContent": [
+        "import React from 'react';\nimport ReactDOMServer from 'react-dom/server';\nimport axios from 'axios';\nimport StateApi from 'state-api';\n\nimport App from 'components/App';\nimport config from 'config';\n\nconst serverRender = async () => {\n  const resp = await axios.get(`http://${config.host}:${config.port}/data`);\n  const store = new StateApi(resp.data);\n\n  return {\n    initialMarkup: ReactDOMServer.renderToString(\n      <App store={store} />\n    ),\n    initialData: resp.data,\n  };\n};\n\nexport default serverRender;\n"
+      ]
+    },
+    "mtime": 1628392048631
+  },
+  "{\"filename\":\"/Users/linuss/Dev/projects/training/advanced-react/lib/state-api/lib/index.js\",\"env\":{\"development\":{\"plugins\":[]}},\"retainLines\":false,\"highlightCode\":true,\"suppressDeprecationMessages\":false,\"presets\":[],\"plugins\":[[[],null],[[],null],[[],{\"loose\":false}],[[],{\"spec\":false,\"loose\":false}],[[],null],[[],null],[[],null],[[],null]],\"ignore\":[],\"code\":true,\"metadata\":true,\"ast\":true,\"comments\":true,\"compact\":\"auto\",\"minified\":false,\"sourceRoot\":\"/Users/linuss/Dev/projects/training/advanced-react/lib/state-api/lib\",\"babelrc\":true,\"sourceType\":\"module\",\"moduleIds\":false,\"passPerPreset\":false,\"parserOpts\":false,\"generatorOpts\":false}:6.26.3": {
+    "metadata": {
+      "usedHelpers": [
+        "extends"
+      ],
+      "marked": [],
+      "modules": {
+        "imports": [],
+        "exports": {
+          "exported": [],
+          "specifiers": []
+        }
+      }
+    },
+    "options": {
+      "filename": "/Users/linuss/Dev/projects/training/advanced-react/lib/state-api/lib/index.js",
+      "filenameRelative": "/Users/linuss/Dev/projects/training/advanced-react/lib/state-api/lib/index.js",
+      "env": {},
+      "retainLines": false,
+      "highlightCode": true,
+      "suppressDeprecationMessages": false,
+      "presets": [],
+      "plugins": [
+        [
+          [],
+          null
+        ],
+        [
+          [],
+          null
+        ],
+        [
+          [],
+          {
+            "loose": false
+          }
+        ],
+        [
+          [],
+          {
+            "spec": false,
+            "loose": false
+          }
+        ],
+        [
+          [],
+          null
+        ],
+        [
+          [],
+          null
+        ],
+        [
+          [],
+          null
+        ],
+        [
+          [],
+          null
+        ]
+      ],
+      "ignore": [],
+      "code": true,
+      "metadata": true,
+      "ast": false,
+      "comments": true,
+      "compact": "auto",
+      "minified": false,
+      "sourceMaps": "both",
+      "sourceMapTarget": "index.js",
+      "sourceFileName": "index.js",
+      "sourceRoot": "/Users/linuss/Dev/projects/training/advanced-react/lib/state-api/lib",
+      "babelrc": false,
+      "sourceType": "module",
+      "moduleRoot": "/Users/linuss/Dev/projects/training/advanced-react/lib/state-api/lib",
+      "moduleIds": false,
+      "passPerPreset": false,
+      "parserOpts": false,
+      "generatorOpts": false,
+      "basename": "index"
+    },
+    "ignored": false,
+    "code": "'use strict';\n\nObject.defineProperty(exports, \"__esModule\", {\n  value: true\n});\n\nvar _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };\n\nclass StateApi {\n  constructor(rawData) {\n    this.lookupAuthor = authorId => {\n      return this.data.authors[authorId];\n    };\n\n    this.getState = () => {\n      return this.data;\n    };\n\n    this.subscribe = cb => {\n      this.lastSubscriptionId++;\n      this.subscriptions[this.lastSubscriptionId] = cb;\n      return this.lastSubscriptionId;\n    };\n\n    this.unsubscribe = subscriptionId => {\n      delete this.subscriptions[subscriptionId];\n    };\n\n    this.notifySubscribers = () => {\n      Object.values(this.subscriptions).forEach(cb => cb());\n    };\n\n    this.mergeWithState = stateChange => {\n      this.data = _extends({}, this.data, stateChange);\n      this.notifySubscribers();\n    };\n\n    this.setSearchTerm = searchTerm => {\n      this.mergeWithState({\n        searchTerm\n      });\n    };\n\n    this.startClock = () => {\n      setInterval(() => {\n        this.mergeWithState({\n          timestamp: new Date()\n        });\n      }, 1000);\n    };\n\n    this.data = {\n      articles: this.mapIntoObject(rawData.articles),\n      authors: this.mapIntoObject(rawData.authors),\n      searchTerm: '',\n      timestamp: new Date()\n    };\n    this.subscriptions = {};\n    this.lastSubscriptionId = 0;\n\n    setTimeout(() => {\n      const fakeArticle = _extends({}, rawData.articles[0], {\n        id: 'fakeArticleId'\n      });\n      // this.data.articles[fakeArticle.id] = fakeArticle;\n      this.data = _extends({}, this.data, {\n        articles: _extends({}, this.data.articles, {\n          [fakeArticle.id]: fakeArticle\n        })\n      });\n      this.notifySubscribers();\n    }, 1000);\n  }\n  mapIntoObject(arr) {\n    return arr.reduce((acc, curr) => {\n      acc[curr.id] = curr;\n      return acc;\n    }, {});\n  }\n}\n\nexports.default = StateApi;\n//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbImluZGV4LmpzIl0sIm5hbWVzIjpbIlN0YXRlQXBpIiwiY29uc3RydWN0b3IiLCJyYXdEYXRhIiwibG9va3VwQXV0aG9yIiwiYXV0aG9ySWQiLCJkYXRhIiwiYXV0aG9ycyIsImdldFN0YXRlIiwic3Vic2NyaWJlIiwiY2IiLCJsYXN0U3Vic2NyaXB0aW9uSWQiLCJzdWJzY3JpcHRpb25zIiwidW5zdWJzY3JpYmUiLCJzdWJzY3JpcHRpb25JZCIsIm5vdGlmeVN1YnNjcmliZXJzIiwiT2JqZWN0IiwidmFsdWVzIiwiZm9yRWFjaCIsIm1lcmdlV2l0aFN0YXRlIiwic3RhdGVDaGFuZ2UiLCJzZXRTZWFyY2hUZXJtIiwic2VhcmNoVGVybSIsInN0YXJ0Q2xvY2siLCJzZXRJbnRlcnZhbCIsInRpbWVzdGFtcCIsIkRhdGUiLCJhcnRpY2xlcyIsIm1hcEludG9PYmplY3QiLCJzZXRUaW1lb3V0IiwiZmFrZUFydGljbGUiLCJpZCIsImFyciIsInJlZHVjZSIsImFjYyIsImN1cnIiXSwibWFwcGluZ3MiOiI7Ozs7Ozs7O0FBQUEsTUFBTUEsUUFBTixDQUFlO0FBQ2JDLGNBQVlDLE9BQVosRUFBcUI7QUFBQSxTQWdDckJDLFlBaENxQixHQWdDTEMsUUFBRCxJQUFjO0FBQzNCLGFBQU8sS0FBS0MsSUFBTCxDQUFVQyxPQUFWLENBQWtCRixRQUFsQixDQUFQO0FBQ0QsS0FsQ29COztBQUFBLFNBbUNyQkcsUUFuQ3FCLEdBbUNWLE1BQU07QUFDZixhQUFPLEtBQUtGLElBQVo7QUFDRCxLQXJDb0I7O0FBQUEsU0F1Q3JCRyxTQXZDcUIsR0F1Q1RDLE1BQU07QUFDaEIsV0FBS0Msa0JBQUw7QUFDQSxXQUFLQyxhQUFMLENBQW1CLEtBQUtELGtCQUF4QixJQUE4Q0QsRUFBOUM7QUFDQSxhQUFPLEtBQUtDLGtCQUFaO0FBQ0QsS0EzQ29COztBQUFBLFNBNkNyQkUsV0E3Q3FCLEdBNkNQQyxrQkFBa0I7QUFDOUIsYUFBTyxLQUFLRixhQUFMLENBQW1CRSxjQUFuQixDQUFQO0FBQ0QsS0EvQ29COztBQUFBLFNBaURyQkMsaUJBakRxQixHQWlERCxNQUFNO0FBQ3hCQyxhQUFPQyxNQUFQLENBQWMsS0FBS0wsYUFBbkIsRUFBa0NNLE9BQWxDLENBQTBDUixNQUFNQSxJQUFoRDtBQUNELEtBbkRvQjs7QUFBQSxTQXFEckJTLGNBckRxQixHQXFESkMsZUFBZTtBQUM5QixXQUFLZCxJQUFMLGdCQUNLLEtBQUtBLElBRFYsRUFFS2MsV0FGTDtBQUlBLFdBQUtMLGlCQUFMO0FBQ0QsS0EzRG9COztBQUFBLFNBNkRyQk0sYUE3RHFCLEdBNkRMQyxjQUFjO0FBQzVCLFdBQUtILGNBQUwsQ0FBb0I7QUFDbEJHO0FBRGtCLE9BQXBCO0FBR0QsS0FqRW9COztBQUFBLFNBbUVyQkMsVUFuRXFCLEdBbUVSLE1BQU07QUFDakJDLGtCQUFZLE1BQU07QUFDaEIsYUFBS0wsY0FBTCxDQUFvQjtBQUNsQk0scUJBQVcsSUFBSUMsSUFBSjtBQURPLFNBQXBCO0FBR0QsT0FKRCxFQUlHLElBSkg7QUFLRCxLQXpFb0I7O0FBQ25CLFNBQUtwQixJQUFMLEdBQVk7QUFDVnFCLGdCQUFVLEtBQUtDLGFBQUwsQ0FBbUJ6QixRQUFRd0IsUUFBM0IsQ0FEQTtBQUVWcEIsZUFBUyxLQUFLcUIsYUFBTCxDQUFtQnpCLFFBQVFJLE9BQTNCLENBRkM7QUFHVmUsa0JBQVksRUFIRjtBQUlWRyxpQkFBVyxJQUFJQyxJQUFKO0FBSkQsS0FBWjtBQU1BLFNBQUtkLGFBQUwsR0FBcUIsRUFBckI7QUFDQSxTQUFLRCxrQkFBTCxHQUEwQixDQUExQjs7QUFFQWtCLGVBQVcsTUFBTTtBQUNmLFlBQU1DLDJCQUNEM0IsUUFBUXdCLFFBQVIsQ0FBaUIsQ0FBakIsQ0FEQztBQUVKSSxZQUFJO0FBRkEsUUFBTjtBQUlBO0FBQ0EsV0FBS3pCLElBQUwsZ0JBQ0ssS0FBS0EsSUFEVjtBQUVFcUIsK0JBQ0ssS0FBS3JCLElBQUwsQ0FBVXFCLFFBRGY7QUFFRSxXQUFDRyxZQUFZQyxFQUFiLEdBQWtCRDtBQUZwQjtBQUZGO0FBT0EsV0FBS2YsaUJBQUw7QUFDRCxLQWRELEVBY0csSUFkSDtBQWVEO0FBQ0RhLGdCQUFjSSxHQUFkLEVBQW1CO0FBQ2pCLFdBQU9BLElBQUlDLE1BQUosQ0FBVyxDQUFDQyxHQUFELEVBQU1DLElBQU4sS0FBZTtBQUMvQkQsVUFBSUMsS0FBS0osRUFBVCxJQUFlSSxJQUFmO0FBQ0EsYUFBT0QsR0FBUDtBQUNELEtBSE0sRUFHSixFQUhJLENBQVA7QUFJRDtBQWhDWTs7a0JBNkVBakMsUSIsImZpbGUiOiJpbmRleC5qcyIsInNvdXJjZVJvb3QiOiIvVXNlcnMvbGludXNzL0Rldi9wcm9qZWN0cy90cmFpbmluZy9hZHZhbmNlZC1yZWFjdC9saWIvc3RhdGUtYXBpL2xpYiIsInNvdXJjZXNDb250ZW50IjpbImNsYXNzIFN0YXRlQXBpIHtcbiAgY29uc3RydWN0b3IocmF3RGF0YSkge1xuICAgIHRoaXMuZGF0YSA9IHtcbiAgICAgIGFydGljbGVzOiB0aGlzLm1hcEludG9PYmplY3QocmF3RGF0YS5hcnRpY2xlcyksXG4gICAgICBhdXRob3JzOiB0aGlzLm1hcEludG9PYmplY3QocmF3RGF0YS5hdXRob3JzKSxcbiAgICAgIHNlYXJjaFRlcm06ICcnLFxuICAgICAgdGltZXN0YW1wOiBuZXcgRGF0ZSgpLFxuICAgIH07XG4gICAgdGhpcy5zdWJzY3JpcHRpb25zID0ge307XG4gICAgdGhpcy5sYXN0U3Vic2NyaXB0aW9uSWQgPSAwO1xuXG4gICAgc2V0VGltZW91dCgoKSA9PiB7XG4gICAgICBjb25zdCBmYWtlQXJ0aWNsZSA9IHtcbiAgICAgICAgLi4ucmF3RGF0YS5hcnRpY2xlc1swXSxcbiAgICAgICAgaWQ6ICdmYWtlQXJ0aWNsZUlkJyxcbiAgICAgIH07XG4gICAgICAvLyB0aGlzLmRhdGEuYXJ0aWNsZXNbZmFrZUFydGljbGUuaWRdID0gZmFrZUFydGljbGU7XG4gICAgICB0aGlzLmRhdGEgPSB7XG4gICAgICAgIC4uLnRoaXMuZGF0YSxcbiAgICAgICAgYXJ0aWNsZXM6IHtcbiAgICAgICAgICAuLi50aGlzLmRhdGEuYXJ0aWNsZXMsXG4gICAgICAgICAgW2Zha2VBcnRpY2xlLmlkXTogZmFrZUFydGljbGUsXG4gICAgICAgIH0sXG4gICAgICB9O1xuICAgICAgdGhpcy5ub3RpZnlTdWJzY3JpYmVycygpO1xuICAgIH0sIDEwMDApO1xuICB9XG4gIG1hcEludG9PYmplY3QoYXJyKSB7XG4gICAgcmV0dXJuIGFyci5yZWR1Y2UoKGFjYywgY3VycikgPT4ge1xuICAgICAgYWNjW2N1cnIuaWRdID0gY3VycjtcbiAgICAgIHJldHVybiBhY2M7XG4gICAgfSwge30pO1xuICB9XG4gIGxvb2t1cEF1dGhvciA9IChhdXRob3JJZCkgPT4ge1xuICAgIHJldHVybiB0aGlzLmRhdGEuYXV0aG9yc1thdXRob3JJZF07XG4gIH07XG4gIGdldFN0YXRlID0gKCkgPT4ge1xuICAgIHJldHVybiB0aGlzLmRhdGE7XG4gIH07XG5cbiAgc3Vic2NyaWJlID0gY2IgPT4ge1xuICAgIHRoaXMubGFzdFN1YnNjcmlwdGlvbklkKys7XG4gICAgdGhpcy5zdWJzY3JpcHRpb25zW3RoaXMubGFzdFN1YnNjcmlwdGlvbklkXSA9IGNiO1xuICAgIHJldHVybiB0aGlzLmxhc3RTdWJzY3JpcHRpb25JZDtcbiAgfTtcblxuICB1bnN1YnNjcmliZSA9IHN1YnNjcmlwdGlvbklkID0+IHtcbiAgICBkZWxldGUgdGhpcy5zdWJzY3JpcHRpb25zW3N1YnNjcmlwdGlvbklkXTtcbiAgfTtcblxuICBub3RpZnlTdWJzY3JpYmVycyA9ICgpID0+IHtcbiAgICBPYmplY3QudmFsdWVzKHRoaXMuc3Vic2NyaXB0aW9ucykuZm9yRWFjaChjYiA9PiBjYigpKTtcbiAgfTtcblxuICBtZXJnZVdpdGhTdGF0ZSA9IHN0YXRlQ2hhbmdlID0+IHtcbiAgICB0aGlzLmRhdGEgPSB7XG4gICAgICAuLi50aGlzLmRhdGEsXG4gICAgICAuLi5zdGF0ZUNoYW5nZSxcbiAgICB9O1xuICAgIHRoaXMubm90aWZ5U3Vic2NyaWJlcnMoKTtcbiAgfTtcblxuICBzZXRTZWFyY2hUZXJtID0gc2VhcmNoVGVybSA9PiB7XG4gICAgdGhpcy5tZXJnZVdpdGhTdGF0ZSh7XG4gICAgICBzZWFyY2hUZXJtLFxuICAgIH0pO1xuICB9O1xuXG4gIHN0YXJ0Q2xvY2sgPSAoKSA9PiB7XG4gICAgc2V0SW50ZXJ2YWwoKCkgPT4ge1xuICAgICAgdGhpcy5tZXJnZVdpdGhTdGF0ZSh7XG4gICAgICAgIHRpbWVzdGFtcDogbmV3IERhdGUoKSxcbiAgICAgIH0pO1xuICAgIH0sIDEwMDApO1xuICB9O1xufVxuXG5leHBvcnQgZGVmYXVsdCBTdGF0ZUFwaTtcbiJdfQ==",
+    "ast": null,
+    "map": {
+      "version": 3,
+      "sources": [
+        "index.js"
+      ],
+      "names": [
+        "StateApi",
+        "constructor",
+        "rawData",
+        "lookupAuthor",
+        "authorId",
+        "data",
+        "authors",
+        "getState",
+        "subscribe",
+        "cb",
+        "lastSubscriptionId",
+        "subscriptions",
+        "unsubscribe",
+        "subscriptionId",
+        "notifySubscribers",
+        "Object",
+        "values",
+        "forEach",
+        "mergeWithState",
+        "stateChange",
+        "setSearchTerm",
+        "searchTerm",
+        "startClock",
+        "setInterval",
+        "timestamp",
+        "Date",
+        "articles",
+        "mapIntoObject",
+        "setTimeout",
+        "fakeArticle",
+        "id",
+        "arr",
+        "reduce",
+        "acc",
+        "curr"
+      ],
+      "mappings": ";;;;;;;;AAAA,MAAMA,QAAN,CAAe;AACbC,cAAYC,OAAZ,EAAqB;AAAA,SAgCrBC,YAhCqB,GAgCLC,QAAD,IAAc;AAC3B,aAAO,KAAKC,IAAL,CAAUC,OAAV,CAAkBF,QAAlB,CAAP;AACD,KAlCoB;;AAAA,SAmCrBG,QAnCqB,GAmCV,MAAM;AACf,aAAO,KAAKF,IAAZ;AACD,KArCoB;;AAAA,SAuCrBG,SAvCqB,GAuCTC,MAAM;AAChB,WAAKC,kBAAL;AACA,WAAKC,aAAL,CAAmB,KAAKD,kBAAxB,IAA8CD,EAA9C;AACA,aAAO,KAAKC,kBAAZ;AACD,KA3CoB;;AAAA,SA6CrBE,WA7CqB,GA6CPC,kBAAkB;AAC9B,aAAO,KAAKF,aAAL,CAAmBE,cAAnB,CAAP;AACD,KA/CoB;;AAAA,SAiDrBC,iBAjDqB,GAiDD,MAAM;AACxBC,aAAOC,MAAP,CAAc,KAAKL,aAAnB,EAAkCM,OAAlC,CAA0CR,MAAMA,IAAhD;AACD,KAnDoB;;AAAA,SAqDrBS,cArDqB,GAqDJC,eAAe;AAC9B,WAAKd,IAAL,gBACK,KAAKA,IADV,EAEKc,WAFL;AAIA,WAAKL,iBAAL;AACD,KA3DoB;;AAAA,SA6DrBM,aA7DqB,GA6DLC,cAAc;AAC5B,WAAKH,cAAL,CAAoB;AAClBG;AADkB,OAApB;AAGD,KAjEoB;;AAAA,SAmErBC,UAnEqB,GAmER,MAAM;AACjBC,kBAAY,MAAM;AAChB,aAAKL,cAAL,CAAoB;AAClBM,qBAAW,IAAIC,IAAJ;AADO,SAApB;AAGD,OAJD,EAIG,IAJH;AAKD,KAzEoB;;AACnB,SAAKpB,IAAL,GAAY;AACVqB,gBAAU,KAAKC,aAAL,CAAmBzB,QAAQwB,QAA3B,CADA;AAEVpB,eAAS,KAAKqB,aAAL,CAAmBzB,QAAQI,OAA3B,CAFC;AAGVe,kBAAY,EAHF;AAIVG,iBAAW,IAAIC,IAAJ;AAJD,KAAZ;AAMA,SAAKd,aAAL,GAAqB,EAArB;AACA,SAAKD,kBAAL,GAA0B,CAA1B;;AAEAkB,eAAW,MAAM;AACf,YAAMC,2BACD3B,QAAQwB,QAAR,CAAiB,CAAjB,CADC;AAEJI,YAAI;AAFA,QAAN;AAIA;AACA,WAAKzB,IAAL,gBACK,KAAKA,IADV;AAEEqB,+BACK,KAAKrB,IAAL,CAAUqB,QADf;AAEE,WAACG,YAAYC,EAAb,GAAkBD;AAFpB;AAFF;AAOA,WAAKf,iBAAL;AACD,KAdD,EAcG,IAdH;AAeD;AACDa,gBAAcI,GAAd,EAAmB;AACjB,WAAOA,IAAIC,MAAJ,CAAW,CAACC,GAAD,EAAMC,IAAN,KAAe;AAC/BD,UAAIC,KAAKJ,EAAT,IAAeI,IAAf;AACA,aAAOD,GAAP;AACD,KAHM,EAGJ,EAHI,CAAP;AAID;AAhCY;;kBA6EAjC,Q",
+      "file": "index.js",
+      "sourceRoot": "/Users/linuss/Dev/projects/training/advanced-react/lib/state-api/lib",
+      "sourcesContent": [
+        "class StateApi {\n  constructor(rawData) {\n    this.data = {\n      articles: this.mapIntoObject(rawData.articles),\n      authors: this.mapIntoObject(rawData.authors),\n      searchTerm: '',\n      timestamp: new Date(),\n    };\n    this.subscriptions = {};\n    this.lastSubscriptionId = 0;\n\n    setTimeout(() => {\n      const fakeArticle = {\n        ...rawData.articles[0],\n        id: 'fakeArticleId',\n      };\n      // this.data.articles[fakeArticle.id] = fakeArticle;\n      this.data = {\n        ...this.data,\n        articles: {\n          ...this.data.articles,\n          [fakeArticle.id]: fakeArticle,\n        },\n      };\n      this.notifySubscribers();\n    }, 1000);\n  }\n  mapIntoObject(arr) {\n    return arr.reduce((acc, curr) => {\n      acc[curr.id] = curr;\n      return acc;\n    }, {});\n  }\n  lookupAuthor = (authorId) => {\n    return this.data.authors[authorId];\n  };\n  getState = () => {\n    return this.data;\n  };\n\n  subscribe = cb => {\n    this.lastSubscriptionId++;\n    this.subscriptions[this.lastSubscriptionId] = cb;\n    return this.lastSubscriptionId;\n  };\n\n  unsubscribe = subscriptionId => {\n    delete this.subscriptions[subscriptionId];\n  };\n\n  notifySubscribers = () => {\n    Object.values(this.subscriptions).forEach(cb => cb());\n  };\n\n  mergeWithState = stateChange => {\n    this.data = {\n      ...this.data,\n      ...stateChange,\n    };\n    this.notifySubscribers();\n  };\n\n  setSearchTerm = searchTerm => {\n    this.mergeWithState({\n      searchTerm,\n    });\n  };\n\n  startClock = () => {\n    setInterval(() => {\n      this.mergeWithState({\n        timestamp: new Date(),\n      });\n    }, 1000);\n  };\n}\n\nexport default StateApi;\n"
+      ]
+    },
+    "mtime": 1628392048632
+  },
+  "{\"filename\":\"/Users/linuss/Dev/projects/training/advanced-react/lib/components/App.js\",\"env\":{\"development\":{\"plugins\":[]}},\"retainLines\":false,\"highlightCode\":true,\"suppressDeprecationMessages\":false,\"presets\":[],\"plugins\":[[[],null],[[],null],[[],{\"loose\":false}],[[],{\"spec\":false,\"loose\":false}],[[],null],[[],null],[[],null],[[],null]],\"ignore\":[],\"code\":true,\"metadata\":true,\"ast\":true,\"comments\":true,\"compact\":\"auto\",\"minified\":false,\"sourceRoot\":\"/Users/linuss/Dev/projects/training/advanced-react/lib/components\",\"babelrc\":true,\"sourceType\":\"module\",\"moduleIds\":false,\"passPerPreset\":false,\"parserOpts\":false,\"generatorOpts\":false}:6.26.3": {
+    "metadata": {
+      "usedHelpers": [
+        "interopRequireDefault"
+      ],
+      "marked": [],
+      "modules": {
+        "imports": [
+          {
+            "source": "react",
+            "imported": [
+              "default"
+            ],
+            "specifiers": [
+              {
+                "kind": "named",
+                "imported": "default",
+                "local": "React"
+              }
+            ]
+          },
+          {
+            "source": "prop-types",
+            "imported": [
+              "default"
+            ],
+            "specifiers": [
+              {
+                "kind": "named",
+                "imported": "default",
+                "local": "PropTypes"
+              }
+            ]
+          },
+          {
+            "source": "lodash.pickby",
+            "imported": [
+              "default"
+            ],
+            "specifiers": [
+              {
+                "kind": "named",
+                "imported": "default",
+                "local": "pickBy"
+              }
+            ]
+          },
+          {
+            "source": "./ArticleList",
+            "imported": [
+              "default"
+            ],
+            "specifiers": [
+              {
+                "kind": "named",
+                "imported": "default",
+                "local": "ArticleList"
+              }
+            ]
+          },
+          {
+            "source": "./SearchBar",
+            "imported": [
+              "default"
+            ],
+            "specifiers": [
+              {
+                "kind": "named",
+                "imported": "default",
+                "local": "SearchBar"
+              }
+            ]
+          },
+          {
+            "source": "./Timestamp",
+            "imported": [
+              "default"
+            ],
+            "specifiers": [
+              {
+                "kind": "named",
+                "imported": "default",
+                "local": "Timestamp"
+              }
+            ]
+          }
+        ],
+        "exports": {
+          "exported": [],
+          "specifiers": []
+        }
+      }
+    },
+    "options": {
+      "filename": "/Users/linuss/Dev/projects/training/advanced-react/lib/components/App.js",
+      "filenameRelative": "/Users/linuss/Dev/projects/training/advanced-react/lib/components/App.js",
+      "env": {},
+      "retainLines": false,
+      "highlightCode": true,
+      "suppressDeprecationMessages": false,
+      "presets": [],
+      "plugins": [
+        [
+          [],
+          null
+        ],
+        [
+          [],
+          null
+        ],
+        [
+          [],
+          {
+            "loose": false
+          }
+        ],
+        [
+          [],
+          {
+            "spec": false,
+            "loose": false
+          }
+        ],
+        [
+          [],
+          null
+        ],
+        [
+          [],
+          null
+        ],
+        [
+          [],
+          null
+        ],
+        [
+          [],
+          null
+        ]
+      ],
+      "ignore": [],
+      "code": true,
+      "metadata": true,
+      "ast": false,
+      "comments": true,
+      "compact": "auto",
+      "minified": false,
+      "sourceMaps": "both",
+      "sourceMapTarget": "App.js",
+      "sourceFileName": "App.js",
+      "sourceRoot": "/Users/linuss/Dev/projects/training/advanced-react/lib/components",
+      "babelrc": false,
+      "sourceType": "module",
+      "moduleRoot": "/Users/linuss/Dev/projects/training/advanced-react/lib/components",
+      "moduleIds": false,
+      "passPerPreset": false,
+      "parserOpts": false,
+      "generatorOpts": false,
+      "basename": "App"
+    },
+    "ignored": false,
+    "code": "'use strict';\n\nObject.defineProperty(exports, \"__esModule\", {\n  value: true\n});\n\nvar _react = require('react');\n\nvar _react2 = _interopRequireDefault(_react);\n\nvar _propTypes = require('prop-types');\n\nvar _propTypes2 = _interopRequireDefault(_propTypes);\n\nvar _lodash = require('lodash.pickby');\n\nvar _lodash2 = _interopRequireDefault(_lodash);\n\nvar _ArticleList = require('./ArticleList');\n\nvar _ArticleList2 = _interopRequireDefault(_ArticleList);\n\nvar _SearchBar = require('./SearchBar');\n\nvar _SearchBar2 = _interopRequireDefault(_SearchBar);\n\nvar _Timestamp = require('./Timestamp');\n\nvar _Timestamp2 = _interopRequireDefault(_Timestamp);\n\nfunction _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }\n\nclass App extends _react2.default.PureComponent {\n  constructor(...args) {\n    var _temp;\n\n    return _temp = super(...args), this.appState = () => {\n      const { articles, searchTerm } = this.props.store.getState();\n      return { articles, searchTerm };\n    }, this.state = this.appState(), this.onStoreChange = () => {\n      this.setState(this.appState);\n    }, _temp;\n  }\n\n  getChildContext() {\n    return {\n      store: this.props.store\n    };\n  }\n\n  componentDidMount() {\n    this.subscriptionId = this.props.store.subscribe(this.onStoreChange);\n    this.props.store.startClock();\n  }\n  componentWillUnmount() {\n    this.props.store.unsubscribe(this.subscriptionId);\n  }\n  render() {\n    let { articles, searchTerm } = this.state;\n    const searchRE = new RegExp(searchTerm, 'i');\n    if (searchTerm) {\n      articles = (0, _lodash2.default)(articles, value => {\n        return value.title.match(searchRE) || value.body.match(searchRE);\n      });\n    }\n    return _react2.default.createElement(\n      'div',\n      null,\n      _react2.default.createElement(_Timestamp2.default, null),\n      _react2.default.createElement(_SearchBar2.default, null),\n      _react2.default.createElement(_ArticleList2.default, {\n        articles: articles\n      })\n    );\n  }\n}\n\nApp.childContextTypes = {\n  store: _propTypes2.default.object\n};\nexports.default = App;\n//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIkFwcC5qcyJdLCJuYW1lcyI6WyJBcHAiLCJQdXJlQ29tcG9uZW50IiwiYXBwU3RhdGUiLCJhcnRpY2xlcyIsInNlYXJjaFRlcm0iLCJwcm9wcyIsInN0b3JlIiwiZ2V0U3RhdGUiLCJzdGF0ZSIsIm9uU3RvcmVDaGFuZ2UiLCJzZXRTdGF0ZSIsImdldENoaWxkQ29udGV4dCIsImNvbXBvbmVudERpZE1vdW50Iiwic3Vic2NyaXB0aW9uSWQiLCJzdWJzY3JpYmUiLCJzdGFydENsb2NrIiwiY29tcG9uZW50V2lsbFVubW91bnQiLCJ1bnN1YnNjcmliZSIsInJlbmRlciIsInNlYXJjaFJFIiwiUmVnRXhwIiwidmFsdWUiLCJ0aXRsZSIsIm1hdGNoIiwiYm9keSIsImNoaWxkQ29udGV4dFR5cGVzIiwib2JqZWN0Il0sIm1hcHBpbmdzIjoiOzs7Ozs7QUFBQTs7OztBQUNBOzs7O0FBQ0E7Ozs7QUFFQTs7OztBQUNBOzs7O0FBQ0E7Ozs7OztBQUVBLE1BQU1BLEdBQU4sU0FBa0IsZ0JBQU1DLGFBQXhCLENBQXNDO0FBQUE7QUFBQTs7QUFBQSx3Q0FTcENDLFFBVG9DLEdBU3pCLE1BQU07QUFDZixZQUFNLEVBQUVDLFFBQUYsRUFBWUMsVUFBWixLQUEyQixLQUFLQyxLQUFMLENBQVdDLEtBQVgsQ0FBaUJDLFFBQWpCLEVBQWpDO0FBQ0EsYUFBTyxFQUFFSixRQUFGLEVBQVlDLFVBQVosRUFBUDtBQUNELEtBWm1DLE9BYXBDSSxLQWJvQyxHQWE1QixLQUFLTixRQUFMLEVBYjRCLE9BY3BDTyxhQWRvQyxHQWNwQixNQUFNO0FBQ3BCLFdBQUtDLFFBQUwsQ0FBYyxLQUFLUixRQUFuQjtBQUNELEtBaEJtQztBQUFBOztBQUlwQ1Msb0JBQWtCO0FBQ2hCLFdBQU87QUFDTEwsYUFBTyxLQUFLRCxLQUFMLENBQVdDO0FBRGIsS0FBUDtBQUdEOztBQVNETSxzQkFBb0I7QUFDbEIsU0FBS0MsY0FBTCxHQUFzQixLQUFLUixLQUFMLENBQVdDLEtBQVgsQ0FBaUJRLFNBQWpCLENBQTJCLEtBQUtMLGFBQWhDLENBQXRCO0FBQ0EsU0FBS0osS0FBTCxDQUFXQyxLQUFYLENBQWlCUyxVQUFqQjtBQUNEO0FBQ0RDLHlCQUF1QjtBQUNyQixTQUFLWCxLQUFMLENBQVdDLEtBQVgsQ0FBaUJXLFdBQWpCLENBQTZCLEtBQUtKLGNBQWxDO0FBQ0Q7QUFDREssV0FBUztBQUNQLFFBQUksRUFBRWYsUUFBRixFQUFZQyxVQUFaLEtBQTJCLEtBQUtJLEtBQXBDO0FBQ0EsVUFBTVcsV0FBVyxJQUFJQyxNQUFKLENBQVdoQixVQUFYLEVBQXVCLEdBQXZCLENBQWpCO0FBQ0EsUUFBSUEsVUFBSixFQUFnQjtBQUNkRCxpQkFBVyxzQkFBT0EsUUFBUCxFQUFrQmtCLEtBQUQsSUFBVztBQUNyQyxlQUFPQSxNQUFNQyxLQUFOLENBQVlDLEtBQVosQ0FBa0JKLFFBQWxCLEtBQ0ZFLE1BQU1HLElBQU4sQ0FBV0QsS0FBWCxDQUFpQkosUUFBakIsQ0FETDtBQUVELE9BSFUsQ0FBWDtBQUlEO0FBQ0QsV0FDRTtBQUFBO0FBQUE7QUFDRSw4REFERjtBQUVFLDhEQUZGO0FBR0U7QUFDRSxrQkFBVWhCO0FBRFo7QUFIRixLQURGO0FBU0Q7QUExQ21DOztBQUFoQ0gsRyxDQUNHeUIsaUIsR0FBb0I7QUFDekJuQixTQUFPLG9CQUFVb0I7QUFEUSxDO2tCQTRDZDFCLEciLCJmaWxlIjoiQXBwLmpzIiwic291cmNlUm9vdCI6Ii9Vc2Vycy9saW51c3MvRGV2L3Byb2plY3RzL3RyYWluaW5nL2FkdmFuY2VkLXJlYWN0L2xpYi9jb21wb25lbnRzIiwic291cmNlc0NvbnRlbnQiOlsiaW1wb3J0IFJlYWN0IGZyb20gJ3JlYWN0JztcbmltcG9ydCBQcm9wVHlwZXMgZnJvbSAncHJvcC10eXBlcyc7XG5pbXBvcnQgcGlja0J5IGZyb20gJ2xvZGFzaC5waWNrYnknO1xuXG5pbXBvcnQgQXJ0aWNsZUxpc3QgZnJvbSAnLi9BcnRpY2xlTGlzdCc7XG5pbXBvcnQgU2VhcmNoQmFyIGZyb20gJy4vU2VhcmNoQmFyJztcbmltcG9ydCBUaW1lc3RhbXAgZnJvbSAnLi9UaW1lc3RhbXAnO1xuXG5jbGFzcyBBcHAgZXh0ZW5kcyBSZWFjdC5QdXJlQ29tcG9uZW50IHtcbiAgc3RhdGljIGNoaWxkQ29udGV4dFR5cGVzID0ge1xuICAgIHN0b3JlOiBQcm9wVHlwZXMub2JqZWN0LFxuICB9O1xuICBnZXRDaGlsZENvbnRleHQoKSB7XG4gICAgcmV0dXJuIHtcbiAgICAgIHN0b3JlOiB0aGlzLnByb3BzLnN0b3JlXG4gICAgfTtcbiAgfVxuICBhcHBTdGF0ZSA9ICgpID0+IHtcbiAgICBjb25zdCB7IGFydGljbGVzLCBzZWFyY2hUZXJtIH0gPSB0aGlzLnByb3BzLnN0b3JlLmdldFN0YXRlKCk7XG4gICAgcmV0dXJuIHsgYXJ0aWNsZXMsIHNlYXJjaFRlcm0gfTtcbiAgfVxuICBzdGF0ZSA9IHRoaXMuYXBwU3RhdGUoKTtcbiAgb25TdG9yZUNoYW5nZSA9ICgpID0+IHtcbiAgICB0aGlzLnNldFN0YXRlKHRoaXMuYXBwU3RhdGUpO1xuICB9XG4gIGNvbXBvbmVudERpZE1vdW50KCkge1xuICAgIHRoaXMuc3Vic2NyaXB0aW9uSWQgPSB0aGlzLnByb3BzLnN0b3JlLnN1YnNjcmliZSh0aGlzLm9uU3RvcmVDaGFuZ2UpO1xuICAgIHRoaXMucHJvcHMuc3RvcmUuc3RhcnRDbG9jaygpO1xuICB9XG4gIGNvbXBvbmVudFdpbGxVbm1vdW50KCkge1xuICAgIHRoaXMucHJvcHMuc3RvcmUudW5zdWJzY3JpYmUodGhpcy5zdWJzY3JpcHRpb25JZCk7XG4gIH1cbiAgcmVuZGVyKCkge1xuICAgIGxldCB7IGFydGljbGVzLCBzZWFyY2hUZXJtIH0gPSB0aGlzLnN0YXRlO1xuICAgIGNvbnN0IHNlYXJjaFJFID0gbmV3IFJlZ0V4cChzZWFyY2hUZXJtLCAnaScpO1xuICAgIGlmIChzZWFyY2hUZXJtKSB7XG4gICAgICBhcnRpY2xlcyA9IHBpY2tCeShhcnRpY2xlcywgKHZhbHVlKSA9PiB7XG4gICAgICAgIHJldHVybiB2YWx1ZS50aXRsZS5tYXRjaChzZWFyY2hSRSlcbiAgICAgICAgICB8fCB2YWx1ZS5ib2R5Lm1hdGNoKHNlYXJjaFJFKTtcbiAgICAgIH0pO1xuICAgIH1cbiAgICByZXR1cm4gKFxuICAgICAgPGRpdj5cbiAgICAgICAgPFRpbWVzdGFtcCAvPlxuICAgICAgICA8U2VhcmNoQmFyIC8+XG4gICAgICAgIDxBcnRpY2xlTGlzdFxuICAgICAgICAgIGFydGljbGVzPXthcnRpY2xlc31cbiAgICAgICAgLz5cbiAgICAgIDwvZGl2PlxuICAgICk7XG4gIH1cbn1cblxuZXhwb3J0IGRlZmF1bHQgQXBwO1xuIl19",
+    "ast": null,
+    "map": {
+      "version": 3,
+      "sources": [
+        "App.js"
+      ],
+      "names": [
+        "App",
+        "PureComponent",
+        "appState",
+        "articles",
+        "searchTerm",
+        "props",
+        "store",
+        "getState",
+        "state",
+        "onStoreChange",
+        "setState",
+        "getChildContext",
+        "componentDidMount",
+        "subscriptionId",
+        "subscribe",
+        "startClock",
+        "componentWillUnmount",
+        "unsubscribe",
+        "render",
+        "searchRE",
+        "RegExp",
+        "value",
+        "title",
+        "match",
+        "body",
+        "childContextTypes",
+        "object"
+      ],
+      "mappings": ";;;;;;AAAA;;;;AACA;;;;AACA;;;;AAEA;;;;AACA;;;;AACA;;;;;;AAEA,MAAMA,GAAN,SAAkB,gBAAMC,aAAxB,CAAsC;AAAA;AAAA;;AAAA,wCASpCC,QAToC,GASzB,MAAM;AACf,YAAM,EAAEC,QAAF,EAAYC,UAAZ,KAA2B,KAAKC,KAAL,CAAWC,KAAX,CAAiBC,QAAjB,EAAjC;AACA,aAAO,EAAEJ,QAAF,EAAYC,UAAZ,EAAP;AACD,KAZmC,OAapCI,KAboC,GAa5B,KAAKN,QAAL,EAb4B,OAcpCO,aAdoC,GAcpB,MAAM;AACpB,WAAKC,QAAL,CAAc,KAAKR,QAAnB;AACD,KAhBmC;AAAA;;AAIpCS,oBAAkB;AAChB,WAAO;AACLL,aAAO,KAAKD,KAAL,CAAWC;AADb,KAAP;AAGD;;AASDM,sBAAoB;AAClB,SAAKC,cAAL,GAAsB,KAAKR,KAAL,CAAWC,KAAX,CAAiBQ,SAAjB,CAA2B,KAAKL,aAAhC,CAAtB;AACA,SAAKJ,KAAL,CAAWC,KAAX,CAAiBS,UAAjB;AACD;AACDC,yBAAuB;AACrB,SAAKX,KAAL,CAAWC,KAAX,CAAiBW,WAAjB,CAA6B,KAAKJ,cAAlC;AACD;AACDK,WAAS;AACP,QAAI,EAAEf,QAAF,EAAYC,UAAZ,KAA2B,KAAKI,KAApC;AACA,UAAMW,WAAW,IAAIC,MAAJ,CAAWhB,UAAX,EAAuB,GAAvB,CAAjB;AACA,QAAIA,UAAJ,EAAgB;AACdD,iBAAW,sBAAOA,QAAP,EAAkBkB,KAAD,IAAW;AACrC,eAAOA,MAAMC,KAAN,CAAYC,KAAZ,CAAkBJ,QAAlB,KACFE,MAAMG,IAAN,CAAWD,KAAX,CAAiBJ,QAAjB,CADL;AAED,OAHU,CAAX;AAID;AACD,WACE;AAAA;AAAA;AACE,8DADF;AAEE,8DAFF;AAGE;AACE,kBAAUhB;AADZ;AAHF,KADF;AASD;AA1CmC;;AAAhCH,G,CACGyB,iB,GAAoB;AACzBnB,SAAO,oBAAUoB;AADQ,C;kBA4Cd1B,G",
+      "file": "App.js",
+      "sourceRoot": "/Users/linuss/Dev/projects/training/advanced-react/lib/components",
+      "sourcesContent": [
+        "import React from 'react';\nimport PropTypes from 'prop-types';\nimport pickBy from 'lodash.pickby';\n\nimport ArticleList from './ArticleList';\nimport SearchBar from './SearchBar';\nimport Timestamp from './Timestamp';\n\nclass App extends React.PureComponent {\n  static childContextTypes = {\n    store: PropTypes.object,\n  };\n  getChildContext() {\n    return {\n      store: this.props.store\n    };\n  }\n  appState = () => {\n    const { articles, searchTerm } = this.props.store.getState();\n    return { articles, searchTerm };\n  }\n  state = this.appState();\n  onStoreChange = () => {\n    this.setState(this.appState);\n  }\n  componentDidMount() {\n    this.subscriptionId = this.props.store.subscribe(this.onStoreChange);\n    this.props.store.startClock();\n  }\n  componentWillUnmount() {\n    this.props.store.unsubscribe(this.subscriptionId);\n  }\n  render() {\n    let { articles, searchTerm } = this.state;\n    const searchRE = new RegExp(searchTerm, 'i');\n    if (searchTerm) {\n      articles = pickBy(articles, (value) => {\n        return value.title.match(searchRE)\n          || value.body.match(searchRE);\n      });\n    }\n    return (\n      <div>\n        <Timestamp />\n        <SearchBar />\n        <ArticleList\n          articles={articles}\n        />\n      </div>\n    );\n  }\n}\n\nexport default App;\n"
+      ]
+    },
+    "mtime": 1628392048630
+  },
+  "{\"filename\":\"/Users/linuss/Dev/projects/training/advanced-react/lib/components/ArticleList.js\",\"env\":{\"development\":{\"plugins\":[]}},\"retainLines\":false,\"highlightCode\":true,\"suppressDeprecationMessages\":false,\"presets\":[],\"plugins\":[[[],null],[[],null],[[],{\"loose\":false}],[[],{\"spec\":false,\"loose\":false}],[[],null],[[],null],[[],null],[[],null]],\"ignore\":[],\"code\":true,\"metadata\":true,\"ast\":true,\"comments\":true,\"compact\":\"auto\",\"minified\":false,\"sourceRoot\":\"/Users/linuss/Dev/projects/training/advanced-react/lib/components\",\"babelrc\":true,\"sourceType\":\"module\",\"moduleIds\":false,\"passPerPreset\":false,\"parserOpts\":false,\"generatorOpts\":false}:6.26.3": {
+    "metadata": {
+      "usedHelpers": [
+        "interopRequireDefault"
+      ],
+      "marked": [],
+      "modules": {
+        "imports": [
+          {
+            "source": "react",
+            "imported": [
+              "default"
+            ],
+            "specifiers": [
+              {
+                "kind": "named",
+                "imported": "default",
+                "local": "React"
+              }
+            ]
+          },
+          {
+            "source": "./Article",
+            "imported": [
+              "default"
+            ],
+            "specifiers": [
+              {
+                "kind": "named",
+                "imported": "default",
+                "local": "Article"
+              }
+            ]
+          }
+        ],
+        "exports": {
+          "exported": [],
+          "specifiers": []
+        }
+      }
+    },
+    "options": {
+      "filename": "/Users/linuss/Dev/projects/training/advanced-react/lib/components/ArticleList.js",
+      "filenameRelative": "/Users/linuss/Dev/projects/training/advanced-react/lib/components/ArticleList.js",
+      "env": {},
+      "retainLines": false,
+      "highlightCode": true,
+      "suppressDeprecationMessages": false,
+      "presets": [],
+      "plugins": [
+        [
+          [],
+          null
+        ],
+        [
+          [],
+          null
+        ],
+        [
+          [],
+          {
+            "loose": false
+          }
+        ],
+        [
+          [],
+          {
+            "spec": false,
+            "loose": false
+          }
+        ],
+        [
+          [],
+          null
+        ],
+        [
+          [],
+          null
+        ],
+        [
+          [],
+          null
+        ],
+        [
+          [],
+          null
+        ]
+      ],
+      "ignore": [],
+      "code": true,
+      "metadata": true,
+      "ast": false,
+      "comments": true,
+      "compact": "auto",
+      "minified": false,
+      "sourceMaps": "both",
+      "sourceMapTarget": "ArticleList.js",
+      "sourceFileName": "ArticleList.js",
+      "sourceRoot": "/Users/linuss/Dev/projects/training/advanced-react/lib/components",
+      "babelrc": false,
+      "sourceType": "module",
+      "moduleRoot": "/Users/linuss/Dev/projects/training/advanced-react/lib/components",
+      "moduleIds": false,
+      "passPerPreset": false,
+      "parserOpts": false,
+      "generatorOpts": false,
+      "basename": "ArticleList"
+    },
+    "ignored": false,
+    "code": "'use strict';\n\nObject.defineProperty(exports, \"__esModule\", {\n  value: true\n});\n\nvar _react = require('react');\n\nvar _react2 = _interopRequireDefault(_react);\n\nvar _Article = require('./Article');\n\nvar _Article2 = _interopRequireDefault(_Article);\n\nfunction _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }\n\nclass ArticleList extends _react2.default.PureComponent {\n  render() {\n    return _react2.default.createElement(\n      'div',\n      null,\n      Object.values(this.props.articles).map(article => _react2.default.createElement(_Article2.default, {\n        key: article.id,\n        article: article\n      }))\n    );\n  }\n}\n\nexports.default = ArticleList;\n//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIkFydGljbGVMaXN0LmpzIl0sIm5hbWVzIjpbIkFydGljbGVMaXN0IiwiUHVyZUNvbXBvbmVudCIsInJlbmRlciIsIk9iamVjdCIsInZhbHVlcyIsInByb3BzIiwiYXJ0aWNsZXMiLCJtYXAiLCJhcnRpY2xlIiwiaWQiXSwibWFwcGluZ3MiOiI7Ozs7OztBQUFBOzs7O0FBRUE7Ozs7OztBQUVBLE1BQU1BLFdBQU4sU0FBMEIsZ0JBQU1DLGFBQWhDLENBQThDO0FBQzVDQyxXQUFTO0FBQ1AsV0FDRTtBQUFBO0FBQUE7QUFDR0MsYUFBT0MsTUFBUCxDQUFjLEtBQUtDLEtBQUwsQ0FBV0MsUUFBekIsRUFBbUNDLEdBQW5DLENBQXVDQyxXQUN0QztBQUNFLGFBQUtBLFFBQVFDLEVBRGY7QUFFRSxpQkFBU0Q7QUFGWCxRQUREO0FBREgsS0FERjtBQVVEO0FBWjJDOztrQkFlL0JSLFciLCJmaWxlIjoiQXJ0aWNsZUxpc3QuanMiLCJzb3VyY2VSb290IjoiL1VzZXJzL2xpbnVzcy9EZXYvcHJvamVjdHMvdHJhaW5pbmcvYWR2YW5jZWQtcmVhY3QvbGliL2NvbXBvbmVudHMiLCJzb3VyY2VzQ29udGVudCI6WyJpbXBvcnQgUmVhY3QgZnJvbSAncmVhY3QnO1xuXG5pbXBvcnQgQXJ0aWNsZSBmcm9tICcuL0FydGljbGUnO1xuXG5jbGFzcyBBcnRpY2xlTGlzdCBleHRlbmRzIFJlYWN0LlB1cmVDb21wb25lbnQge1xuICByZW5kZXIoKSB7XG4gICAgcmV0dXJuIChcbiAgICAgIDxkaXY+XG4gICAgICAgIHtPYmplY3QudmFsdWVzKHRoaXMucHJvcHMuYXJ0aWNsZXMpLm1hcChhcnRpY2xlID0+XG4gICAgICAgICAgPEFydGljbGVcbiAgICAgICAgICAgIGtleT17YXJ0aWNsZS5pZH1cbiAgICAgICAgICAgIGFydGljbGU9e2FydGljbGV9XG4gICAgICAgICAgLz5cbiAgICAgICAgKX1cbiAgICAgIDwvZGl2PlxuICAgICk7XG4gIH1cbn1cblxuZXhwb3J0IGRlZmF1bHQgQXJ0aWNsZUxpc3Q7XG4iXX0=",
+    "ast": null,
+    "map": {
+      "version": 3,
+      "sources": [
+        "ArticleList.js"
+      ],
+      "names": [
+        "ArticleList",
+        "PureComponent",
+        "render",
+        "Object",
+        "values",
+        "props",
+        "articles",
+        "map",
+        "article",
+        "id"
+      ],
+      "mappings": ";;;;;;AAAA;;;;AAEA;;;;;;AAEA,MAAMA,WAAN,SAA0B,gBAAMC,aAAhC,CAA8C;AAC5CC,WAAS;AACP,WACE;AAAA;AAAA;AACGC,aAAOC,MAAP,CAAc,KAAKC,KAAL,CAAWC,QAAzB,EAAmCC,GAAnC,CAAuCC,WACtC;AACE,aAAKA,QAAQC,EADf;AAEE,iBAASD;AAFX,QADD;AADH,KADF;AAUD;AAZ2C;;kBAe/BR,W",
+      "file": "ArticleList.js",
+      "sourceRoot": "/Users/linuss/Dev/projects/training/advanced-react/lib/components",
+      "sourcesContent": [
+        "import React from 'react';\n\nimport Article from './Article';\n\nclass ArticleList extends React.PureComponent {\n  render() {\n    return (\n      <div>\n        {Object.values(this.props.articles).map(article =>\n          <Article\n            key={article.id}\n            article={article}\n          />\n        )}\n      </div>\n    );\n  }\n}\n\nexport default ArticleList;\n"
+      ]
+    },
+    "mtime": 1628392048631
+  },
+  "{\"filename\":\"/Users/linuss/Dev/projects/training/advanced-react/lib/components/Article.js\",\"env\":{\"development\":{\"plugins\":[]}},\"retainLines\":false,\"highlightCode\":true,\"suppressDeprecationMessages\":false,\"presets\":[],\"plugins\":[[[],null],[[],null],[[],{\"loose\":false}],[[],{\"spec\":false,\"loose\":false}],[[],null],[[],null],[[],null],[[],null]],\"ignore\":[],\"code\":true,\"metadata\":true,\"ast\":true,\"comments\":true,\"compact\":\"auto\",\"minified\":false,\"sourceRoot\":\"/Users/linuss/Dev/projects/training/advanced-react/lib/components\",\"babelrc\":true,\"sourceType\":\"module\",\"moduleIds\":false,\"passPerPreset\":false,\"parserOpts\":false,\"generatorOpts\":false}:6.26.3": {
+    "metadata": {
+      "usedHelpers": [
+        "interopRequireDefault"
+      ],
+      "marked": [],
+      "modules": {
+        "imports": [
+          {
+            "source": "react",
+            "imported": [
+              "default"
+            ],
+            "specifiers": [
+              {
+                "kind": "named",
+                "imported": "default",
+                "local": "React"
+              }
+            ]
+          },
+          {
+            "source": "prop-types",
+            "imported": [
+              "default"
+            ],
+            "specifiers": [
+              {
+                "kind": "named",
+                "imported": "default",
+                "local": "PropTypes"
+              }
+            ]
+          },
+          {
+            "source": "./storeProvider",
+            "imported": [
+              "default"
+            ],
+            "specifiers": [
+              {
+                "kind": "named",
+                "imported": "default",
+                "local": "storeProvider"
+              }
+            ]
+          }
+        ],
+        "exports": {
+          "exported": [],
+          "specifiers": []
+        }
+      }
+    },
+    "options": {
+      "filename": "/Users/linuss/Dev/projects/training/advanced-react/lib/components/Article.js",
+      "filenameRelative": "/Users/linuss/Dev/projects/training/advanced-react/lib/components/Article.js",
+      "env": {},
+      "retainLines": false,
+      "highlightCode": true,
+      "suppressDeprecationMessages": false,
+      "presets": [],
+      "plugins": [
+        [
+          [],
+          null
+        ],
+        [
+          [],
+          null
+        ],
+        [
+          [],
+          {
+            "loose": false
+          }
+        ],
+        [
+          [],
+          {
+            "spec": false,
+            "loose": false
+          }
+        ],
+        [
+          [],
+          null
+        ],
+        [
+          [],
+          null
+        ],
+        [
+          [],
+          null
+        ],
+        [
+          [],
+          null
+        ]
+      ],
+      "ignore": [],
+      "code": true,
+      "metadata": true,
+      "ast": false,
+      "comments": true,
+      "compact": "auto",
+      "minified": false,
+      "sourceMaps": "both",
+      "sourceMapTarget": "Article.js",
+      "sourceFileName": "Article.js",
+      "sourceRoot": "/Users/linuss/Dev/projects/training/advanced-react/lib/components",
+      "babelrc": false,
+      "sourceType": "module",
+      "moduleRoot": "/Users/linuss/Dev/projects/training/advanced-react/lib/components",
+      "moduleIds": false,
+      "passPerPreset": false,
+      "parserOpts": false,
+      "generatorOpts": false,
+      "basename": "Article"
+    },
+    "ignored": false,
+    "code": "'use strict';\n\nObject.defineProperty(exports, \"__esModule\", {\n  value: true\n});\n\nvar _react = require('react');\n\nvar _react2 = _interopRequireDefault(_react);\n\nvar _propTypes = require('prop-types');\n\nvar _propTypes2 = _interopRequireDefault(_propTypes);\n\nvar _storeProvider = require('./storeProvider');\n\nvar _storeProvider2 = _interopRequireDefault(_storeProvider);\n\nfunction _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }\n\nconst styles = {\n  article: {\n    paddingBottom: 10,\n    borderBottomStyle: 'solid',\n    borderBottomColor: '#aaa',\n    borderBottomWidth: 1,\n    marginBottom: 10\n  },\n  title: {\n    fontWeight: 'bold'\n  },\n  date: {\n    fontSize: '0.8em',\n    color: '#888'\n  },\n  author: {\n    paddingTop: 10,\n    paddingBottom: 10\n  },\n  body: {\n    paddingLeft: 20\n  }\n};\nconst dateDisplay = dateString => new Date(dateString).toDateString();\n\nclass Article extends _react2.default.PureComponent {\n  render() {\n    const { article, author } = this.props;\n    return _react2.default.createElement(\n      'div',\n      { style: styles.article },\n      _react2.default.createElement(\n        'div',\n        { style: styles.title },\n        article.title\n      ),\n      _react2.default.createElement(\n        'div',\n        { style: styles.date },\n        dateDisplay(article.date)\n      ),\n      _react2.default.createElement(\n        'div',\n        { style: styles.author },\n        _react2.default.createElement(\n          'a',\n          { href: author.website },\n          author.firstName,\n          ' ',\n          author.lastName\n        )\n      ),\n      _react2.default.createElement(\n        'div',\n        { style: styles.body },\n        article.body\n      )\n    );\n  }\n}\n\nArticle.propTypes = {\n  article: _propTypes2.default.shape({\n    title: _propTypes2.default.string.isRequired,\n    body: _propTypes2.default.string.isRequired,\n    date: _propTypes2.default.string.isRequired\n  })\n};\n\nfunction extraProps(store, originalProps) {\n  return {\n    author: store.lookupAuthor(originalProps.article.authorId)\n  };\n}\n\nexports.default = (0, _storeProvider2.default)(extraProps)(Article);\n//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIkFydGljbGUuanMiXSwibmFtZXMiOlsic3R5bGVzIiwiYXJ0aWNsZSIsInBhZGRpbmdCb3R0b20iLCJib3JkZXJCb3R0b21TdHlsZSIsImJvcmRlckJvdHRvbUNvbG9yIiwiYm9yZGVyQm90dG9tV2lkdGgiLCJtYXJnaW5Cb3R0b20iLCJ0aXRsZSIsImZvbnRXZWlnaHQiLCJkYXRlIiwiZm9udFNpemUiLCJjb2xvciIsImF1dGhvciIsInBhZGRpbmdUb3AiLCJib2R5IiwicGFkZGluZ0xlZnQiLCJkYXRlRGlzcGxheSIsImRhdGVTdHJpbmciLCJEYXRlIiwidG9EYXRlU3RyaW5nIiwiQXJ0aWNsZSIsIlB1cmVDb21wb25lbnQiLCJyZW5kZXIiLCJwcm9wcyIsIndlYnNpdGUiLCJmaXJzdE5hbWUiLCJsYXN0TmFtZSIsInByb3BUeXBlcyIsInNoYXBlIiwic3RyaW5nIiwiaXNSZXF1aXJlZCIsImV4dHJhUHJvcHMiLCJzdG9yZSIsIm9yaWdpbmFsUHJvcHMiLCJsb29rdXBBdXRob3IiLCJhdXRob3JJZCJdLCJtYXBwaW5ncyI6Ijs7Ozs7O0FBQUE7Ozs7QUFDQTs7OztBQUNBOzs7Ozs7QUFFQSxNQUFNQSxTQUFTO0FBQ2JDLFdBQVM7QUFDUEMsbUJBQWUsRUFEUjtBQUVQQyx1QkFBbUIsT0FGWjtBQUdQQyx1QkFBbUIsTUFIWjtBQUlQQyx1QkFBbUIsQ0FKWjtBQUtQQyxrQkFBYztBQUxQLEdBREk7QUFRYkMsU0FBTztBQUNMQyxnQkFBWTtBQURQLEdBUk07QUFXYkMsUUFBTTtBQUNKQyxjQUFVLE9BRE47QUFFSkMsV0FBTztBQUZILEdBWE87QUFlYkMsVUFBUTtBQUNOQyxnQkFBWSxFQUROO0FBRU5YLG1CQUFlO0FBRlQsR0FmSztBQW1CYlksUUFBTTtBQUNKQyxpQkFBYTtBQURUO0FBbkJPLENBQWY7QUF1QkEsTUFBTUMsY0FBZUMsVUFBRCxJQUNsQixJQUFJQyxJQUFKLENBQVNELFVBQVQsRUFBcUJFLFlBQXJCLEVBREY7O0FBR0EsTUFBTUMsT0FBTixTQUFzQixnQkFBTUMsYUFBNUIsQ0FBMEM7QUFDeENDLFdBQVM7QUFDUCxVQUFNLEVBQUVyQixPQUFGLEVBQVdXLE1BQVgsS0FBc0IsS0FBS1csS0FBakM7QUFDQSxXQUNFO0FBQUE7QUFBQSxRQUFLLE9BQU92QixPQUFPQyxPQUFuQjtBQUNFO0FBQUE7QUFBQSxVQUFLLE9BQU9ELE9BQU9PLEtBQW5CO0FBQTJCTixnQkFBUU07QUFBbkMsT0FERjtBQUVFO0FBQUE7QUFBQSxVQUFLLE9BQU9QLE9BQU9TLElBQW5CO0FBQ0dPLG9CQUFZZixRQUFRUSxJQUFwQjtBQURILE9BRkY7QUFLRTtBQUFBO0FBQUEsVUFBSyxPQUFPVCxPQUFPWSxNQUFuQjtBQUNFO0FBQUE7QUFBQSxZQUFHLE1BQU1BLE9BQU9ZLE9BQWhCO0FBQ0daLGlCQUFPYSxTQURWO0FBQUE7QUFDc0JiLGlCQUFPYztBQUQ3QjtBQURGLE9BTEY7QUFVRTtBQUFBO0FBQUEsVUFBSyxPQUFPMUIsT0FBT2MsSUFBbkI7QUFBMEJiLGdCQUFRYTtBQUFsQztBQVZGLEtBREY7QUFjRDtBQWpCdUM7O0FBb0IxQ00sUUFBUU8sU0FBUixHQUFvQjtBQUNsQjFCLFdBQVMsb0JBQVUyQixLQUFWLENBQWdCO0FBQ3ZCckIsV0FBTyxvQkFBVXNCLE1BQVYsQ0FBaUJDLFVBREQ7QUFFdkJoQixVQUFNLG9CQUFVZSxNQUFWLENBQWlCQyxVQUZBO0FBR3ZCckIsVUFBTSxvQkFBVW9CLE1BQVYsQ0FBaUJDO0FBSEEsR0FBaEI7QUFEUyxDQUFwQjs7QUFRQSxTQUFTQyxVQUFULENBQW9CQyxLQUFwQixFQUEyQkMsYUFBM0IsRUFBMEM7QUFDeEMsU0FBTztBQUNMckIsWUFBUW9CLE1BQU1FLFlBQU4sQ0FBbUJELGNBQWNoQyxPQUFkLENBQXNCa0MsUUFBekM7QUFESCxHQUFQO0FBR0Q7O2tCQUVjLDZCQUFjSixVQUFkLEVBQTBCWCxPQUExQixDIiwiZmlsZSI6IkFydGljbGUuanMiLCJzb3VyY2VSb290IjoiL1VzZXJzL2xpbnVzcy9EZXYvcHJvamVjdHMvdHJhaW5pbmcvYWR2YW5jZWQtcmVhY3QvbGliL2NvbXBvbmVudHMiLCJzb3VyY2VzQ29udGVudCI6WyJpbXBvcnQgUmVhY3QgZnJvbSAncmVhY3QnO1xuaW1wb3J0IFByb3BUeXBlcyBmcm9tICdwcm9wLXR5cGVzJztcbmltcG9ydCBzdG9yZVByb3ZpZGVyIGZyb20gJy4vc3RvcmVQcm92aWRlcic7XG5cbmNvbnN0IHN0eWxlcyA9IHtcbiAgYXJ0aWNsZToge1xuICAgIHBhZGRpbmdCb3R0b206IDEwLFxuICAgIGJvcmRlckJvdHRvbVN0eWxlOiAnc29saWQnLFxuICAgIGJvcmRlckJvdHRvbUNvbG9yOiAnI2FhYScsXG4gICAgYm9yZGVyQm90dG9tV2lkdGg6IDEsXG4gICAgbWFyZ2luQm90dG9tOiAxMCxcbiAgfSxcbiAgdGl0bGU6IHtcbiAgICBmb250V2VpZ2h0OiAnYm9sZCcsXG4gIH0sXG4gIGRhdGU6IHtcbiAgICBmb250U2l6ZTogJzAuOGVtJyxcbiAgICBjb2xvcjogJyM4ODgnLFxuICB9LFxuICBhdXRob3I6IHtcbiAgICBwYWRkaW5nVG9wOiAxMCxcbiAgICBwYWRkaW5nQm90dG9tOiAxMCxcbiAgfSxcbiAgYm9keToge1xuICAgIHBhZGRpbmdMZWZ0OiAyMCxcbiAgfVxufTtcbmNvbnN0IGRhdGVEaXNwbGF5ID0gKGRhdGVTdHJpbmcpID0+XG4gIG5ldyBEYXRlKGRhdGVTdHJpbmcpLnRvRGF0ZVN0cmluZygpO1xuXG5jbGFzcyBBcnRpY2xlIGV4dGVuZHMgUmVhY3QuUHVyZUNvbXBvbmVudCB7XG4gIHJlbmRlcigpIHtcbiAgICBjb25zdCB7IGFydGljbGUsIGF1dGhvciB9ID0gdGhpcy5wcm9wcztcbiAgICByZXR1cm4gKFxuICAgICAgPGRpdiBzdHlsZT17c3R5bGVzLmFydGljbGV9PlxuICAgICAgICA8ZGl2IHN0eWxlPXtzdHlsZXMudGl0bGV9PnthcnRpY2xlLnRpdGxlfTwvZGl2PlxuICAgICAgICA8ZGl2IHN0eWxlPXtzdHlsZXMuZGF0ZX0+XG4gICAgICAgICAge2RhdGVEaXNwbGF5KGFydGljbGUuZGF0ZSl9XG4gICAgICAgIDwvZGl2PlxuICAgICAgICA8ZGl2IHN0eWxlPXtzdHlsZXMuYXV0aG9yfT5cbiAgICAgICAgICA8YSBocmVmPXthdXRob3Iud2Vic2l0ZX0+XG4gICAgICAgICAgICB7YXV0aG9yLmZpcnN0TmFtZX0ge2F1dGhvci5sYXN0TmFtZX1cbiAgICAgICAgICA8L2E+XG4gICAgICAgIDwvZGl2PlxuICAgICAgICA8ZGl2IHN0eWxlPXtzdHlsZXMuYm9keX0+e2FydGljbGUuYm9keX08L2Rpdj5cbiAgICAgIDwvZGl2PlxuICAgICk7XG4gIH1cbn1cblxuQXJ0aWNsZS5wcm9wVHlwZXMgPSB7XG4gIGFydGljbGU6IFByb3BUeXBlcy5zaGFwZSh7XG4gICAgdGl0bGU6IFByb3BUeXBlcy5zdHJpbmcuaXNSZXF1aXJlZCxcbiAgICBib2R5OiBQcm9wVHlwZXMuc3RyaW5nLmlzUmVxdWlyZWQsXG4gICAgZGF0ZTogUHJvcFR5cGVzLnN0cmluZy5pc1JlcXVpcmVkLFxuICB9KVxufTtcblxuZnVuY3Rpb24gZXh0cmFQcm9wcyhzdG9yZSwgb3JpZ2luYWxQcm9wcykge1xuICByZXR1cm4ge1xuICAgIGF1dGhvcjogc3RvcmUubG9va3VwQXV0aG9yKG9yaWdpbmFsUHJvcHMuYXJ0aWNsZS5hdXRob3JJZCksXG4gIH07XG59XG5cbmV4cG9ydCBkZWZhdWx0IHN0b3JlUHJvdmlkZXIoZXh0cmFQcm9wcykoQXJ0aWNsZSk7XG4iXX0=",
+    "ast": null,
+    "map": {
+      "version": 3,
+      "sources": [
+        "Article.js"
+      ],
+      "names": [
+        "styles",
+        "article",
+        "paddingBottom",
+        "borderBottomStyle",
+        "borderBottomColor",
+        "borderBottomWidth",
+        "marginBottom",
+        "title",
+        "fontWeight",
+        "date",
+        "fontSize",
+        "color",
+        "author",
+        "paddingTop",
+        "body",
+        "paddingLeft",
+        "dateDisplay",
+        "dateString",
+        "Date",
+        "toDateString",
+        "Article",
+        "PureComponent",
+        "render",
+        "props",
+        "website",
+        "firstName",
+        "lastName",
+        "propTypes",
+        "shape",
+        "string",
+        "isRequired",
+        "extraProps",
+        "store",
+        "originalProps",
+        "lookupAuthor",
+        "authorId"
+      ],
+      "mappings": ";;;;;;AAAA;;;;AACA;;;;AACA;;;;;;AAEA,MAAMA,SAAS;AACbC,WAAS;AACPC,mBAAe,EADR;AAEPC,uBAAmB,OAFZ;AAGPC,uBAAmB,MAHZ;AAIPC,uBAAmB,CAJZ;AAKPC,kBAAc;AALP,GADI;AAQbC,SAAO;AACLC,gBAAY;AADP,GARM;AAWbC,QAAM;AACJC,cAAU,OADN;AAEJC,WAAO;AAFH,GAXO;AAebC,UAAQ;AACNC,gBAAY,EADN;AAENX,mBAAe;AAFT,GAfK;AAmBbY,QAAM;AACJC,iBAAa;AADT;AAnBO,CAAf;AAuBA,MAAMC,cAAeC,UAAD,IAClB,IAAIC,IAAJ,CAASD,UAAT,EAAqBE,YAArB,EADF;;AAGA,MAAMC,OAAN,SAAsB,gBAAMC,aAA5B,CAA0C;AACxCC,WAAS;AACP,UAAM,EAAErB,OAAF,EAAWW,MAAX,KAAsB,KAAKW,KAAjC;AACA,WACE;AAAA;AAAA,QAAK,OAAOvB,OAAOC,OAAnB;AACE;AAAA;AAAA,UAAK,OAAOD,OAAOO,KAAnB;AAA2BN,gBAAQM;AAAnC,OADF;AAEE;AAAA;AAAA,UAAK,OAAOP,OAAOS,IAAnB;AACGO,oBAAYf,QAAQQ,IAApB;AADH,OAFF;AAKE;AAAA;AAAA,UAAK,OAAOT,OAAOY,MAAnB;AACE;AAAA;AAAA,YAAG,MAAMA,OAAOY,OAAhB;AACGZ,iBAAOa,SADV;AAAA;AACsBb,iBAAOc;AAD7B;AADF,OALF;AAUE;AAAA;AAAA,UAAK,OAAO1B,OAAOc,IAAnB;AAA0Bb,gBAAQa;AAAlC;AAVF,KADF;AAcD;AAjBuC;;AAoB1CM,QAAQO,SAAR,GAAoB;AAClB1B,WAAS,oBAAU2B,KAAV,CAAgB;AACvBrB,WAAO,oBAAUsB,MAAV,CAAiBC,UADD;AAEvBhB,UAAM,oBAAUe,MAAV,CAAiBC,UAFA;AAGvBrB,UAAM,oBAAUoB,MAAV,CAAiBC;AAHA,GAAhB;AADS,CAApB;;AAQA,SAASC,UAAT,CAAoBC,KAApB,EAA2BC,aAA3B,EAA0C;AACxC,SAAO;AACLrB,YAAQoB,MAAME,YAAN,CAAmBD,cAAchC,OAAd,CAAsBkC,QAAzC;AADH,GAAP;AAGD;;kBAEc,6BAAcJ,UAAd,EAA0BX,OAA1B,C",
+      "file": "Article.js",
+      "sourceRoot": "/Users/linuss/Dev/projects/training/advanced-react/lib/components",
+      "sourcesContent": [
+        "import React from 'react';\nimport PropTypes from 'prop-types';\nimport storeProvider from './storeProvider';\n\nconst styles = {\n  article: {\n    paddingBottom: 10,\n    borderBottomStyle: 'solid',\n    borderBottomColor: '#aaa',\n    borderBottomWidth: 1,\n    marginBottom: 10,\n  },\n  title: {\n    fontWeight: 'bold',\n  },\n  date: {\n    fontSize: '0.8em',\n    color: '#888',\n  },\n  author: {\n    paddingTop: 10,\n    paddingBottom: 10,\n  },\n  body: {\n    paddingLeft: 20,\n  }\n};\nconst dateDisplay = (dateString) =>\n  new Date(dateString).toDateString();\n\nclass Article extends React.PureComponent {\n  render() {\n    const { article, author } = this.props;\n    return (\n      <div style={styles.article}>\n        <div style={styles.title}>{article.title}</div>\n        <div style={styles.date}>\n          {dateDisplay(article.date)}\n        </div>\n        <div style={styles.author}>\n          <a href={author.website}>\n            {author.firstName} {author.lastName}\n          </a>\n        </div>\n        <div style={styles.body}>{article.body}</div>\n      </div>\n    );\n  }\n}\n\nArticle.propTypes = {\n  article: PropTypes.shape({\n    title: PropTypes.string.isRequired,\n    body: PropTypes.string.isRequired,\n    date: PropTypes.string.isRequired,\n  })\n};\n\nfunction extraProps(store, originalProps) {\n  return {\n    author: store.lookupAuthor(originalProps.article.authorId),\n  };\n}\n\nexport default storeProvider(extraProps)(Article);\n"
+      ]
+    },
+    "mtime": 1628392048630
+  },
+  "{\"filename\":\"/Users/linuss/Dev/projects/training/advanced-react/lib/components/storeProvider.js\",\"env\":{\"development\":{\"plugins\":[]}},\"retainLines\":false,\"highlightCode\":true,\"suppressDeprecationMessages\":false,\"presets\":[],\"plugins\":[[[],null],[[],null],[[],{\"loose\":false}],[[],{\"spec\":false,\"loose\":false}],[[],null],[[],null],[[],null],[[],null]],\"ignore\":[],\"code\":true,\"metadata\":true,\"ast\":true,\"comments\":true,\"compact\":\"auto\",\"minified\":false,\"sourceRoot\":\"/Users/linuss/Dev/projects/training/advanced-react/lib/components\",\"babelrc\":true,\"sourceType\":\"module\",\"moduleIds\":false,\"passPerPreset\":false,\"parserOpts\":false,\"generatorOpts\":false}:6.26.3": {
+    "metadata": {
+      "usedHelpers": [
+        "extends",
+        "interopRequireDefault"
+      ],
+      "marked": [],
+      "modules": {
+        "imports": [
+          {
+            "source": "react",
+            "imported": [
+              "default"
+            ],
+            "specifiers": [
+              {
+                "kind": "named",
+                "imported": "default",
+                "local": "React"
+              }
+            ]
+          },
+          {
+            "source": "prop-types",
+            "imported": [
+              "default"
+            ],
+            "specifiers": [
+              {
+                "kind": "named",
+                "imported": "default",
+                "local": "PropTypes"
+              }
+            ]
+          }
+        ],
+        "exports": {
+          "exported": [],
+          "specifiers": []
+        }
+      }
+    },
+    "options": {
+      "filename": "/Users/linuss/Dev/projects/training/advanced-react/lib/components/storeProvider.js",
+      "filenameRelative": "/Users/linuss/Dev/projects/training/advanced-react/lib/components/storeProvider.js",
+      "env": {},
+      "retainLines": false,
+      "highlightCode": true,
+      "suppressDeprecationMessages": false,
+      "presets": [],
+      "plugins": [
+        [
+          [],
+          null
+        ],
+        [
+          [],
+          null
+        ],
+        [
+          [],
+          {
+            "loose": false
+          }
+        ],
+        [
+          [],
+          {
+            "spec": false,
+            "loose": false
+          }
+        ],
+        [
+          [],
+          null
+        ],
+        [
+          [],
+          null
+        ],
+        [
+          [],
+          null
+        ],
+        [
+          [],
+          null
+        ]
+      ],
+      "ignore": [],
+      "code": true,
+      "metadata": true,
+      "ast": false,
+      "comments": true,
+      "compact": "auto",
+      "minified": false,
+      "sourceMaps": "both",
+      "sourceMapTarget": "storeProvider.js",
+      "sourceFileName": "storeProvider.js",
+      "sourceRoot": "/Users/linuss/Dev/projects/training/advanced-react/lib/components",
+      "babelrc": false,
+      "sourceType": "module",
+      "moduleRoot": "/Users/linuss/Dev/projects/training/advanced-react/lib/components",
+      "moduleIds": false,
+      "passPerPreset": false,
+      "parserOpts": false,
+      "generatorOpts": false,
+      "basename": "storeProvider"
+    },
+    "ignored": false,
+    "code": "'use strict';\n\nObject.defineProperty(exports, \"__esModule\", {\n  value: true\n});\n\nvar _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };\n\nvar _react = require('react');\n\nvar _react2 = _interopRequireDefault(_react);\n\nvar _propTypes = require('prop-types');\n\nvar _propTypes2 = _interopRequireDefault(_propTypes);\n\nfunction _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }\n\nconst storeProvider = (extraProps = () => ({})) => Component => {\n  var _class, _temp2;\n\n  return _temp2 = _class = class extends _react2.default.PureComponent {\n    constructor(...args) {\n      var _temp;\n\n      return _temp = super(...args), this.usedState = () => {\n        return extraProps(this.context.store, this.props);\n      }, this.state = this.usedState(), this.onStoreChange = () => {\n        if (this.subscriptionId) {\n          this.setState(this.usedState());\n        }\n      }, _temp;\n    }\n\n    componentDidMount() {\n      this.subscriptionId = this.context.store.subscribe(this.onStoreChange);\n    }\n    componentWillUnmount() {\n      this.context.store.unsubscribe(this.subscriptionId);\n      this.subscriptionId = null;\n    }\n    render() {\n      return _react2.default.createElement(Component, _extends({}, this.props, this.usedState(), {\n        store: this.context.store }));\n    }\n  }, _class.displayName = `${Component.name}Container`, _class.contextTypes = {\n    store: _propTypes2.default.object\n  }, _temp2;\n};\n\nexports.default = storeProvider;\n//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInN0b3JlUHJvdmlkZXIuanMiXSwibmFtZXMiOlsic3RvcmVQcm92aWRlciIsImV4dHJhUHJvcHMiLCJDb21wb25lbnQiLCJQdXJlQ29tcG9uZW50IiwidXNlZFN0YXRlIiwiY29udGV4dCIsInN0b3JlIiwicHJvcHMiLCJzdGF0ZSIsIm9uU3RvcmVDaGFuZ2UiLCJzdWJzY3JpcHRpb25JZCIsInNldFN0YXRlIiwiY29tcG9uZW50RGlkTW91bnQiLCJzdWJzY3JpYmUiLCJjb21wb25lbnRXaWxsVW5tb3VudCIsInVuc3Vic2NyaWJlIiwicmVuZGVyIiwiZGlzcGxheU5hbWUiLCJuYW1lIiwiY29udGV4dFR5cGVzIiwib2JqZWN0Il0sIm1hcHBpbmdzIjoiOzs7Ozs7OztBQUFBOzs7O0FBQ0E7Ozs7OztBQUVBLE1BQU1BLGdCQUFnQixDQUFDQyxhQUFhLE9BQU8sRUFBUCxDQUFkLEtBQThCQyxTQUFELElBQWU7QUFBQTs7QUFDaEUsMkJBQU8sY0FBYyxnQkFBTUMsYUFBcEIsQ0FBa0M7QUFBQTtBQUFBOztBQUFBLDBDQU12Q0MsU0FOdUMsR0FNM0IsTUFBTTtBQUNoQixlQUFPSCxXQUFXLEtBQUtJLE9BQUwsQ0FBYUMsS0FBeEIsRUFBK0IsS0FBS0MsS0FBcEMsQ0FBUDtBQUNELE9BUnNDLE9BVXZDQyxLQVZ1QyxHQVUvQixLQUFLSixTQUFMLEVBVitCLE9BWXZDSyxhQVp1QyxHQVl2QixNQUFNO0FBQ3BCLFlBQUksS0FBS0MsY0FBVCxFQUF5QjtBQUN2QixlQUFLQyxRQUFMLENBQWMsS0FBS1AsU0FBTCxFQUFkO0FBQ0Q7QUFDRixPQWhCc0M7QUFBQTs7QUFpQnZDUSx3QkFBb0I7QUFDbEIsV0FBS0YsY0FBTCxHQUFzQixLQUFLTCxPQUFMLENBQWFDLEtBQWIsQ0FBbUJPLFNBQW5CLENBQTZCLEtBQUtKLGFBQWxDLENBQXRCO0FBQ0Q7QUFDREssMkJBQXVCO0FBQ3JCLFdBQUtULE9BQUwsQ0FBYUMsS0FBYixDQUFtQlMsV0FBbkIsQ0FBK0IsS0FBS0wsY0FBcEM7QUFDQSxXQUFLQSxjQUFMLEdBQXNCLElBQXRCO0FBQ0Q7QUFDRE0sYUFBUztBQUNQLGFBQU8sOEJBQUMsU0FBRCxlQUNELEtBQUtULEtBREosRUFFRCxLQUFLSCxTQUFMLEVBRkM7QUFHTCxlQUFPLEtBQUtDLE9BQUwsQ0FBYUMsS0FIZixJQUFQO0FBSUQ7QUE3QnNDLEdBQXpDLFNBQ1NXLFdBRFQsR0FDd0IsR0FBRWYsVUFBVWdCLElBQUssV0FEekMsU0FFU0MsWUFGVCxHQUV3QjtBQUNwQmIsV0FBTyxvQkFBVWM7QUFERyxHQUZ4QjtBQStCRCxDQWhDRDs7a0JBa0NlcEIsYSIsImZpbGUiOiJzdG9yZVByb3ZpZGVyLmpzIiwic291cmNlUm9vdCI6Ii9Vc2Vycy9saW51c3MvRGV2L3Byb2plY3RzL3RyYWluaW5nL2FkdmFuY2VkLXJlYWN0L2xpYi9jb21wb25lbnRzIiwic291cmNlc0NvbnRlbnQiOlsiaW1wb3J0IFJlYWN0IGZyb20gJ3JlYWN0JztcbmltcG9ydCBQcm9wVHlwZXMgZnJvbSAncHJvcC10eXBlcyc7XG5cbmNvbnN0IHN0b3JlUHJvdmlkZXIgPSAoZXh0cmFQcm9wcyA9ICgpID0+ICh7fSkpID0+IChDb21wb25lbnQpID0+IHtcbiAgcmV0dXJuIGNsYXNzIGV4dGVuZHMgUmVhY3QuUHVyZUNvbXBvbmVudCB7XG4gICAgc3RhdGljIGRpc3BsYXlOYW1lID0gYCR7Q29tcG9uZW50Lm5hbWV9Q29udGFpbmVyYDtcbiAgICBzdGF0aWMgY29udGV4dFR5cGVzID0ge1xuICAgICAgc3RvcmU6IFByb3BUeXBlcy5vYmplY3QsXG4gICAgfTtcblxuICAgIHVzZWRTdGF0ZSA9ICgpID0+IHtcbiAgICAgIHJldHVybiBleHRyYVByb3BzKHRoaXMuY29udGV4dC5zdG9yZSwgdGhpcy5wcm9wcyk7XG4gICAgfTtcblxuICAgIHN0YXRlID0gdGhpcy51c2VkU3RhdGUoKTtcblxuICAgIG9uU3RvcmVDaGFuZ2UgPSAoKSA9PiB7XG4gICAgICBpZiAodGhpcy5zdWJzY3JpcHRpb25JZCkge1xuICAgICAgICB0aGlzLnNldFN0YXRlKHRoaXMudXNlZFN0YXRlKCkpO1xuICAgICAgfVxuICAgIH1cbiAgICBjb21wb25lbnREaWRNb3VudCgpIHtcbiAgICAgIHRoaXMuc3Vic2NyaXB0aW9uSWQgPSB0aGlzLmNvbnRleHQuc3RvcmUuc3Vic2NyaWJlKHRoaXMub25TdG9yZUNoYW5nZSk7XG4gICAgfVxuICAgIGNvbXBvbmVudFdpbGxVbm1vdW50KCkge1xuICAgICAgdGhpcy5jb250ZXh0LnN0b3JlLnVuc3Vic2NyaWJlKHRoaXMuc3Vic2NyaXB0aW9uSWQpO1xuICAgICAgdGhpcy5zdWJzY3JpcHRpb25JZCA9IG51bGw7XG4gICAgfVxuICAgIHJlbmRlcigpIHtcbiAgICAgIHJldHVybiA8Q29tcG9uZW50XG4gICAgICAgIHsuLi50aGlzLnByb3BzfVxuICAgICAgICB7Li4udGhpcy51c2VkU3RhdGUoKX1cbiAgICAgICAgc3RvcmU9e3RoaXMuY29udGV4dC5zdG9yZX0gLz47XG4gICAgfVxuICB9O1xufTtcblxuZXhwb3J0IGRlZmF1bHQgc3RvcmVQcm92aWRlcjtcbiJdfQ==",
+    "ast": null,
+    "map": {
+      "version": 3,
+      "sources": [
+        "storeProvider.js"
+      ],
+      "names": [
+        "storeProvider",
+        "extraProps",
+        "Component",
+        "PureComponent",
+        "usedState",
+        "context",
+        "store",
+        "props",
+        "state",
+        "onStoreChange",
+        "subscriptionId",
+        "setState",
+        "componentDidMount",
+        "subscribe",
+        "componentWillUnmount",
+        "unsubscribe",
+        "render",
+        "displayName",
+        "name",
+        "contextTypes",
+        "object"
+      ],
+      "mappings": ";;;;;;;;AAAA;;;;AACA;;;;;;AAEA,MAAMA,gBAAgB,CAACC,aAAa,OAAO,EAAP,CAAd,KAA8BC,SAAD,IAAe;AAAA;;AAChE,2BAAO,cAAc,gBAAMC,aAApB,CAAkC;AAAA;AAAA;;AAAA,0CAMvCC,SANuC,GAM3B,MAAM;AAChB,eAAOH,WAAW,KAAKI,OAAL,CAAaC,KAAxB,EAA+B,KAAKC,KAApC,CAAP;AACD,OARsC,OAUvCC,KAVuC,GAU/B,KAAKJ,SAAL,EAV+B,OAYvCK,aAZuC,GAYvB,MAAM;AACpB,YAAI,KAAKC,cAAT,EAAyB;AACvB,eAAKC,QAAL,CAAc,KAAKP,SAAL,EAAd;AACD;AACF,OAhBsC;AAAA;;AAiBvCQ,wBAAoB;AAClB,WAAKF,cAAL,GAAsB,KAAKL,OAAL,CAAaC,KAAb,CAAmBO,SAAnB,CAA6B,KAAKJ,aAAlC,CAAtB;AACD;AACDK,2BAAuB;AACrB,WAAKT,OAAL,CAAaC,KAAb,CAAmBS,WAAnB,CAA+B,KAAKL,cAApC;AACA,WAAKA,cAAL,GAAsB,IAAtB;AACD;AACDM,aAAS;AACP,aAAO,8BAAC,SAAD,eACD,KAAKT,KADJ,EAED,KAAKH,SAAL,EAFC;AAGL,eAAO,KAAKC,OAAL,CAAaC,KAHf,IAAP;AAID;AA7BsC,GAAzC,SACSW,WADT,GACwB,GAAEf,UAAUgB,IAAK,WADzC,SAESC,YAFT,GAEwB;AACpBb,WAAO,oBAAUc;AADG,GAFxB;AA+BD,CAhCD;;kBAkCepB,a",
+      "file": "storeProvider.js",
+      "sourceRoot": "/Users/linuss/Dev/projects/training/advanced-react/lib/components",
+      "sourcesContent": [
+        "import React from 'react';\nimport PropTypes from 'prop-types';\n\nconst storeProvider = (extraProps = () => ({})) => (Component) => {\n  return class extends React.PureComponent {\n    static displayName = `${Component.name}Container`;\n    static contextTypes = {\n      store: PropTypes.object,\n    };\n\n    usedState = () => {\n      return extraProps(this.context.store, this.props);\n    };\n\n    state = this.usedState();\n\n    onStoreChange = () => {\n      if (this.subscriptionId) {\n        this.setState(this.usedState());\n      }\n    }\n    componentDidMount() {\n      this.subscriptionId = this.context.store.subscribe(this.onStoreChange);\n    }\n    componentWillUnmount() {\n      this.context.store.unsubscribe(this.subscriptionId);\n      this.subscriptionId = null;\n    }\n    render() {\n      return <Component\n        {...this.props}\n        {...this.usedState()}\n        store={this.context.store} />;\n    }\n  };\n};\n\nexport default storeProvider;\n"
+      ]
+    },
+    "mtime": 1628392048631
+  },
+  "{\"filename\":\"/Users/linuss/Dev/projects/training/advanced-react/lib/components/SearchBar.js\",\"env\":{\"development\":{\"plugins\":[]}},\"retainLines\":false,\"highlightCode\":true,\"suppressDeprecationMessages\":false,\"presets\":[],\"plugins\":[[[],null],[[],null],[[],{\"loose\":false}],[[],{\"spec\":false,\"loose\":false}],[[],null],[[],null],[[],null],[[],null]],\"ignore\":[],\"code\":true,\"metadata\":true,\"ast\":true,\"comments\":true,\"compact\":\"auto\",\"minified\":false,\"sourceRoot\":\"/Users/linuss/Dev/projects/training/advanced-react/lib/components\",\"babelrc\":true,\"sourceType\":\"module\",\"moduleIds\":false,\"passPerPreset\":false,\"parserOpts\":false,\"generatorOpts\":false}:6.26.3": {
+    "metadata": {
+      "usedHelpers": [
+        "interopRequireDefault"
+      ],
+      "marked": [],
+      "modules": {
+        "imports": [
+          {
+            "source": "react",
+            "imported": [
+              "default"
+            ],
+            "specifiers": [
+              {
+                "kind": "named",
+                "imported": "default",
+                "local": "React"
+              }
+            ]
+          },
+          {
+            "source": "lodash.debounce",
+            "imported": [
+              "default"
+            ],
+            "specifiers": [
+              {
+                "kind": "named",
+                "imported": "default",
+                "local": "debounce"
+              }
+            ]
+          },
+          {
+            "source": "./storeProvider",
+            "imported": [
+              "default"
+            ],
+            "specifiers": [
+              {
+                "kind": "named",
+                "imported": "default",
+                "local": "storeProvider"
+              }
+            ]
+          }
+        ],
+        "exports": {
+          "exported": [],
+          "specifiers": []
+        }
+      }
+    },
+    "options": {
+      "filename": "/Users/linuss/Dev/projects/training/advanced-react/lib/components/SearchBar.js",
+      "filenameRelative": "/Users/linuss/Dev/projects/training/advanced-react/lib/components/SearchBar.js",
+      "env": {},
+      "retainLines": false,
+      "highlightCode": true,
+      "suppressDeprecationMessages": false,
+      "presets": [],
+      "plugins": [
+        [
+          [],
+          null
+        ],
+        [
+          [],
+          null
+        ],
+        [
+          [],
+          {
+            "loose": false
+          }
+        ],
+        [
+          [],
+          {
+            "spec": false,
+            "loose": false
+          }
+        ],
+        [
+          [],
+          null
+        ],
+        [
+          [],
+          null
+        ],
+        [
+          [],
+          null
+        ],
+        [
+          [],
+          null
+        ]
+      ],
+      "ignore": [],
+      "code": true,
+      "metadata": true,
+      "ast": false,
+      "comments": true,
+      "compact": "auto",
+      "minified": false,
+      "sourceMaps": "both",
+      "sourceMapTarget": "SearchBar.js",
+      "sourceFileName": "SearchBar.js",
+      "sourceRoot": "/Users/linuss/Dev/projects/training/advanced-react/lib/components",
+      "babelrc": false,
+      "sourceType": "module",
+      "moduleRoot": "/Users/linuss/Dev/projects/training/advanced-react/lib/components",
+      "moduleIds": false,
+      "passPerPreset": false,
+      "parserOpts": false,
+      "generatorOpts": false,
+      "basename": "SearchBar"
+    },
+    "ignored": false,
+    "code": "'use strict';\n\nObject.defineProperty(exports, \"__esModule\", {\n  value: true\n});\n\nvar _react = require('react');\n\nvar _react2 = _interopRequireDefault(_react);\n\nvar _lodash = require('lodash.debounce');\n\nvar _lodash2 = _interopRequireDefault(_lodash);\n\nvar _storeProvider = require('./storeProvider');\n\nvar _storeProvider2 = _interopRequireDefault(_storeProvider);\n\nfunction _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }\n\nclass SearchBar extends _react2.default.PureComponent {\n  constructor(...args) {\n    var _temp;\n\n    return _temp = super(...args), this.state = {\n      searchTerm: ''\n    }, this.doSearch = (0, _lodash2.default)(() => {\n      this.props.store.setSearchTerm(this.state.searchTerm);\n    }, 300), this.handleSearch = event => {\n      this.setState({ searchTerm: event.target.value }, () => {\n        this.doSearch();\n      });\n    }, _temp;\n  }\n\n  render() {\n    return _react2.default.createElement('input', {\n      type: 'search',\n      placeholder: 'Enter search term',\n      value: this.state.searchTerm,\n      onChange: this.handleSearch\n    });\n  }\n}\n\nexports.default = (0, _storeProvider2.default)()(SearchBar);\n//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIlNlYXJjaEJhci5qcyJdLCJuYW1lcyI6WyJTZWFyY2hCYXIiLCJQdXJlQ29tcG9uZW50Iiwic3RhdGUiLCJzZWFyY2hUZXJtIiwiZG9TZWFyY2giLCJwcm9wcyIsInN0b3JlIiwic2V0U2VhcmNoVGVybSIsImhhbmRsZVNlYXJjaCIsImV2ZW50Iiwic2V0U3RhdGUiLCJ0YXJnZXQiLCJ2YWx1ZSIsInJlbmRlciJdLCJtYXBwaW5ncyI6Ijs7Ozs7O0FBQUE7Ozs7QUFDQTs7OztBQUNBOzs7Ozs7QUFFQSxNQUFNQSxTQUFOLFNBQXdCLGdCQUFNQyxhQUE5QixDQUE0QztBQUFBO0FBQUE7O0FBQUEsd0NBQzFDQyxLQUQwQyxHQUNsQztBQUNOQyxrQkFBWTtBQUROLEtBRGtDLE9BSTFDQyxRQUowQyxHQUkvQixzQkFBUyxNQUFNO0FBQ3hCLFdBQUtDLEtBQUwsQ0FBV0MsS0FBWCxDQUFpQkMsYUFBakIsQ0FBK0IsS0FBS0wsS0FBTCxDQUFXQyxVQUExQztBQUNELEtBRlUsRUFFUixHQUZRLENBSitCLE9BTzFDSyxZQVAwQyxHQU8xQkMsS0FBRCxJQUFXO0FBQ3hCLFdBQUtDLFFBQUwsQ0FBYyxFQUFFUCxZQUFZTSxNQUFNRSxNQUFOLENBQWFDLEtBQTNCLEVBQWQsRUFBa0QsTUFBTTtBQUN0RCxhQUFLUixRQUFMO0FBQ0QsT0FGRDtBQUdELEtBWHlDO0FBQUE7O0FBWTFDUyxXQUFTO0FBQ1AsV0FDRTtBQUNFLFlBQUssUUFEUDtBQUVFLG1CQUFZLG1CQUZkO0FBR0UsYUFBTyxLQUFLWCxLQUFMLENBQVdDLFVBSHBCO0FBSUUsZ0JBQVUsS0FBS0s7QUFKakIsTUFERjtBQVFEO0FBckJ5Qzs7a0JBd0I3QiwrQkFBZ0JSLFNBQWhCLEMiLCJmaWxlIjoiU2VhcmNoQmFyLmpzIiwic291cmNlUm9vdCI6Ii9Vc2Vycy9saW51c3MvRGV2L3Byb2plY3RzL3RyYWluaW5nL2FkdmFuY2VkLXJlYWN0L2xpYi9jb21wb25lbnRzIiwic291cmNlc0NvbnRlbnQiOlsiaW1wb3J0IFJlYWN0IGZyb20gJ3JlYWN0JztcbmltcG9ydCBkZWJvdW5jZSBmcm9tICdsb2Rhc2guZGVib3VuY2UnO1xuaW1wb3J0IHN0b3JlUHJvdmlkZXIgZnJvbSAnLi9zdG9yZVByb3ZpZGVyJztcblxuY2xhc3MgU2VhcmNoQmFyIGV4dGVuZHMgUmVhY3QuUHVyZUNvbXBvbmVudCB7XG4gIHN0YXRlID0ge1xuICAgIHNlYXJjaFRlcm06ICcnXG4gIH07XG4gIGRvU2VhcmNoID0gZGVib3VuY2UoKCkgPT4ge1xuICAgIHRoaXMucHJvcHMuc3RvcmUuc2V0U2VhcmNoVGVybSh0aGlzLnN0YXRlLnNlYXJjaFRlcm0pO1xuICB9LCAzMDApO1xuICBoYW5kbGVTZWFyY2ggPSAoZXZlbnQpID0+IHtcbiAgICB0aGlzLnNldFN0YXRlKHsgc2VhcmNoVGVybTogZXZlbnQudGFyZ2V0LnZhbHVlIH0sICgpID0+IHtcbiAgICAgIHRoaXMuZG9TZWFyY2goKTtcbiAgICB9KTtcbiAgfVxuICByZW5kZXIoKSB7XG4gICAgcmV0dXJuIChcbiAgICAgIDxpbnB1dFxuICAgICAgICB0eXBlPVwic2VhcmNoXCJcbiAgICAgICAgcGxhY2Vob2xkZXI9XCJFbnRlciBzZWFyY2ggdGVybVwiXG4gICAgICAgIHZhbHVlPXt0aGlzLnN0YXRlLnNlYXJjaFRlcm19XG4gICAgICAgIG9uQ2hhbmdlPXt0aGlzLmhhbmRsZVNlYXJjaH1cbiAgICAgIC8+XG4gICAgKTtcbiAgfVxufVxuXG5leHBvcnQgZGVmYXVsdCBzdG9yZVByb3ZpZGVyKCkoU2VhcmNoQmFyKTtcbiJdfQ==",
+    "ast": null,
+    "map": {
+      "version": 3,
+      "sources": [
+        "SearchBar.js"
+      ],
+      "names": [
+        "SearchBar",
+        "PureComponent",
+        "state",
+        "searchTerm",
+        "doSearch",
+        "props",
+        "store",
+        "setSearchTerm",
+        "handleSearch",
+        "event",
+        "setState",
+        "target",
+        "value",
+        "render"
+      ],
+      "mappings": ";;;;;;AAAA;;;;AACA;;;;AACA;;;;;;AAEA,MAAMA,SAAN,SAAwB,gBAAMC,aAA9B,CAA4C;AAAA;AAAA;;AAAA,wCAC1CC,KAD0C,GAClC;AACNC,kBAAY;AADN,KADkC,OAI1CC,QAJ0C,GAI/B,sBAAS,MAAM;AACxB,WAAKC,KAAL,CAAWC,KAAX,CAAiBC,aAAjB,CAA+B,KAAKL,KAAL,CAAWC,UAA1C;AACD,KAFU,EAER,GAFQ,CAJ+B,OAO1CK,YAP0C,GAO1BC,KAAD,IAAW;AACxB,WAAKC,QAAL,CAAc,EAAEP,YAAYM,MAAME,MAAN,CAAaC,KAA3B,EAAd,EAAkD,MAAM;AACtD,aAAKR,QAAL;AACD,OAFD;AAGD,KAXyC;AAAA;;AAY1CS,WAAS;AACP,WACE;AACE,YAAK,QADP;AAEE,mBAAY,mBAFd;AAGE,aAAO,KAAKX,KAAL,CAAWC,UAHpB;AAIE,gBAAU,KAAKK;AAJjB,MADF;AAQD;AArByC;;kBAwB7B,+BAAgBR,SAAhB,C",
+      "file": "SearchBar.js",
+      "sourceRoot": "/Users/linuss/Dev/projects/training/advanced-react/lib/components",
+      "sourcesContent": [
+        "import React from 'react';\nimport debounce from 'lodash.debounce';\nimport storeProvider from './storeProvider';\n\nclass SearchBar extends React.PureComponent {\n  state = {\n    searchTerm: ''\n  };\n  doSearch = debounce(() => {\n    this.props.store.setSearchTerm(this.state.searchTerm);\n  }, 300);\n  handleSearch = (event) => {\n    this.setState({ searchTerm: event.target.value }, () => {\n      this.doSearch();\n    });\n  }\n  render() {\n    return (\n      <input\n        type=\"search\"\n        placeholder=\"Enter search term\"\n        value={this.state.searchTerm}\n        onChange={this.handleSearch}\n      />\n    );\n  }\n}\n\nexport default storeProvider()(SearchBar);\n"
+      ]
+    },
+    "mtime": 1628392048631
+  },
+  "{\"filename\":\"/Users/linuss/Dev/projects/training/advanced-react/lib/components/Timestamp.js\",\"env\":{\"development\":{\"plugins\":[]}},\"retainLines\":false,\"highlightCode\":true,\"suppressDeprecationMessages\":false,\"presets\":[],\"plugins\":[[[],null],[[],null],[[],{\"loose\":false}],[[],{\"spec\":false,\"loose\":false}],[[],null],[[],null],[[],null],[[],null]],\"ignore\":[],\"code\":true,\"metadata\":true,\"ast\":true,\"comments\":true,\"compact\":\"auto\",\"minified\":false,\"sourceRoot\":\"/Users/linuss/Dev/projects/training/advanced-react/lib/components\",\"babelrc\":true,\"sourceType\":\"module\",\"moduleIds\":false,\"passPerPreset\":false,\"parserOpts\":false,\"generatorOpts\":false}:6.26.3": {
+    "metadata": {
+      "usedHelpers": [
+        "interopRequireDefault"
+      ],
+      "marked": [],
+      "modules": {
+        "imports": [
+          {
+            "source": "react",
+            "imported": [
+              "default"
+            ],
+            "specifiers": [
+              {
+                "kind": "named",
+                "imported": "default",
+                "local": "React"
+              }
+            ]
+          },
+          {
+            "source": "./storeProvider",
+            "imported": [
+              "default"
+            ],
+            "specifiers": [
+              {
+                "kind": "named",
+                "imported": "default",
+                "local": "storeProvider"
+              }
+            ]
+          }
+        ],
+        "exports": {
+          "exported": [],
+          "specifiers": []
+        }
+      }
+    },
+    "options": {
+      "filename": "/Users/linuss/Dev/projects/training/advanced-react/lib/components/Timestamp.js",
+      "filenameRelative": "/Users/linuss/Dev/projects/training/advanced-react/lib/components/Timestamp.js",
+      "env": {},
+      "retainLines": false,
+      "highlightCode": true,
+      "suppressDeprecationMessages": false,
+      "presets": [],
+      "plugins": [
+        [
+          [],
+          null
+        ],
+        [
+          [],
+          null
+        ],
+        [
+          [],
+          {
+            "loose": false
+          }
+        ],
+        [
+          [],
+          {
+            "spec": false,
+            "loose": false
+          }
+        ],
+        [
+          [],
+          null
+        ],
+        [
+          [],
+          null
+        ],
+        [
+          [],
+          null
+        ],
+        [
+          [],
+          null
+        ]
+      ],
+      "ignore": [],
+      "code": true,
+      "metadata": true,
+      "ast": false,
+      "comments": true,
+      "compact": "auto",
+      "minified": false,
+      "sourceMaps": "both",
+      "sourceMapTarget": "Timestamp.js",
+      "sourceFileName": "Timestamp.js",
+      "sourceRoot": "/Users/linuss/Dev/projects/training/advanced-react/lib/components",
+      "babelrc": false,
+      "sourceType": "module",
+      "moduleRoot": "/Users/linuss/Dev/projects/training/advanced-react/lib/components",
+      "moduleIds": false,
+      "passPerPreset": false,
+      "parserOpts": false,
+      "generatorOpts": false,
+      "basename": "Timestamp"
+    },
+    "ignored": false,
+    "code": "'use strict';\n\nObject.defineProperty(exports, \"__esModule\", {\n  value: true\n});\n\nvar _react = require('react');\n\nvar _react2 = _interopRequireDefault(_react);\n\nvar _storeProvider = require('./storeProvider');\n\nvar _storeProvider2 = _interopRequireDefault(_storeProvider);\n\nfunction _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }\n\nclass Timestamp extends _react2.default.PureComponent {\n\n  render() {\n    return _react2.default.createElement(\n      'div',\n      null,\n      this.props.timestampDisplay\n    );\n  }\n}\n\nTimestamp.timeDisplay = timestamp => timestamp.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' });\n\nfunction extraProps(store) {\n  return {\n    timestampDisplay: Timestamp.timeDisplay(store.getState().timestamp)\n  };\n}\n\nexports.default = (0, _storeProvider2.default)(extraProps)(Timestamp);\n//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIlRpbWVzdGFtcC5qcyJdLCJuYW1lcyI6WyJUaW1lc3RhbXAiLCJQdXJlQ29tcG9uZW50IiwicmVuZGVyIiwicHJvcHMiLCJ0aW1lc3RhbXBEaXNwbGF5IiwidGltZURpc3BsYXkiLCJ0aW1lc3RhbXAiLCJ0b0xvY2FsZVRpbWVTdHJpbmciLCJob3VyIiwibWludXRlIiwiZXh0cmFQcm9wcyIsInN0b3JlIiwiZ2V0U3RhdGUiXSwibWFwcGluZ3MiOiI7Ozs7OztBQUFBOzs7O0FBQ0E7Ozs7OztBQUVBLE1BQU1BLFNBQU4sU0FBd0IsZ0JBQU1DLGFBQTlCLENBQTRDOztBQUkxQ0MsV0FBUztBQUNQLFdBQ0U7QUFBQTtBQUFBO0FBQ0csV0FBS0MsS0FBTCxDQUFXQztBQURkLEtBREY7QUFLRDtBQVZ5Qzs7QUFBdENKLFMsQ0FDR0ssVyxHQUFjQyxhQUNuQkEsVUFBVUMsa0JBQVYsQ0FBNkIsRUFBN0IsRUFBaUMsRUFBRUMsTUFBTSxTQUFSLEVBQW1CQyxRQUFRLFNBQTNCLEVBQWpDLEM7O0FBV0osU0FBU0MsVUFBVCxDQUFvQkMsS0FBcEIsRUFBMkI7QUFDekIsU0FBTztBQUNMUCxzQkFBa0JKLFVBQVVLLFdBQVYsQ0FBc0JNLE1BQU1DLFFBQU4sR0FBaUJOLFNBQXZDO0FBRGIsR0FBUDtBQUdEOztrQkFFYyw2QkFBY0ksVUFBZCxFQUEwQlYsU0FBMUIsQyIsImZpbGUiOiJUaW1lc3RhbXAuanMiLCJzb3VyY2VSb290IjoiL1VzZXJzL2xpbnVzcy9EZXYvcHJvamVjdHMvdHJhaW5pbmcvYWR2YW5jZWQtcmVhY3QvbGliL2NvbXBvbmVudHMiLCJzb3VyY2VzQ29udGVudCI6WyJpbXBvcnQgUmVhY3QgZnJvbSAncmVhY3QnO1xuaW1wb3J0IHN0b3JlUHJvdmlkZXIgZnJvbSAnLi9zdG9yZVByb3ZpZGVyJztcblxuY2xhc3MgVGltZXN0YW1wIGV4dGVuZHMgUmVhY3QuUHVyZUNvbXBvbmVudCB7XG4gIHN0YXRpYyB0aW1lRGlzcGxheSA9IHRpbWVzdGFtcCA9PlxuICAgIHRpbWVzdGFtcC50b0xvY2FsZVRpbWVTdHJpbmcoW10sIHsgaG91cjogJzItZGlnaXQnLCBtaW51dGU6ICcyLWRpZ2l0JyB9KTtcblxuICByZW5kZXIoKSB7XG4gICAgcmV0dXJuIChcbiAgICAgIDxkaXY+XG4gICAgICAgIHt0aGlzLnByb3BzLnRpbWVzdGFtcERpc3BsYXl9XG4gICAgICA8L2Rpdj5cbiAgICApO1xuICB9XG59XG5cbmZ1bmN0aW9uIGV4dHJhUHJvcHMoc3RvcmUpIHtcbiAgcmV0dXJuIHtcbiAgICB0aW1lc3RhbXBEaXNwbGF5OiBUaW1lc3RhbXAudGltZURpc3BsYXkoc3RvcmUuZ2V0U3RhdGUoKS50aW1lc3RhbXApLFxuICB9O1xufVxuXG5leHBvcnQgZGVmYXVsdCBzdG9yZVByb3ZpZGVyKGV4dHJhUHJvcHMpKFRpbWVzdGFtcCk7XG4iXX0=",
+    "ast": null,
+    "map": {
+      "version": 3,
+      "sources": [
+        "Timestamp.js"
+      ],
+      "names": [
+        "Timestamp",
+        "PureComponent",
+        "render",
+        "props",
+        "timestampDisplay",
+        "timeDisplay",
+        "timestamp",
+        "toLocaleTimeString",
+        "hour",
+        "minute",
+        "extraProps",
+        "store",
+        "getState"
+      ],
+      "mappings": ";;;;;;AAAA;;;;AACA;;;;;;AAEA,MAAMA,SAAN,SAAwB,gBAAMC,aAA9B,CAA4C;;AAI1CC,WAAS;AACP,WACE;AAAA;AAAA;AACG,WAAKC,KAAL,CAAWC;AADd,KADF;AAKD;AAVyC;;AAAtCJ,S,CACGK,W,GAAcC,aACnBA,UAAUC,kBAAV,CAA6B,EAA7B,EAAiC,EAAEC,MAAM,SAAR,EAAmBC,QAAQ,SAA3B,EAAjC,C;;AAWJ,SAASC,UAAT,CAAoBC,KAApB,EAA2B;AACzB,SAAO;AACLP,sBAAkBJ,UAAUK,WAAV,CAAsBM,MAAMC,QAAN,GAAiBN,SAAvC;AADb,GAAP;AAGD;;kBAEc,6BAAcI,UAAd,EAA0BV,SAA1B,C",
+      "file": "Timestamp.js",
+      "sourceRoot": "/Users/linuss/Dev/projects/training/advanced-react/lib/components",
+      "sourcesContent": [
+        "import React from 'react';\nimport storeProvider from './storeProvider';\n\nclass Timestamp extends React.PureComponent {\n  static timeDisplay = timestamp =>\n    timestamp.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' });\n\n  render() {\n    return (\n      <div>\n        {this.props.timestampDisplay}\n      </div>\n    );\n  }\n}\n\nfunction extraProps(store) {\n  return {\n    timestampDisplay: Timestamp.timeDisplay(store.getState().timestamp),\n  };\n}\n\nexport default storeProvider(extraProps)(Timestamp);\n"
+      ]
+    },
+    "mtime": 1628392048631
+  }
+}
