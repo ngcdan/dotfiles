@@ -15,10 +15,10 @@ alias d="cd ~/Documents/Dropbox"
 alias dl="cd ~/Downloads"
 alias dt="cd ~/Desktop"
 alias p="cd ~/Dev/projects"
+
 alias g="git"
-alias gpod="git push origin develop"
-alias gpom="git push origin master"
-alias gpdan="git push origin dan"
+alias ggmergedevelop='git merge origin "$(git_develop_branch)"'
+alias ggpulldevelop='git pull origin "$(git_develop_branch)"'
 
 alias v="vim"
 
@@ -95,8 +95,6 @@ alias cleanup="find . -type f -name '*.DS_Store' -ls -delete"
 
 # Empty the Trash on all mounted volumes and the main HDD.
 # Also, clear Apple’s System Logs to improve shell startup speed.
-# Finally, clear download history from quarantine. https://mths.be/bum
-alias emptytrash="sudo rm -rfv /Volumes/*/.Trashes; sudo rm -rfv ~/.Trash; sudo rm -rfv /private/var/log/asl/*.asl; sqlite3 ~/Library/Preferences/com.apple.LaunchServices.QuarantineEventsV* 'delete from LSQuarantineEvent'"
 
 # Show/hide hidden files in Finder
 alias show="defaults write com.apple.finder AppleShowAllFiles -bool true && killall Finder"
@@ -150,9 +148,3 @@ alias reload="exec ${SHELL} -l"
 
 # Print each PATH entry on a separate line
 alias path='echo -e ${PATH//:/\\n}'
-
-# Ahaysoft 
-alias run-hsql="gradle clean release && ./build/release/app/server/bin/server.sh start"
-alias run-postgres="gradle clean release && ./build/release/app/server/bin/server.sh start --profile=postgres"
-alias of1="cd ~/Dev/projects/ahaysoft/ofone/openfreightone"
-alias training="cd ~/Dev/projects/ahaysoft/training"

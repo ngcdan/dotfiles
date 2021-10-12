@@ -46,3 +46,5 @@ export SDKMAN_DIR="/Users/linuss/.sdkman"
 
 test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
 export JAVA_HOME=$(/usr/libexec/java_home)
+
+export datatpdir="$HOME/Dev/projects/ahaysoft/ofone/datatp"
