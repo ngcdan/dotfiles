@@ -1,0 +1,12 @@
+[user]
+	name = ngcdan
+	email = Linuss1908@gmail.com
+[code]
+	filemode = false
+[core]
+	autocrlf = false
+	ignorecase = false
+[pull]
+	ff = only
+[init]
+	defaultBranch = master
