@@ -20,7 +20,8 @@ alias g="git"
 alias ggmergedevelop='git merge origin "$(git_develop_branch)"'
 alias ggpulldevelop='git pull origin "$(git_develop_branch)"'
 
-alias v="vim"
+alias v="nvim"
+alias vim="nvim"
 
 # Detect which `ls` flavor is in use
 if ls --color > /dev/null 2>&1; then # GNU `ls`
@@ -145,6 +146,8 @@ alias afk="/System/Library/CoreServices/Menu\ Extras/User.menu/Contents/Resource
 
 # Reload the shell (i.e. invoke as a login shell)
 alias reload="exec ${SHELL} -l"
+
+alias emptytrash="sudo rm -rfv /Volumes/*/.Trashes; sudo rm -rfv ~/.Trash; sudo rm -rfv /private/var/log/asl/*.asl; sqlite3 ~/Library/Preferences/com.apple.LaunchServices.QuarantineEventsV* 'delete from LSQuarantineEvent'"
 
 # Print each PATH entry on a separate line
 alias path='echo -e ${PATH//:/\\n}'
