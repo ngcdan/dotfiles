@@ -18,3 +18,12 @@ while true ; do
 	esac
 	read -n1 -p "Press any key"
 done
+
+# MacOS comes with Python pre-installed. But it's Python Version 2.7, which is now deprecated
+# Install pyenv to Manage Your Python Versions
+# https://github.com/pyenv/pyenv
+# https://www.freecodecamp.org/news/python-version-on-mac-update/
+# brew install pyenv
+# pyenv install 3.10.0
+# pyenv global 3.10.0
+
