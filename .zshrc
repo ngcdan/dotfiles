@@ -1,6 +1,10 @@
 [ -z "$TMUX" ] && command -v tmux > /dev/null && TERM=xterm-256color && exec tmux
-export ZSH="$HOME/.oh-my-zsh"
-ZSH_THEME="spaceship"
+
+export DOTFILES="$HOME/Dev/dotfiles"
+export ZSH="$DOTFILES/.oh-my-zsh"
+
+# ZSH_THEME="spaceship"
+
 plugins=(git zsh-autosuggestions zsh-syntax-highlighting)
 
 export PATH=$(pyenv root)/shims:/opt/homebrew/bin:usr/local/bin:/usr/bin:/bin:$HOME/.local/bin:$PATH
@@ -13,10 +17,12 @@ if command -v pyenv 1>/dev/null 2>&1; then
 fi
 
 # aliases
-[[ -f ~/dotfiles/.aliases ]] && source ~/dotfiles/.aliases
+[[ -f $DOTFILES/.aliases ]] && source $DOTFILES/.aliases
 
 # functions
-[[ -f ~/dotfiles/.functions ]] && source ~/dotfiles/.functions
+[[ -f $DOTFILES/.functions ]] && source $DOTFILES/.functions
+
+
 
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
@@ -28,5 +34,5 @@ export JAVA_HOME=$(/usr/libexec/java_home)
 
 export EDITOR='nvim'
 
-test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
+test -e "${DOTFILES}/.iterm2_shell_integration.zsh" && source "${DOTFILES}/.iterm2_shell_integration.zsh"
 

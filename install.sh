@@ -1,9 +1,11 @@
 function link_dotfiles {
   echo "Linking dotfiles"
-  ln -s $(pwd)/.zshrc ~/.zshrc
-  ln -s $(pwd)/.tmux.conf ~/.tmux.conf
-  ln -s $(pwd)/.ideavimrc ~/.ideavimrc
-  ln -s $(pwd)/.gitconfig ~/.gitconfig
+  ln -sf $(pwd)/.zshrc ~/.zshrc
+  ln -sf $(pwd)/.tmux.conf ~/.tmux.conf
+  ln -sf $(pwd)/.ideavimrc ~/.ideavimrc
+  ln -sf $(pwd)/.vrapperrc ~/.vrapperrc
+  ln -sf $(pwd)/.gitconfig ~/.gitconfig
+
 }
 
 while true ; do 
