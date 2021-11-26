@@ -4,7 +4,7 @@
 [code]
 	filemode = false
 [core]
-	autocrlf = false
+	autocrlf = input
 	ignorecase = false
 [pull]
 	ff = only

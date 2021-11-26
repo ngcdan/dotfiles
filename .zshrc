@@ -1,15 +1,16 @@
 [ -z "$TMUX" ] && command -v tmux > /dev/null && TERM=xterm-256color && exec tmux
 
 export DOTFILES="$HOME/Dev/dotfiles"
-export ZSH="$DOTFILES/.oh-my-zsh"
+export ZSH="/Users/linuss/Dev/dotfiles/.oh-my-zsh"
 
 # ZSH_THEME="spaceship"
+ZSH_THEME="robbyrussell"
 
 plugins=(git zsh-autosuggestions zsh-syntax-highlighting)
+source $ZSH/oh-my-zsh.sh
 
 export PATH=$(pyenv root)/shims:/opt/homebrew/bin:usr/local/bin:/usr/bin:/bin:$HOME/.local/bin:$PATH
 
-source $ZSH/oh-my-zsh.sh
 
 export PYENV_ROOT="$HOME/.pyenv"
 if command -v pyenv 1>/dev/null 2>&1; then

@@ -29,3 +29,14 @@ done
 # pyenv install 3.10.0
 # pyenv global 3.10.0
 
+
+# install Oh My Zsh 
+# sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
+# Install zsh-autosuggestions
+# git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
+# nano ~/.zshrc
+# plugins=(git zsh-autosuggestions)
+# git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
+# plugins=(git zsh-autosuggestions zsh-syntax-highlighting)
+
+
