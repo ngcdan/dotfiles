@@ -21,7 +21,6 @@ alias ggmergedevelop='git merge origin "$(git_develop_branch)"'
 alias ggpulldevelop='git pull origin "$(git_develop_branch)"'
 
 alias v="nvim"
-alias vim="nvim"
 
 # Detect which `ls` flavor is in use
 if ls --color > /dev/null 2>&1; then # GNU `ls`

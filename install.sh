@@ -5,6 +5,7 @@ function link_dotfiles {
   ln -sf $(pwd)/.ideavimrc ~/.ideavimrc
   ln -sf $(pwd)/.vrapperrc ~/.vrapperrc
   ln -sf $(pwd)/.gitconfig ~/.gitconfig
+  ln -sf $(pwd)/.vimrc ~/.vimrc
 
 }
 
@@ -39,4 +40,18 @@ done
 # git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
 # plugins=(git zsh-autosuggestions zsh-syntax-highlighting)
 
+# clone
+# git clone https://github.com/powerline/fonts.git --depth=1
+# install
+# cd fonts
+# ./install.sh
+# clean-up a bit
+# cd ..
+# rm -rf fonts
 
+
+
+
+# Install fd 
+# https://github.com/sharkdp/fd
+# brew install fd 

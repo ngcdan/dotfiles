@@ -42,5 +42,10 @@ export EDITOR='nvim'
 
 test -e "${DOTFILES}/.iterm2_shell_integration.zsh" && source "${DOTFILES}/.iterm2_shell_integration.zsh"
 
-# To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
+
+# Key bindings 
+bindkey -s '^e' 'v $(fzf)\n'
+export FZF_DEFAULT_OPS="--extended"
+
