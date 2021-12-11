@@ -1,60 +1,75 @@
-let mapleader = " "
+" Better nav for omnicomplet" set leader key
+let g:mapleader = "\<Space>"
 
-set backspace=2   " Backspace deletes like most programs in insert mode
-set nobackup
-set nowritebackup
-set noswapfile
+set hidden                              " Required to keep multiple buffers open multiple buffers
+set encoding=utf-8                      " The encoding displayed
+set backspace=2                         " Backspace deletes like most program in insert mode
+set nobackup                            " This is recommended by coc
+set nowritebackup                       " This is recommended by coc
+
+set nowrap                              " Display long lines as just one line
 set history=50
-set ruler         " show the cursor position all the time
-set showcmd       " display incomplete commands
-set incsearch     " do incremental searching
-set laststatus=2  " Always display the status line
-set autowrite     " Automatically :write before running commands
+set ruler
+set showcmd " display incomplete commands
+set laststatus=2
+set autowrite    " automatically :write before running commands
+set noshowmode
 
-set autoindent
-set smartindent
 
-set autoread
-set autowrite
-
-" Softtabs, 2 spaces
-set tabstop=2
+" soft tabs , 2 spaces
+set tabstop=2                           " Insert 2 spaces for a tab
 set shiftwidth=2
-set shiftround
-set expandtab
+set expandtab                           " Converts tabs to spaces
+set softtabstop=0
+set smarttab
+set autoindent                          " Good auto indent
+" set tabstop=8 softtabstop=0 expandtab shiftwidth=2 smarttab
+" set smartindent                         " Makes indenting smart
 
-" Make it obvious where 80 characters is
-set textwidth=80
-set colorcolumn=+1
+" make it obvious where 80 characters is
+set colorcolumn=120
 
-" Display extra whitespace
-" set list listchars=tab:»·,trail:·,nbsp:·
+set nojoinspaces                        " use one space, not two, after punctuation
 
-" Use one space, not two, after punctuation.
-set nojoinspaces
+set mouse=a                            " Enable your mouse
 
-" Numbers
-set relativenumber
-set number
+set number relativenumber                             " Line numbers
 set numberwidth=5
 
-" Open new split panes to right and bottom, which feels more natural
-set splitbelow
-set splitright
+" set list listchars=tab:»·,trail:·,space:· " Display extra whitespace
+
+set splitbelow splitright                         " Horizontal splits will automatically be below
 
 " Autocomplete with dictionary words when spell check is on
 set complete+=kspell
 
-" Copy to clipboard
-set clipboard=unnamed
+" Always use vertical diffs
+set diffopt+=vertical
+
+set cursorline                          " Enable highlighting of the current line
+set updatetime=50                      " Faster completion
+
+set clipboard=unnamedplus               " Copy paste between vim and everything else
+
+" ingore case when searching
+set ignorecase
+set incsearch                           "  makes search act like search in modern brosers
+set hlsearch
+set smartcase
 
 set lazyredraw
+
 set termguicolors
+set background=dark                     " tell vim what the background color looks like
 
-set background=dark
+set backspace=indent,eol,start  " allow backspacing over everything in insert mode
 
-filetype plugin indent on
+set cmdheight=2 " Give more space for displaying messages.
+set shortmess+=c    " Don't pass messages to |ins-completion-menu|.
+set ttyfast
 
-inoremap jk <esc>
+set inccommand=split " for incsearch while sub ( neovim only )
+
+syntax enable
 
 

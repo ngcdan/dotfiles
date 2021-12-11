@@ -6,6 +6,8 @@ function link_dotfiles {
   ln -sf $(pwd)/.vrapperrc ~/.vrapperrc
   ln -sf $(pwd)/.gitconfig ~/.gitconfig
   ln -sf $(pwd)/.vimrc ~/.vimrc
+  ln -sf $(pwd)/.yabairc ~/.yabairc
+  ln -sf $(pwd)/.skhdrc ~/.skhdrc
 
 }
 
@@ -52,6 +54,18 @@ done
 
 
 
-# Install fd 
+# FD 
 # https://github.com/sharkdp/fd
 # brew install fd 
+
+
+# FZF.
+# brew install fzf
+# To install useful key bindings and fuzzy completion:
+# $(brew --prefix)/opt/fzf/install
+
+
+
+
+#  Nerd Font 
+# https://github.com/ryanoasis/nerd-fonts/tree/master/patched-fonts/Hack

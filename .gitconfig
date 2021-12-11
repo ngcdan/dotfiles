@@ -1,6 +1,6 @@
 [user]
 	name = ngcdan
-	email = Linuss1908@gmail.com
+	email = linuss1908@gmail.com
 [code]
 	filemode = false
 [core]
@@ -10,3 +10,13 @@
 	ff = only
 [init]
 	defaultBranch = master
+[merge]
+  tool = vimdiff
+[mergetool]
+  prompt = true
+[mergetool "vimdiff"]
+  cmd = nvim -d $LOCAL $REMOTE $MERGED -c '$wincmd w' -c 'wincmd J'
+[difftool]
+	prompt = false
+[diff]
+	tool = vimdiff

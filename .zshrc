@@ -4,7 +4,6 @@
 if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
   source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
 fi
-
 [ -z "$TMUX" ] && command -v tmux > /dev/null && TERM=xterm-256color && exec tmux
 
 export DOTFILES="$HOME/Dev/dotfiles"
@@ -43,9 +42,15 @@ export EDITOR='nvim'
 test -e "${DOTFILES}/.iterm2_shell_integration.zsh" && source "${DOTFILES}/.iterm2_shell_integration.zsh"
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
-[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
 # Key bindings 
 bindkey -s '^e' 'v $(fzf)\n'
-export FZF_DEFAULT_OPS="--extended"
 
+export FZF_DEFAULT_COMMAND='fd --type f --hidden --follow --exclude .git'
+# export FZF_DEFAULT_COMMAND='fd --type f'
+export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
+export FZF_ALT_C_COMMAND="fd --type d --hidden --follow --exclude .git"
+# export FZF_DEFAULT_OPS="--extended"
+
+# To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
+[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
