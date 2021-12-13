@@ -13,21 +13,13 @@ ZSH_THEME="powerlevel10k/powerlevel10k"
 plugins=(git zsh-autosuggestions zsh-syntax-highlighting)
 source $ZSH/oh-my-zsh.sh
 
-export PATH=$(pyenv root)/shims:/opt/homebrew/bin:usr/local/bin:/usr/bin:/bin:$HOME/.local/bin:$PATH
-
-
-export PYENV_ROOT="$HOME/.pyenv"
-if command -v pyenv 1>/dev/null 2>&1; then
-  eval "$(pyenv init -)"
-fi
+export PATH=/opt/homebrew/bin:usr/local/bin:/usr/bin:/bin:$HOME/.local/bin:$PATH
 
 # aliases
 [[ -f $DOTFILES/.aliases ]] && source $DOTFILES/.aliases
 
 # functions
 [[ -f $DOTFILES/.functions ]] && source $DOTFILES/.functions
-
-
 
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
@@ -47,10 +39,8 @@ test -e "${DOTFILES}/.iterm2_shell_integration.zsh" && source "${DOTFILES}/.iter
 bindkey -s '^e' 'v $(fzf)\n'
 
 export FZF_DEFAULT_COMMAND='fd --type f --hidden --follow --exclude .git'
-# export FZF_DEFAULT_COMMAND='fd --type f'
 export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
 export FZF_ALT_C_COMMAND="fd --type d --hidden --follow --exclude .git"
-# export FZF_DEFAULT_OPS="--extended"
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh

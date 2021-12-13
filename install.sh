@@ -3,12 +3,10 @@ function link_dotfiles {
   ln -sf $(pwd)/.zshrc ~/.zshrc
   ln -sf $(pwd)/.tmux.conf ~/.tmux.conf
   ln -sf $(pwd)/.ideavimrc ~/.ideavimrc
-  ln -sf $(pwd)/.vrapperrc ~/.vrapperrc
   ln -sf $(pwd)/.gitconfig ~/.gitconfig
   ln -sf $(pwd)/.vimrc ~/.vimrc
   ln -sf $(pwd)/.yabairc ~/.yabairc
   ln -sf $(pwd)/.skhdrc ~/.skhdrc
-
 }
 
 while true ; do 

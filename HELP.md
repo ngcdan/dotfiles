@@ -7,3 +7,6 @@ hold o - v : open Visual Studio Code
 hold o - i : open Iterm 
 hold o - y : open IntelliJ  
 hold o - s : open Spotify  
+
+# Key press visualizer
+brew install --cask keycastr

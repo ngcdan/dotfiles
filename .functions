@@ -5,3 +5,12 @@ function lazygit() {
     git commit -a -m "$1"
     git push
 }
+
+function working() {
+	open -a notion.app
+	open -a Google\ Chrome.app
+	open -a Visual\ Studio\ Code.app
+	open -a Visual\ Studio\ Code.app
+	open -a IntelliJ\ IDEA.app
+	open -a Skype.app
+}

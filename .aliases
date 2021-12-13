@@ -15,12 +15,18 @@ alias d="cd ~/Documents/Dropbox"
 alias dl="cd ~/Downloads"
 alias dt="cd ~/Desktop"
 alias p="cd ~/Dev/projects"
+alias df="cd ~/Dev/dotfiles"
 
 alias g="git"
 alias ggmergedevelop='git merge origin "$(git_develop_branch)"'
 alias ggpulldevelop='git pull origin "$(git_develop_branch)"'
+alias lz="lazygit \"update code\""
+alias wk="working"
 
 alias v="nvim"
+
+# reload yabai 
+alias rya="brew services restart yabai && brew services restart skhd"
 
 # Detect which `ls` flavor is in use
 if ls --color > /dev/null 2>&1; then # GNU `ls`
@@ -57,7 +63,6 @@ alias week='date +%V'
 
 # Google Chrome
 alias chrome='/Applications/Google\ Chrome.app/Contents/MacOS/Google\ Chrome'
-alias canary='/Applications/Google\ Chrome\ Canary.app/Contents/MacOS/Google\ Chrome\ Canary'
 
 # IP addresses
 alias ip="dig +short myip.opendns.com @resolver1.opendns.com"

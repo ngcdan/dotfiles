@@ -1,24 +1,11 @@
 #!/usr/bin/env sh
 #YABAI STUFF
-
 sudo yabai --load-sa
 yabai -m signal --add event=dock_did_restart action="sudo yabai --load-sa"
 
-# bar settings
-# yabai -m config status_bar                   off
-# yabai -m config status_bar_text_font         "Roboto:Regular:12.0"
-# yabai -m config status_bar_icon_font         "FontAwesome:Regular:12.0"
-# yabai -m config status_bar_background_color  0xff1B222D
-# yabai -m config status_bar_foreground_color  0xffa8a8a8
-# yabai -m config status_bar_space_icon_strip  1 2 3 4 5 6 7 8 9 10 11 12
-# yabai -m config status_bar_power_icon_strip   
-# yabai -m config status_bar_space_icon        
-# yabai -m config status_bar_clock_icon        
-# 
-# yabai -m signal --add event=space_changed action="osascript -e 'tell application \"Übersicht\" to refresh widget id \"simple-bar-spaces-jsx\"'"
-# yabai -m signal --add event=display_changed action="osascript -e 'tell application \"Übersicht\" to refresh widget id \"simple-bar-spaces-jsx\"'"
-# yabai -m signal --add event=space_changed action="osascript -e 'tell application \"Übersicht\" to refresh widget id \"simple-bar-process-jsx\"'"
-
+yabai -m signal --add event=space_changed action="osascript -e 'tell application \"Übersicht\" to refresh widget id \"simple-bar-spaces-jsx\"'"
+yabai -m signal --add event=display_changed action="osascript -e 'tell application \"Übersicht\" to refresh widget id \"simple-bar-spaces-jsx\"'"
+yabai -m signal --add event=space_changed action="osascript -e 'tell application \"Übersicht\" to refresh widget id \"simple-bar-process-jsx\"'"
 
 yabai -m space 1 --label I
 yabai -m space 2 --label II
@@ -31,7 +18,6 @@ yabai -m space 8 --label VIII
 yabai -m space 9 --label IX
 yabai -m space 10 --label X
 
-
 # global settings
 yabai -m config mouse_follows_focus          off
 yabai -m config focus_follows_mouse          off
@@ -43,12 +29,8 @@ yabai -m config window_opacity_duration      0.0
 yabai -m config active_window_opacity        1.0
 yabai -m config normal_window_opacity        1.0
 yabai -m config window_border                off
-yabai -m config window_border_width          6
-# yabai -m config active_window_border_color   0xff7aa2f7
-# yabai -m config normal_window_border_color   0xff444b6a
-# yabai -m config active_window_border_color   0xff81A1C1
-# yabai -m config normal_window_border_color   0xff7A808C
-yabai -m config insert_feedback_color        0xff61afef
+yabai -m config window_border_width          2
+
 yabai -m config split_ratio                  0.50
 yabai -m config auto_balance                 off
 yabai -m config mouse_modifier               fn
@@ -58,38 +40,17 @@ yabai -m config mouse_drop_action            swap
 
 #----------------- Change how yabai looks----------------------
 yabai -m config layout                       bsp
-yabai -m config top_padding                  2
-yabai -m config bottom_padding               2
-yabai -m config left_padding                 2
-yabai -m config right_padding                2
-yabai -m config window_gap                   2
+yabai -m config top_padding                  0
+yabai -m config bottom_padding               0
+yabai -m config left_padding                 0
+yabai -m config right_padding                0
+yabai -m config window_gap                   0
 yabai -m config external_bar main:20:0
-
-
-# # New window spawns to the right if vertical split, or bottom if horizontal split
-# yabai -m config window_placement second_child
-# 
-# # window opacity (default: off)
-# # example: render all unfocused windows with 90% opacity
-# yabai -m config window_opacity on
-# yabai -m config active_window_opacity 1.0
-# yabai -m config normal_window_opacity 0.3
-# 
-# # -------------------- Mouse Support ------------------------
-# # # set mouse interaction modifier key (default: fn)
-# yabai -m config mouse_modifier ctrl
-# # set modifier + right-click drag to resize window (default: resize)
-# yabai -m config mouse_action2 resize
-# # set modifier + left-click drag to resize window (default: move)
-# yabai -m config mouse_action1 move
-# # set focus follows mouse mode (default: off, options: off, autoraise, autofocus)
-# yabai -m config focus_follows_mouse autofocus 
-# # set mouse follows focus mode (default: off)
-# yabai -m config mouse_follows_focus on
-
 
 # float system preferences. Most of these just diable Yabai form resizing them.
 yabai -m rule --add app="^System Preferences$" sticky=on layer=above manage=off
+yabai -m rule --add app="^Disk Utility$" sticky=on layer=above manage=off
+yabai -m rule --add app="^System Information$" sticky=on layer=above manage=off
 yabai -m rule --add app="^Karabiner-Elements$" sticky=on layer=above manage=off
 yabai -m rule --add app="^Karabiner-EventViewer$" sticky=on layer=above manage=off
 yabai -m rule --add app="^Finder$" sticky=on layer=above manage=off
@@ -98,22 +59,25 @@ yabai -m rule --add app="^Fonos$" manage=off
 yabai -m rule --add label="iTerm2" app="^iTerm2$" manage=off
 yabai -m rule --add label="App Store" app="^App Store$" manage=off
 yabai -m rule --add label="Activity Monitor" app="^Activity Monitor$" manage=off
+yabai -m rule --add label="KeyCastr" app="^KeyCastr$" manage=off
+yabai -m rule --add app="^*$" manage=off
 
+yabai -m rule --add app="Google Chrome"       space=1             
+yabai -m rule --add app="Alacritty"           space=2
+yabai -m rule --add app="Visual Studio Code"  space=3
+yabai -m rule --add app="IntelliJ IDEA"       space=3
+yabai -m rule --add app="Skype"               space=4
+yabai -m rule --add app="Notion"              space=4
 
-yabai -m rule --add app="Google Chrome"        space=1
-yabai -m rule --add app="iTerm2"               space=2
+yabai -m config window_border on
+yabai -m config window_border_width 3
+yabai -m config active_window_border_color 0xFF40FF00
+yabai -m config normal_window_border_color 0x00FFFFFF
+yabai -m config insert_feedback_color        0xffd75f5f
 
-## WTIH SIP DISABLED (Limelight build into Yabai, enable it here)
-#yabai -m config window_border on
-#yabai -m config window_border_width 3
-#yabai -m config active_window_border_color 0xFF40FF00
-#yabai -m config normal_window_border_color 0x00FFFFFF
-#yabai -m config insert_feedback_color        0xffd75f5f
-#
-##Limelight addon (Kill it and start it each time Yabai starts)
-#killall limelight &>/dev/null
-#limelight &>/dev/null &
-
+#Limelight addon (Kill it and start it each time Yabai starts)
+killall limelight &>/dev/null
+limelight &>/dev/null &
 
 echo "yabai configuration loaded.."
 #END

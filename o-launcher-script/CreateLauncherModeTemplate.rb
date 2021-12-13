@@ -25,14 +25,14 @@ def main
       {
         'description' => 'O-Launcher',
         'manipulators' => [
-          #generate_launcher_mode('n', [], [{ 'shell_command' => "open -a 'notion.app'" }]),
-          generate_launcher_mode('e', [], [{ 'shell_command' => "open -a 'Brave Browser Beta.app'" }]),
+          generate_launcher_mode('n', [], [{ 'shell_command' => "open -a 'notion.app'" }]),
           generate_launcher_mode('c', [], [{ 'shell_command' => "open -a 'Google Chrome.app'" }]),
-          #generate_launcher_mode('a', [], [{ 'shell_command' => "open -a 'Activity Monitor.app'" }]),
-          #generate_launcher_mode('v', [], [{ 'shell_command' => "open -a 'Visual Studio Code.app'" }]),
-          #generate_launcher_mode('i', [], [{ 'shell_command' => "open -a 'iTerm.app'" }]),
-          generate_launcher_mode('y', [], [{ 'shell_command' => "open -a 'IntelliJ IDEA.app'" }]),
+          generate_launcher_mode('a', [], [{ 'shell_command' => "open -a 'Activity Monitor.app'" }]),
+          generate_launcher_mode('v', [], [{ 'shell_command' => "open -a 'Visual Studio Code.app'" }]),
+          generate_launcher_mode('t', [], [{ 'shell_command' => "open -a 'iTerm.app'" }]),
+          generate_launcher_mode('i', [], [{ 'shell_command' => "open -a 'IntelliJ IDEA.app'" }]),
           generate_launcher_mode('s', [], [{ 'shell_command' => "open -a 'Spotify.app'" }]),
+          generate_launcher_mode('y', [], [{ 'shell_command' => "open -a 'Skype.app'" }]),
 
         ].flatten,
       },
