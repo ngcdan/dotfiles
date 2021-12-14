@@ -3,7 +3,6 @@
 # if you're having troubles finding key codes for a key just type skhd --observe in a terminal and type a key. Pretty cool! Or just check the wiki.
 
 # ------------------------ Window -----------------------
-
 # # toggle window fullscreen zoom
 hyper - f : yabai -m window --toggle zoom-fullscreen
 
