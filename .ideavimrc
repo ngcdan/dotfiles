@@ -1,7 +1,11 @@
 "
 "
 " ------------------ General Settings -------------------
-let g:mapleader = "\<Space>"
+let g:mapleader = "\<space>"
+set idearefactormode=keep
+set ideajoin
+set surround
+set easymotion
 
 set hidden                              " Required to keep multiple buffers open multiple buffers
 set encoding=utf-8                      " The encoding displayed
@@ -31,7 +35,6 @@ set nojoinspaces                        " use one space, not two, after punctuat
 
 set mouse=a                            " Enable your mouse
 
-set number relativenumber                             " Line numbers
 set numberwidth=5
 
 " set list listchars=tab:»·,trail:·,space:· " Display extra whitespace
@@ -88,15 +91,23 @@ let mapleader= " "
 
 
 " -------------------- Navigation, Window--------------------
-" Split 
+nmap <S-Enter> O<Esc>
+nmap <CR> o<Esc>
+
+" scrolling
+nmap <leader>d <C-d>
+nmap <leader>u <C-u>
+vmap <leader>d <C-d>
+vmap <leader>u <C-u>
+
+" actions
+nmap <leader>bd <action>(CloseEditor)
+
+" Split
 nnoremap <space>\ :vsplit<CR> 
 nnoremap ss :vsplit<CR> 
 nnoremap <space>/ :split<CR>
 nnoremap sv :split<CR>
-
-" resize 
-nnoremap <silent> <space>- :vertical resize -8<CR>
-nnoremap <silent> <space>= :vertical resize +8<CR>
 
 " window focus
 nnoremap <c-h> <c-w>h
@@ -105,12 +116,12 @@ nnoremap <c-k> <c-w>k
 nnoremap <c-l> <c-w>l
 
 " Get off my lawn
-nnoremap <Left> :echoe "Use h"<CR>
-nnoremap <Right> :echoe "Use l"<CR>
-nnoremap <Up> :echoe "Use k"<CR>
-nnoremap <Down> :echoe "Use j"<CR>
+nnoremap <Left> :echo "Use h"<CR>
+nnoremap <Right> :echo "Use l"<CR>
+nnoremap <Up> :echo "Use k"<CR>
+nnoremap <Down> :echo "Use j"<CR>
 
-" Better nav for omnicomplete
+" Better nav for incomplete
 inoremap <expr> <c-j> ("\<C-n>")
 inoremap <expr> <c-k> ("\<C-p>")
 
@@ -119,35 +130,18 @@ nnoremap <silent> <TAB> :bnext<CR>
 nnoremap <silent> <S-TAB> :bprevious<CR>
 
 " --------------Edit--------------------
-" close all buffer
-nmap ba :Bufonly<cr>
-
-command! Bufonly silent! call Preserve("exec '%bd|e#|bd#'")
-
-" preserve function
-if !exists('*Preserve')
-    function! Preserve(command)
-        try
-            let l:win_view = winsaveview()
-            silent! execute 'keeppatterns keepjumps ' . a:command
-        finally
-            call winrestview(l:win_view)
-        endtry
-    endfunction
-endif
 
 " Fast saving 
 nmap <space>w :w!<CR>
 " Alternate way to quit 
 nnoremap qq :wq!<CR>
 
+nnoremap Q :q!<CR>
+
 " --------------------Indent, Format, Refactor------------------------
 " Better indenting
 vnoremap < <gv
 vnoremap > >gv
-" Move selected line / block of text in visual mode
-xnoremap K :move '<-2<CR>gv-gv
-xnoremap J :move '>+1<CR>gv-gv
 
 " ----------------- Search, Replace --------------------
 " No highlight search
@@ -157,4 +151,6 @@ map <silent> <space><space> :nohl<cr>
 " escape
 inoremap jk <Esc>
 inoremap kj <Esc>
-nnoremap <silent> <C-c> <Esc>
+
+" find current word in file
+nnoremap <leader>k /<C-R><C-W><CR>

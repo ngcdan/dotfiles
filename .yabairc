@@ -59,7 +59,7 @@ yabai -m config bottom_padding               0
 yabai -m config left_padding                 0
 yabai -m config right_padding                0
 yabai -m config window_gap                   0
-yabai -m config external_bar main:20:0
+yabai -m config external_bar main:30:0
 
 # float system preferences. Most of these just diable Yabai form resizing them.
 yabai -m rule --add app="^System Preferences$" sticky=on layer=above manage=off
@@ -70,16 +70,16 @@ yabai -m rule --add app="^Karabiner-EventViewer$" sticky=on layer=above manage=o
 yabai -m rule --add app="^Finder$" sticky=on layer=above manage=off
 yabai -m rule --add app="^Spotify$" manage=off
 yabai -m rule --add app="^Fonos$" manage=off
-yabai -m rule --add label="iTerm2" app="^iTerm2$" manage=off
+# yabai -m rule --add label="iTerm2" app="^iTerm2$" manage=off
 yabai -m rule --add label="App Store" app="^App Store$" manage=off
 yabai -m rule --add label="Activity Monitor" app="^Activity Monitor$" manage=off
 yabai -m rule --add label="KeyCastr" app="^KeyCastr$" manage=off
 yabai -m rule --add label="Microsoft Excel" app="^Microsoft Excel$" manage=off
 yabai -m rule --add label="Skype" app="^Skype$" manage=off
 yabai -m rule --add label="Music" app="^Music$" manage=off
-yabai -m rule --add label="Brave Browser" app="^Brave Browser$" manage=off
+# yabai -m rule --add label="IntelliJ IDEA" app="^Intellij IDEA$" manage=off
 
-yabai -m rule --add app="^Google Chrome$"       space=1 native-fullscreen=true           
+yabai -m rule --add app="^Brave Browser$"       space=1 native-fullscreen=true          
 yabai -m rule --add app="^Visual Studio Code$"  space=2 native-fullscreen=true
 yabai -m rule --add app="^IntelliJ IDEA$"       space=2 native-fullscreen=true
 yabai -m rule --add app="^Skype$"               space=4
