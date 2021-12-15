@@ -17,10 +17,7 @@ source $HOME/.config/nvim/vim-plug/tree-sitter.vim
 source $HOME/.config/nvim/vim-plug/dev-icon.vim
 source $HOME/.config/nvim/themes/gruvbox.vim
 source $HOME/.config/nvim/vim-plug/nvim-tree.vim
+source $HOME/.config/nvim/vim-plug/comment.vim
 luafile $HOME/.config/nvim/vim-plug/lualine.lua
-
-
-
-
 
 

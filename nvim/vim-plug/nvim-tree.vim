@@ -24,8 +24,8 @@ let g:nvim_tree_window_picker_exclude = {
     \ }
 let g:nvim_tree_special_files = { 'README.md': 1, 'Makefile': 1, 'MAKEFILE': 1 } 
 let g:nvim_tree_show_icons = {
-    \ 'git': 1,
-    \ 'folders': 0,
+    \ 'git': 0,
+    \ 'folders': 1,
     \ 'files': 0,
     \ 'folder_arrows': 0,
     \ }

@@ -34,12 +34,20 @@ alt - k : yabai -m window --resize top:0:-50; \
 alt - l : yabai -m window --resize right:50:0; \
                   yabai -m window --resize left:50:0
 
-# # # toggle window split type
-# hyper - r : yabai -m window --toggle split
+# # toggle window split type
+hyper - r : yabai -m window --toggle split
  
 # # float / unfloat window and center on screen
 # hyper - 0 : yabai -m window --toggle float;\
 #            yabai -m window --grid 4:4:1:1:2:2
+# 
+
+
+# create desktop, move window and follow focus
+# hyper - e : yabai -m space --create && \
+#                   index="$(yabai -m query --spaces --display | jq 'map(select(."native-fullscreen" == 0))[-1].index')" && \
+#                   yabai -m window --space "${index}" && \
+#                   yabai -m space --focus "${index}"
 # 
 # ------------------- Desktop ---------------------------
 
@@ -69,5 +77,16 @@ hyper - m : yabai -m window --space prev; yabai -m space --focus prev
 # create and destroy spaces
 hyper - c : yabai -m space --create
 hyper - x : yabai -m space --destroy
+
+# toggle sticky
+# hyper - y : yabai -m window --toggle sticky
+# 
+# # toggle sticky, float and resize to picture-in-picture size
+# hyper - o : yabai -m window --toggle sticky;\
+#           yabai -m window --grid 5:5:4:0:1:1
+# 
+# change layout of desktop
+# hyper - u : yabai -m space --layout bsp
+# hyper - i : yabai -m space --layout float
 
 

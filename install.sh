@@ -7,6 +7,7 @@ function link_dotfiles {
   ln -sf $(pwd)/.vimrc ~/.vimrc
   ln -sf $(pwd)/.yabairc ~/.yabairc
   ln -sf $(pwd)/.skhdrc ~/.skhdrc
+  ln -sf $(pwd)/nvim ~/.config/nvim
 }
 
 while true ; do 
