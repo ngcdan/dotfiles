@@ -20,6 +20,7 @@ set encoding=utf-8
 set fileencoding=utf-8
 
 " indents
+filetype indent on
 filetype plugin indent on
 set shiftwidth=2
 set tabstop=2                           " Insert 2 spaces for a tab
@@ -27,6 +28,8 @@ set autoindent                          " Good auto indent
 set smarttab
 set nowrap "No Wrap lines
 set backspace=indent,eol,start  " allow backspacing over everything in insert mode
+set expandtab  " using space instead tab
+
 set showmatch
 
 set wildignore+=*/node_modules/*,*.o,*.obj,*.bak,*.exe,*.hi,*.dyn_hi,*.dyn_o,*.zip,*.pdf
@@ -40,7 +43,7 @@ set mouse=a                            " Enable your mouse
 set number relativenumber                             " Line numbers
 set numberwidth=5
 
-" set list listchars=tab:»·,trail:·,space:· " Display extra whitespace
+set list listchars=tab:»·,trail:·,space:· " Display extra whitespace
 
 set splitbelow splitright                         " Horizontal splits will automatically be below
 
@@ -104,10 +107,6 @@ if (&t_Co > 2 || has("gui_running")) && !exists("syntax_on")
   syntax on
 endif
 
-
-
-
-
 " File types "{{{
 " ---------------------------------------------------------------------
 " JavaScript
@@ -127,5 +126,8 @@ set suffixesadd=.js,.es,.jsx,.json,.css,.less,.sass,.styl,.php,.py,.md
 autocmd FileType coffee setlocal shiftwidth=2 tabstop=2
 autocmd FileType ruby setlocal shiftwidth=2 tabstop=2
 autocmd FileType yaml setlocal shiftwidth=2 tabstop=2
-
+autocmd FileType javascript setlocal shiftwidth=2 tabstop=2
+autocmd FileType javascriptreact setlocal shiftwidth=2 tabstop=2
+autocmd FileType typescript setlocal shiftwidth=2 tabstop=2
+autocmd FileType typescriptreact setlocal shiftwidth=2 tabstop=2
 "}}}

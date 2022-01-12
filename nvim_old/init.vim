@@ -21,3 +21,4 @@ source $HOME/.config/nvim/vim-plug/comment.vim
 luafile $HOME/.config/nvim/vim-plug/lualine.lua
 
 
+

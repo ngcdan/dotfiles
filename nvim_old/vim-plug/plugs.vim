@@ -29,17 +29,27 @@ call plug#begin('~/.config/nvim/autoload/plugged')
 
 	" Theme
   Plug 'eddyekofo94/gruvbox-flat.nvim'
+
 	" Status line
   Plug 'hoob3rt/lualine.nvim'
   " Icon
   Plug 'kyazdani42/nvim-web-devicons'
 
-	" Language server 
-	Plug 'neovim/nvim-lspconfig' " Collection of configurations for built-in LSP client
+  " Cmp plugins
   Plug 'hrsh7th/nvim-cmp' " Autocompletion plugin
+  Plug 'hrsh7th/cmp-path' " path completions
+  Plug 'hrsh7th/cmp-buffer' " Buffer completions
+  Plug 'saadparwaiz1/cmp_luasnip' " Snippets completions
   Plug 'hrsh7th/cmp-nvim-lsp' " LSP source for nvim-cmp
-  Plug 'saadparwaiz1/cmp_luasnip' " Snippets source for nvim-cmp
-  Plug 'L3MON4D3/LuaSnip' " Snippets plugin
+
+  " Language server 
+  Plug 'neovim/nvim-lspconfig' " Collection of configurations for built-in LSP client
+  Plug 'williamboman/nvim-lsp-installer' " simple to use language server installer 
+   
+  " Snippets
+  Plug 'L3MON4D3/LuaSnip'
+  Plug 'rafamadriz/friendly-snippets' 
+
   Plug 'onsails/lspkind-nvim'
   Plug 'nvim-treesitter/nvim-treesitter', { 'do': ':TSUpdate' }
 

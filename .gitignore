@@ -1,4 +1,7 @@
 .tmux/
-*/auload/
+*/autoload/
+*/.oh-my-zsh/
+*/plugged/
+*/session/
 **/nvim/session/
 **/nvim/autoload/

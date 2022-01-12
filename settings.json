@@ -1,7 +1,6 @@
 {
   "editor.renderWhitespace": "all",
   "editor.wordWrapColumn": 120,
-  // "editor.wordWrap": "wordWrapColumn",
   "editor.formatOnPaste": true,
   "files.autoSave": "onFocusChange",
   "files.trimTrailingWhitespace": true,

@@ -23,10 +23,8 @@ set expandtab                           " Converts tabs to spaces
 set softtabstop=0
 set smarttab
 set autoindent                          " Good auto indent
-" set tabstop=8 softtabstop=0 expandtab shiftwidth=2 smarttab
-" set smartindent                         " Makes indenting smart
 
-" make it obvious where 80 characters is
+" make it obvious where 120 characters is
 set colorcolumn=120
 
 set nojoinspaces                        " use one space, not two, after punctuation
@@ -68,8 +66,4 @@ set cmdheight=2 " Give more space for displaying messages.
 set shortmess+=c    " Don't pass messages to |ins-completion-menu|.
 set ttyfast
 
-set inccommand=split " for incsearch while sub ( neovim only )
-
 syntax enable
-
-

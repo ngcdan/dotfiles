@@ -8,7 +8,7 @@ function lazygit() {
 
 function working() {
 	open -a notion.app
-	open -a Google\ Chrome.app
+	open -a Brave\ Browser.app
 	open -a Visual\ Studio\ Code.app
 	open -a Visual\ Studio\ Code.app
 	open -a IntelliJ\ IDEA.app
