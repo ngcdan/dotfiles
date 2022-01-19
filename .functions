@@ -6,6 +6,21 @@ function lazygit() {
     git push
 }
 
+function datatpmerge() {
+  echo "datatp-core......................."
+  cd ~/Dev/projects/datatp/datatp-core
+  git fetch 
+  git merge origin develop -s ours --no-commit
+  echo "datatp-erp......................."
+  cd ../datatp-erp
+  git fetch 
+  git merge origin develop -s ours --no-commit
+  echo "datatp-logistics......................"
+  cd ../datatp-logistics
+  git fetch 
+  git merge origin develop -s ours --no-commit
+}
+
 function working() {
 	open -a notion.app
 	open -a Brave\ Browser.app
