@@ -118,9 +118,6 @@ nnoremap qq :wq!<CR>
 nnoremap Q :q!<CR>
 
 " --------------------Indent, Format, Refactor------------------------
-" Better indenting
-vnoremap < <gv
-vnoremap > >gv
 
 " ----------------- Search, Replace --------------------
 " No highlight search
