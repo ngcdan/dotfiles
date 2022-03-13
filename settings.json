@@ -1,7 +1,24 @@
 {
   "editor.renderWhitespace": "all",
   "editor.wordWrapColumn": 120,
-  "editor.formatOnPaste": true,
+  "editor.formatOnPaste": false,
+  "editor.rulers": [
+    120
+  ],
+  "editor.autoIndent": "advanced",
+  "editor.minimap.enabled": false,
+  "editor.fontSize": 15.5,
+  "editor.fontFamily": "JetBrains Mono",
+  "editor.fontLigatures": true,
+  "editor.tabSize": 2,
+  "editor.tabCompletion": "on",
+  "editor.formatOnSave": true,
+  "editor.suggestSelection": "first",
+  "editor.cursorStyle": "line",
+  "editor.lineNumbers": "on",
+  "editor.wordSeparators": "/\\()\"':,.;<>~!@#$%^&*|+=[]{}`?-",
+  "editor.wordWrap": "wordWrapColumn",
+  "editor.detectIndentation": false,
   "files.autoSave": "onFocusChange",
   "files.trimTrailingWhitespace": true,
   "vim.easymotion": true,
@@ -9,6 +26,8 @@
   "vim.useSystemClipboard": true,
   "vim.useCtrlKeys": true,
   "vim.hlsearch": true,
+  "vim.leader": "<space>",
+  "vim.sneak": true,
   "vim.insertModeKeyBindings": [
     {
       "before": [
@@ -16,11 +35,108 @@
         "k"
       ],
       "after": [
-        "<esc>"
+        "<Esc>"
       ]
     }
   ],
   "vim.normalModeKeyBindingsNonRecursive": [
+    {
+      "before": [
+        "<C-n>"
+      ],
+      "commands": [
+        ":nohl"
+      ]
+    },
+    {
+      "before": [
+        "<leader>",
+        "w"
+      ],
+      "commands": [
+        "workbench.action.splitEditor"
+      ]
+    },
+    {
+      "before": [
+        "<leader>",
+        "e"
+      ],
+      "commands": [
+        "workbench.action.toggleSidebarVisibility"
+      ]
+    },
+    {
+      "before": [
+        "<leader>",
+        "f"
+      ],
+      "commands": [
+        "revealInExplorer"
+      ]
+    },
+    {
+      "before": [
+        "<leader>",
+        "k"
+      ],
+      "after": [
+        "/",
+        "<C-R>",
+        "<C-W>",
+        "<CR>"
+      ]
+    },
+    {
+      "before": [
+        "<leader>",
+        "s"
+      ],
+      "after": [
+        "<leader>",
+        "<leader>",
+        "/"
+      ]
+    },
+    {
+      "before": [
+        "s"
+      ],
+      "after": [
+        "<leader>",
+        "<leader>",
+        "2",
+        "s"
+      ]
+    },
+    {
+      "before": [
+        ":"
+      ],
+      "commands": [
+        "workbench.action.showCommands"
+      ]
+    },
+    {
+      "before": [
+        "leader",
+        "w"
+      ],
+      "commands": [
+        "workbench.action.files.save"
+      ]
+    },
+    {
+      "before": [
+        "q",
+        "q"
+      ],
+      "commands": [
+        "workbench.action.closeActiveEditor",
+      ]
+    },
+  ],
+  "vim.normalModeKeyBindings": [
     {
       "before": [
         "<leader>",
@@ -33,57 +149,42 @@
     },
     {
       "before": [
-        "<C-n>"
+        "<tab>"
       ],
       "commands": [
-        ":nohl"
+        "workbench.action.nextEditor"
       ]
     },
     {
       "before": [
-        "p",
-      ],
-      "after": [
-        "p",
-        "g",
-        "v",
-        "y"
-      ]
-    }
-  ],
-  "vim.leader": "<space>",
-  "vim.handleKeys": {
-    "<C-a>": false,
-    "<C-f>": false
-  },
-  "vim.normalModeKeyBindings": [
-    {
-      "before": [
-        ":"
+        "<S-tab>"
       ],
       "commands": [
-        "workbench.action.showCommands",
+        "workbench.action.previousEditor"
       ]
     },
-    {
-      "before": [
-        "<C-n>"
-      ],
-      "commands": [
-        ":nohl",
-      ]
-    },
-    {
-      "before": [
-        "leader",
-        "w"
-      ],
-      "commands": [
-        "workbench.action.files.save",
-      ]
-    }
   ],
   "vim.visualModeKeyBindings": [
+    {
+      "before": [
+        ">"
+      ],
+      "after": [
+        ">",
+        "g",
+        "v"
+      ]
+    },
+    {
+      "before": [
+        "<"
+      ],
+      "after": [
+        "<",
+        "g",
+        "v"
+      ]
+    },
     {
       "before": [
         ">"
@@ -103,28 +204,36 @@
   ],
   "vim.statusBarColorControl": true,
   "vim.statusBarColors.normal": [
-    "#8FBCBB",
-    "#434C5E"
+    "#a89984",
   ],
-  "vim.statusBarColors.insert": "#BF616A",
-  "vim.statusBarColors.visual": "#B48EAD",
-  "vim.statusBarColors.visualline": "#B48EAD",
-  "vim.statusBarColors.visualblock": "#A3BE8C",
-  "vim.statusBarColors.replace": "#D08770",
+  "vim.handleKeys": {
+    "<C-a>": false,
+    "<C-f>": false,
+    // VS Code new marker @ next occurence
+    "<C-c>": false,
+    // Cut
+    "<C-x>": false,
+    // Paste
+    "<C-v>": false,
+    "<C-z>": false,
+    "<C-y>": false
+  },
+  "vim.vimrc.enable": true,
+  "vim.statusBarColors.insert": "#83a598",
+  "vim.statusBarColors.visual": "#fe8019",
+  "vim.statusBarColors.visualline": "#fe8019",
+  "vim.statusBarColors.visualblock": "#fe8019",
+  "vim.statusBarColors.replace": "#689d6a",
   "vim.statusBarColors.commandlineinprogress": "#007ACC",
   "vim.statusBarColors.searchinprogressmode": "#007ACC",
   "vim.statusBarColors.easymotionmode": "#007ACC",
   "vim.statusBarColors.easymotioninputmode": "#007ACC",
   "vim.statusBarColors.surroundinputmode": "#007ACC",
-  "terminal.external.osxExec": "iTerm.app",
+  "terminal.external.osxExec": "kitty.app",
   "terminal.integrated.cursorBlinking": true,
   "terminal.integrated.fontFamily": "JetBrains Mono",
-  "terminal.integrated.fontSize": 14.5,
+  "terminal.integrated.fontSize": 13.5,
   "terminal.integrated.lineHeight": 1,
-  "editor.rulers": [
-    120
-  ],
-  "editor.autoIndent": "advanced",
   "files.exclude": {
     "**/.git": true,
     "**/.svn": true,
@@ -142,46 +251,48 @@
   "[typescript]": {
     "editor.tabSize": 2
   },
+  "typescript.updateImportsOnFileMove.enabled": "always",
+  "javascript.updateImportsOnFileMove.enabled": "always",
+  "emmet.triggerExpansionOnTab": true,
   "explorer.confirmDragAndDrop": false,
   "workbench.editor.labelFormat": "short",
-  "editor.minimap.enabled": false,
-  "editor.fontSize": 15,
-  "editor.fontFamily": "JetBrains Mono",
-  "editor.tabSize": 2,
-  "editor.fontLigatures": true,
-  "editor.tabCompletion": "on",
-  "emmet.triggerExpansionOnTab": true,
-  "emmet.showExpandedAbbreviation": "never",
   "explorer.confirmDelete": false,
-  "breadcrumbs.enabled": false,
-  "typescript.updateImportsOnFileMove.enabled": "always",
+  "breadcrumbs.enabled": true,
   "workbench.startupEditor": "newUntitledFile",
+  "workbench.iconTheme": "material-icon-theme",
+  "git.autofetch": true,
+  "diffEditor.renderSideBySide": false,
+  "search.exclude": {
+    "": true,
+    "**.map": true,
+    "**.d.ts": true,
+    "**/node_modules": true,
+    "**/.git/**": true,
+    "**/host/**": true,
+    "host/**": true
+  },
+  "security.workspace.trust.untrustedFiles": "open",
+  "files.watcherExclude": {
+    "**/.git/objects/**": true,
+    "**/node_modules/**": true
+  },
   "workbench.colorCustomizations": {
-    "editorRuler.foreground": "#ff4081",
-    "statusBar.background": "#B48EAD",
-    "statusBar.noFolderBackground": "#B48EAD",
-    "statusBar.debuggingBackground": "#B48EAD",
+    "statusBar.background": "#fe8019",
+    "statusBar.noFolderBackground": "#fe8019",
+    "statusBar.debuggingBackground": "#fe8019",
     "statusBar.foreground": "#434C5E",
     "statusBar.debuggingForeground": "#434C5E"
   },
-  "git.autofetch": true,
-  "javascript.updateImportsOnFileMove.enabled": "always",
-  "editor.formatOnSave": true,
-  "editor.suggestSelection": "first",
-  "vsintellicode.modify.editor.suggestSelection": "automaticallyOverrodeDefaultValue",
+  "zenMode.hideStatusBar": false,
+  "gitlens.statusBar.enabled": false,
   "tabnine.experimentalAutoImports": true,
-  "workbench.colorTheme": "Gruvbox Dark Hard",
-  "workbench.iconTheme": "material-icon-theme",
-  "editor.cursorStyle": "line",
-  "editor.lineNumbers": "on",
-  "editor.wordSeparators": "/\\()\"':,.;<>~!@#$%^&*|+=[]{}`?-",
-  "editor.wordWrap": "off",
-  "editor.detectIndentation": false,
-  "diffEditor.renderSideBySide": false,
-  "window.zoomLevel": -2,
-  "search.exclude": {
-    "": true,
-    "**/node_modules": false
-  },
+  "window.zoomLevel": -1.5,
+  "cSpell.userWords": [
+    "containertype",
+    "datatp",
+    "vgrid",
+    "wentity"
+  ],
   "gitlens.mode.active": "zen",
+  "workbench.colorTheme": "One Dark Pro Darker"
 }
