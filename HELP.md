@@ -1,3 +1,17 @@
+
+# Download videos from YouTube and other video site
+  https://github.com/ytdl-org/youtube-dl
+
+  - install via homebrew 
+  ```
+  brew install youtube-dl
+
+  ```
+  - use 
+  ```
+  youtube-dl [OPTIONS] URL [URL...]
+  ```
+
 # Update sortware
 
 ```
