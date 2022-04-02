@@ -6,8 +6,9 @@ function link_dotfiles {
   ln -sf $(pwd)/.vimrc ~/.vimrc
   ln -sf $(pwd)/.gitconfig ~/.gitconfig
   ln -sf $(pwd)/nvim ~/.config/nvim
-  ln -sf ~/Library/Application\ Support/Code/User/keybindings.json ./keybindings.json
-  ln -sf ~/Library/Application\ Support/Code/User/settings.json ./settings.json
+  cp ~/Library/Application\ Support/Code/User/keybindings.json ./
+  cp ~/Library/Application\ Support/Code/User/settings.json ./
+  cp ~/.config/karabiner/karabiner.json ./
   echo "Link dotfiles done!"
 }
 link_dotfiles;
