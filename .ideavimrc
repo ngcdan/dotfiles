@@ -84,6 +84,8 @@ vmap <leader>u <C-u>
 " actions
 nmap <leader>bd <action>(CloseEditor)
 
+nnoremap <leader>gf :action GotoFile<CR>
+
 " Split
 nnoremap <space>\ :vsplit<CR> 
 nnoremap ss :vsplit<CR> 

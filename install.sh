@@ -1,27 +1,16 @@
 function link_dotfiles {
-  echo "Linking dotfiles"
+  echo "Link dotfiles updating.......... "
   ln -sf $(pwd)/.zshrc ~/.zshrc
   ln -sf $(pwd)/.tmux.conf ~/.tmux.conf
   ln -sf $(pwd)/.ideavimrc ~/.ideavimrc
-  ln -sf $(pwd)/.gitconfig ~/.gitconfig
   ln -sf $(pwd)/.vimrc ~/.vimrc
-  ln -sf $(pwd)/.yabairc ~/.yabairc
-  ln -sf $(pwd)/.skhdrc ~/.skhdrc
+  ln -sf $(pwd)/.gitconfig ~/.gitconfig
   ln -sf $(pwd)/nvim ~/.config/nvim
+  ln -sf ~/Library/Application\ Support/Code/User/keybindings.json ./keybindings.json
+  ln -sf ~/Library/Application\ Support/Code/User/settings.json ./settings.json
+  echo "Link dotfiles done!"
 }
-
-while true ; do 
-	echo "Choise 1 2 or 3"
-	echo "1: Link dotfiles"
-	echo "2: Install"
-	echo "3: Quit"
-	read -sn1
-	case "$REPLY" in 
-		1) link_dotfiles;;
-		3) exit 0;;
-	esac
-	read -n1 -p "Press any key"
-done
+link_dotfiles;
 
 # MacOS comes with Python pre-installed. But it's Python Version 2.7, which is now deprecated
 # Install pyenv to Manage Your Python Versions
@@ -63,8 +52,6 @@ done
 # To install useful key bindings and fuzzy completion:
 # $(brew --prefix)/opt/fzf/install
 
-
-
-
 #  Nerd Font 
 # https://github.com/ryanoasis/nerd-fonts/tree/master/patched-fonts/Hack
+

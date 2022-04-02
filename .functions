@@ -1,42 +1,10 @@
 #!/usr/bin/env bash
 
-function lazygit() {
-    git add .
-    git commit -a -m "$1"
+function G() {
+    git commit -am "$1"
     git push
 }
 
-function datatpmerge() {
-  echo "datatp-core......................."
-  cd ~/Dev/projects/datatp/datatp-core
-  git fetch 
-  git merge origin develop -s ours --no-commit
-  echo "datatp-erp......................."
-  cd ../datatp-erp
-  git fetch 
-  git merge origin develop -s ours --no-commit
-  echo "datatp-logistics......................"
-  cd ../datatp-logistics
-  git fetch 
-  git merge origin develop -s ours --no-commit
-}
-
-function working() {
-	open -a notion.app
-	open -a Brave\ Browser.app
-	open -a Visual\ Studio\ Code.app
-	open -a IntelliJ\ IDEA.app
-	open -a Skype.app
-}
-
-# Print current active Finder dir.
-finder() {
-  osascript 2>/dev/null <<EOF
-    tell application "Finder"
-      return POSIX path of (target of window 1 as alias)
-    end tell
-EOF
-}
 
 # cd to Finder
 cdf() {
@@ -49,15 +17,8 @@ cdf() {
 }
 
 # md <folder-name> - Create folder and cd to it
-md(){
-  mkdir "$1"
-  cd "$1"
-}
+md() {
+   mkdir -p "$1" && cd "$1";
+ }
 
-# when there's too many files in working changes for gitupdate, commit with '.' commit.
-G() {
-  git add .
-  git commit -m "."
-  git push
-}
 

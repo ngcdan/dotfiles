@@ -1,0 +1,27 @@
+windows:
+  - name: datatp
+    root: ~/Dev/projects/datatp
+    layout: 71be,186x55,0,0{103x55,0,0[103x27,0,0,60,103x27,0,28,67],82x55,104,0[82x20,104,0,61,82x20,104,21,65,82x13,104,42,66]}
+    panes:
+      - commands:
+        - ./datatp.sh git pull origin develop
+        - ./datatp.sh git merge origin develop --no-edit
+        focus: true
+      - commands:
+        - open -a Visual\ Studio\ Code.app
+        - open -a Notion.app
+        - open -a IntelliJ\ IDEA.app
+        - open -a Google\ Chrome.app
+        - open -a Skype.app
+      - commands:
+        - cd datatp-erp/webui/erp
+        - pnpm run dev-build
+        - pnpm run dev-watch
+      - commands:
+        - cd datatp-logistics/webui/logistics
+        - sleep 20 && pnpm run dev-build
+        - pnpm run dev-watch
+      - commands:
+        - cd datatp-erp/webui/host
+        - sleep 40 && pnpm run dev-build
+        - pnpm run dev-server

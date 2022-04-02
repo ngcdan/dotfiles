@@ -27,15 +27,9 @@ brew install koekeishiya/formulae/yabai --HEAD
 
 ```
 
-# Short cut 
-hold o - n : open Notion 
-hold o - 1 : open Brave Browser 
-hold o - c : open Google chrome 
-hold o - a : open Activity Monitor
-hold o - v : open Visual Studio Code
-hold o - i : open Iterm 
-hold o - y : open IntelliJ  
-hold o - s : open Spotify  
-
 # Key press visualizer
 brew install --cask keycastr
+
+## Create symbolic link
+ ln -sf ~/Library/Application\ Support/Code/User/keybindings.json ./keybindings.json
+![vscode - settings.json file](https://stackoverflow.com/questions/65908987/vs-code-how-to-open-settings-json-file)
