@@ -1,11 +1,11 @@
 [user]
 	name = ngcdan
-	email = linuss1908@gmail.com
+	email = jesse.vnhph@openfreightone.com
 [code]
 	filemode = false
 [core]
-	autocrlf = input
-	ignorecase = false
+	autocrlf = false
+	ignorecase = true
 [pull]
 	ff = only
 [init]
@@ -32,3 +32,5 @@
 ; 	prompt = false
 ; [diff]
 ; 	tool = vimdiff
+[advice]
+	diverging = false

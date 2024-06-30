@@ -33,3 +33,9 @@ brew install --cask keycastr
 ## Create symbolic link
  ln -sf ~/Library/Application\ Support/Code/User/keybindings.json ./keybindings.json
 ![vscode - settings.json file](https://stackoverflow.com/questions/65908987/vs-code-how-to-open-settings-json-file)
+
+## Gradle (SDK)
+```
+  sdk list gradle
+  sdk install gradle <version>
+```

@@ -102,4 +102,12 @@
     "key": "cmd+k cmd+w",
     "command": "-workbench.action.closeAllEditors"
   },
+  {
+    "key": "shift+cmd+o",
+    "command": "-workbench.action.gotoSymbol"
+  },
+  {
+    "key": "shift+cmd+o",
+    "command": "workbench.action.openWorkspace"
+  },
 ]

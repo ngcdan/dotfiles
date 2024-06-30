@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-function G() {
+G() {
     git commit -am "$1"
     git push
 }
@@ -19,6 +19,6 @@ cdf() {
 # md <folder-name> - Create folder and cd to it
 md() {
    mkdir -p "$1" && cd "$1";
- }
+}
 
 

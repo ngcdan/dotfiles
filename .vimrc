@@ -47,7 +47,13 @@ set diffopt+=vertical
 set cursorline                          " Enable highlighting of the current line
 set updatetime=50                      " Faster completion
 
-set clipboard=unnamedplus               " Copy paste between vim and everything else
+
+" Copy paste between vim and everything else 
+if system('uname -s') == "Darwin\n"
+  set clipboard=unnamed "OSX
+else
+  set clipboard=unnamedplus "Linux
+endif
 
 " ingore case when searching
 set ignorecase
@@ -58,12 +64,12 @@ set smartcase
 set lazyredraw
 
 set termguicolors
-set background=dark                     " tell vim what the background color looks like
+" set background=dark                     " tell vim what the background color looks like
 
 set backspace=indent,eol,start  " allow backspacing over everything in insert mode
 
-set cmdheight=2 " Give more space for displaying messages.
-set shortmess+=c    " Don't pass messages to |ins-completion-menu|.
-set ttyfast
-
 syntax enable
+
+
+inoremap jk <esc>
+
